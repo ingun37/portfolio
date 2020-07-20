@@ -1,4 +1,5 @@
 import React from 'react';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import logo from './logo.svg';
 import './App.css';
 import ReactFullpage from '@fullpage/react-fullpage';
@@ -6,31 +7,63 @@ import { Skills } from "./Pages/Skills";
 import { Intro } from "./Pages/Intro";
 import { Chronicle } from "./Pages/Chronicle";
 import { Education } from "./Pages/Education";
+import { GameExperience } from "./Pages/GameExperience";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+
+const useLocalStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  }),
+);
 
 function App() {
   const pages = [
-    Intro(), Skills(), Chronicle(), Education()
+    Intro(), GameExperience(), Skills(), Chronicle(), Education()
   ]
+  const classes = useLocalStyles();
   return (
-    <ReactFullpage
-      //fullpage options
-      licenseKey={'YOUR_KEY_HERE'}
-      scrollingSpeed={1000} /* Options here */
+    <div className={classes.root}>
+      <AppBar position="absolute">
+        <Toolbar>
+          
+          <Typography variant="h6" className={classes.title}>
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+      <ReactFullpage
+        //fullpage options
+        licenseKey={'YOUR_KEY_HERE'}
+        scrollingSpeed={1000} /* Options here */
 
-      render={({ state, fullpageApi }) => {
-        return (
-          <ReactFullpage.Wrapper>
-            {pages.map(x=>{
-              return (
-                <div className="section">
-                  {x}
-                </div>
-              )
-            })}
-          </ReactFullpage.Wrapper>
-        );
-      }}
-    />
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
+              {pages.map(x => {
+                return (
+                  <div className="section">
+                    {x}
+                  </div>
+                )
+              })}
+            </ReactFullpage.Wrapper>
+          );
+        }}
+      />
+    </div>
   );
 }
 
