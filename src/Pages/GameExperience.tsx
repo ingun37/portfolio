@@ -10,6 +10,12 @@ import eos from "./eos.jpg";
 import contest from "./contest.jpeg";
 import { makeStyles } from '@material-ui/core/styles';
 import Business from '@material-ui/icons/Business';
+import AccessTime from '@material-ui/icons/AccessTime';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+
 const useLocalStyles = makeStyles((theme) => ({
     card: {
         width: 300,
@@ -21,14 +27,15 @@ class Game {
         public name: string,
         public img: string,
         public organization: string,
+        public time: string,
     ) { }
 }
 export function GameExperience() {
     const classes = useStyles();
     const games: Game[] = [
-        new Game("Crusaders Quest", cru, "LoadComplete/NHN Entertainment"),
-        new Game("Echo of Soul", eos, "Nvius/Hangame"),
-        new Game("국림과천과학관 온라인과학게임대회", contest, "Swink/국립과천과학관"),
+        new Game("Crusaders Quest", cru, "LoadComplete/NHN Entertainment", "2015~2017"),
+        new Game("Echo of Soul", eos, "Nvius/Hangame", "2014~2015"),
+        new Game("국림과천과학관 온라인과학게임대회", contest, "Swink/국립과천과학관", "2013~2014"),
     ];
     return (
         <div>
@@ -55,6 +62,7 @@ export function GameExperience() {
 function GameCard(game: Game) {
     const classes = useStyles();
     const localClasses = useLocalStyles();
+    
     return (
         <Grid key={game.name} item>
             <Card className={localClasses.card}>
@@ -67,12 +75,33 @@ function GameCard(game: Game) {
                     <Typography variant="h5">
                         {game.name}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        <Business fontSize="small"></Business>
-                        {game.organization}
-                    </Typography>
+
+                    <List dense={true}>
+                    <GameInfoItem icon={<Business />} primary={game.organization} />
+                    <GameInfoItem icon={<AccessTime />} primary={game.time} />
+                    </List>
                 </CardContent>
             </Card>
         </Grid>
     )
 }
+
+interface GameInfoItemProps {
+    icon: React.ReactElement;
+    primary: string;
+}
+
+function GameInfoItem(props: GameInfoItemProps) {
+    const { icon, primary } = props;
+    return (
+        <ListItem disableGutters={true} >
+            <ListItemIcon>
+                {icon}
+            </ListItemIcon>
+            <ListItemText>
+            {primary}
+            </ListItemText>
+        </ListItem>
+    );
+}
+
