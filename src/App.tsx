@@ -18,6 +18,7 @@ import {ReactComponent as SouthKorea} from './south-korea.svg';
 import {ReactComponent as Usa} from './usa.svg';
 import { Template, TemplateProps } from './Pages/Template';
 import { AppProjects } from "./Pages/AppProjects";
+import { GraphicsProjects } from './Pages/GraphicsProjects';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,7 +40,8 @@ function App() {
       ["Get to know me as a", Intro()]
     ]},
     {title: "AS A GAME DEVELOPER", subs: [
-      ["I've worked on commercially successful games.", GameProjects()]
+      ["I've worked on commercially successful games.", GameProjects()],
+      ["I'm very knowledgeable about computer graphics", GraphicsProjects()]
     ]},
     {title: "AS AN APPLICATION DEVELOPER", subs: [
       ["I've developed amazing applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
