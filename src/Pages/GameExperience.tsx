@@ -9,7 +9,7 @@ import cru from "./cru.jpg";
 import eos from "./eos.jpg";
 import contest from "./contest.jpeg";
 import { makeStyles } from '@material-ui/core/styles';
-
+import Business from '@material-ui/icons/Business';
 const useLocalStyles = makeStyles((theme) => ({
     card: {
         width: 300,
@@ -20,14 +20,15 @@ class Game {
     constructor(
         public name: string,
         public img: string,
+        public organization: string,
     ) { }
 }
 export function GameExperience() {
     const classes = useStyles();
     const games: Game[] = [
-        new Game("Crusaders Quest", cru),
-        new Game("Echo of Soul", eos),
-        new Game("국림과천과학관 온라인과학게임대회", contest),
+        new Game("Crusaders Quest", cru, "LoadComplete/NHN Entertainment"),
+        new Game("Echo of Soul", eos, "Nvius/Hangame"),
+        new Game("국림과천과학관 온라인과학게임대회", contest, "Swink/국립과천과학관"),
     ];
     return (
         <div>
@@ -65,6 +66,10 @@ function GameCard(game: Game) {
                 <CardContent>
                     <Typography variant="h5">
                         {game.name}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        <Business fontSize="small"></Business>
+                        {game.organization}
                     </Typography>
                 </CardContent>
             </Card>
