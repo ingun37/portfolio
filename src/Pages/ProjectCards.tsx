@@ -22,7 +22,7 @@ const useLocalStyles = makeStyles((theme) => ({
     },
 }));
 
-class Game {
+export class ProjectProp {
     constructor(
         public name: string,
         public img: string,
@@ -30,55 +30,43 @@ class Game {
         public time: string,
     ) { }
 }
-export function GameExperience() {
+export function ProjectCards(projects: ProjectProp[]) {
     const classes = useStyles();
-    const games: Game[] = [
-        new Game("Crusaders Quest", cru, "LoadComplete/NHN Entertainment", "2015~2017"),
-        new Game("Echo of Soul", eos, "Nvius/Hangame", "2014~2015"),
-        new Game("국림과천과학관 온라인과학게임대회", contest, "Swink/국립과천과학관", "2013~2014"),
-    ];
+
     return (
-        <div>
-            <Typography variant="h2" className={classes.center}>
-                AS A GAME DEVELOPER
-            </Typography>
-            <Typography variant="h4" className={classes.center}>
-                I have participated in developing various commercially successful games.
-            </Typography>
-            <Grid container className={classes.root} spacing={2}>
-                <Grid item xs={12}>
-                    <Grid container justify="center" spacing={2}>
-                        {
-                            games.map(x => GameCard(x))
-                        }
-                    </Grid>
+        <Grid container className={classes.root} spacing={2}>
+            <Grid item xs={12}>
+                <Grid container justify="center" spacing={2}>
+                    {
+                        projects.map(x => ProjectCard(x))
+                    }
                 </Grid>
             </Grid>
-        </div>
+        </Grid>
     );
 }
 
 
-function GameCard(game: Game) {
+function ProjectCard(project: ProjectProp) {
     const classes = useStyles();
     const localClasses = useLocalStyles();
-    
+
     return (
-        <Grid key={game.name} item>
+        <Grid key={project.name} item>
             <Card className={localClasses.card}>
                 <CardMedia
                     className={classes.media}
-                    image={game.img}
+                    image={project.img}
                     title="Contemplative Reptile"
                 />
                 <CardContent>
                     <Typography variant="h5">
-                        {game.name}
+                        {project.name}
                     </Typography>
 
-                    <List dense={true}>
-                    <GameInfoItem icon={<Business />} primary={game.organization} />
-                    <GameInfoItem icon={<AccessTime />} primary={game.time} />
+                    <List dense={true} disablePadding={true}>
+                        <ProjectPropertyItem icon={<Business />} primary={project.organization} />
+                        <ProjectPropertyItem icon={<AccessTime />} primary={project.time} />
                     </List>
                 </CardContent>
             </Card>
@@ -91,7 +79,7 @@ interface GameInfoItemProps {
     primary: string;
 }
 
-function GameInfoItem(props: GameInfoItemProps) {
+function ProjectPropertyItem(props: GameInfoItemProps) {
     const { icon, primary } = props;
     return (
         <ListItem disableGutters={true} >
@@ -99,7 +87,7 @@ function GameInfoItem(props: GameInfoItemProps) {
                 {icon}
             </ListItemIcon>
             <ListItemText>
-            {primary}
+                {primary}
             </ListItemText>
         </ListItem>
     );

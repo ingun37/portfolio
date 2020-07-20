@@ -17,12 +17,6 @@ export function Intro() {
 
     return (
         <div>
-            <Typography variant="h2" className={classes.center}>
-                Hi I'm Ingun
-            </Typography>
-            <Typography variant="h4"  className={classes.center}>
-                Get to know me as a
-            </Typography>
             <Grid container className={classes.root} spacing={2}>
                 <Grid item xs={12}>
                     <Grid container justify="center" spacing={2}>

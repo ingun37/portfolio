@@ -7,7 +7,7 @@ import { Skills } from "./Pages/Skills";
 import { Intro } from "./Pages/Intro";
 import { Chronicle } from "./Pages/Chronicle";
 import { Education } from "./Pages/Education";
-import { GameExperience } from "./Pages/GameExperience";
+import { GameProjects } from "./Pages/GameProjects";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -16,6 +16,8 @@ import SvgIcon from "@material-ui/core/SvgIcon";
 import Button from '@material-ui/core/Button';
 import {ReactComponent as SouthKorea} from './south-korea.svg';
 import {ReactComponent as Usa} from './usa.svg';
+import { Template, TemplateProps } from './Pages/Template';
+import { AppProjects } from "./Pages/AppProjects";
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,8 +34,10 @@ const useLocalStyles = makeStyles((theme: Theme) =>
 );
 
 function App() {
-  const pages = [
-    Intro(), GameExperience(), Skills(), Chronicle(), Education()
+  const pages:TemplateProps[] = [
+    {title: "Hi I'm Ingun", subTitle: "Get to know me as a", comp: Intro()},
+    {title: "AS A GAME DEVELOPER", subTitle: "I've worked on commercially successful games.", comp: GameProjects()},
+    {title: "AS AN APPLICATION DEVELOPER", subTitle: "I've developed amazing applications including the official application for one of the biggest radio channel in South Korea", comp: AppProjects()}
   ]
   const classes = useLocalStyles();
   return (
@@ -67,7 +71,7 @@ function App() {
               {pages.map(x => {
                 return (
                   <div className="section">
-                    {x}
+                    <Template {...x}></Template>
                   </div>
                 )
               })}
