@@ -6,7 +6,7 @@ import contest from "./contest.jpeg";
 import {ProjectCards, ProjectProp} from "./ProjectCards";
 export function AppProjects() {
     const games: ProjectProp[] = [
-        new ProjectProp("Expressive Matrix Calculator", matrix, "Individual", "2013~2014"),
+        new ProjectProp("Expressive Matrix Calculator", matrix, null, "2013~2014"),
         new ProjectProp("EBS어학FM", ebs, "Swink/EBSFM", "2019"),
     ];
     return (

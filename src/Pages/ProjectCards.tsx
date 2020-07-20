@@ -26,7 +26,7 @@ export class ProjectProp {
     constructor(
         public name: string,
         public img: string,
-        public organization: string,
+        public organization: string | null,
         public time: string,
     ) { }
 }
@@ -65,7 +65,7 @@ function ProjectCard(project: ProjectProp) {
                     </Typography>
 
                     <List dense={true} disablePadding={true}>
-                        <ProjectPropertyItem icon={<Business />} primary={project.organization} />
+                        {project.organization ? <ProjectPropertyItem icon={<Business />} primary={project.organization} /> : null}
                         <ProjectPropertyItem icon={<AccessTime />} primary={project.time} />
                     </List>
                 </CardContent>

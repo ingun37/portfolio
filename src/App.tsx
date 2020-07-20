@@ -35,9 +35,15 @@ const useLocalStyles = makeStyles((theme: Theme) =>
 
 function App() {
   const pages:TemplateProps[] = [
-    {title: "Hi I'm Ingun", subTitle: "Get to know me as a", comp: Intro()},
-    {title: "AS A GAME DEVELOPER", subTitle: "I've worked on commercially successful games.", comp: GameProjects()},
-    {title: "AS AN APPLICATION DEVELOPER", subTitle: "I've developed amazing applications including the official application for one of the biggest radio channel in South Korea", comp: AppProjects()}
+    {title: "Hi I'm Ingun", subs: [
+      ["Get to know me as a", Intro()]
+    ]},
+    {title: "AS A GAME DEVELOPER", subs: [
+      ["I've worked on commercially successful games.", GameProjects()]
+    ]},
+    {title: "AS AN APPLICATION DEVELOPER", subs: [
+      ["I've developed amazing applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
+    ]}
   ]
   const classes = useLocalStyles();
   return (

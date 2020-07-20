@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Button from "@material-ui/core/Button";
 export interface TemplateProps {
     title:string,
-    subTitle:string,
-    comp:React.ReactElement
+    subs:[string, React.ReactElement][]
 }
 
 
@@ -18,16 +17,26 @@ const useStyles = makeStyles((theme) => ({
 
 export function Template(props:TemplateProps) {
     const classes = useStyles();
-    const {title, subTitle, comp} = props;
+    const [count, setCount] = useState(0)
+    const {title, subs} = props;
     return (
         <div>
             <Typography variant="h2" className={classes.center}>
                 {title}            
             </Typography>
             <Typography variant="h4" className={classes.center}>
-                {subTitle}
+                {subs[count][0]}
             </Typography>
-            {comp}
+            <Button onClick={
+                ()=>setCount((count+1)%subs.length)
+            }>next</Button>
+            {subs[count][1]}
         </div>
+    );
+}
+
+function DumpComp() {
+    return (
+        <div>what</div>
     );
 }
