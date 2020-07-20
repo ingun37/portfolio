@@ -12,7 +12,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import SvgIcon from "@material-ui/core/SvgIcon";
 import Button from '@material-ui/core/Button';
+import {ReactComponent as SouthKorea} from './south-korea.svg';
+import {ReactComponent as Usa} from './usa.svg';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -41,7 +44,16 @@ function App() {
           <Typography variant="h6" className={classes.title}>
             News
           </Typography>
-          <Button color="inherit">Login</Button>
+          <IconButton>
+            <SvgIcon>
+              <Usa/>
+            </SvgIcon>
+          </IconButton>
+          <IconButton>
+            <SvgIcon>
+              <SouthKorea/>
+            </SvgIcon>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <ReactFullpage
