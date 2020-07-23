@@ -8,6 +8,9 @@ import StepLabel from '@material-ui/core/StepLabel';
 import { blue } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import Fab from '@material-ui/core/Fab';
+import ArrowForward from '@material-ui/icons/ArrowForward';
+import ArrowBack from '@material-ui/icons/ArrowBack';
 
 const titleTheme = createMuiTheme({
     typography: {
@@ -56,18 +59,21 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold'
         // color: 'white'
     },
-    back: {
+    subBack: {
         width: '100%',
         backgroundColor: '#eeeeee',
-        paddingTop: 16,
-        paddingBottom: 16
+        padding: 16,
+
     },
-    right: {
-        // position: 'absolute',
-        // height: '100%',
-        // right: 0,
-        // width: '20%',
-        // backgroundColor: '#001100'
+    rightArrow: {
+        position: 'absolute',
+        marginTop: 26,
+        right: 32
+    },
+    leftArrow: {
+        position: 'absolute',
+        marginTop: 26,
+        left: 32
     }
 }));
 
@@ -86,23 +92,37 @@ export function Template(props: TemplateProps) {
             ))}
         </Stepper>
     );
+    const rightArrow = (
+        <Fab variant="extended" color="primary" aria-label="add" className={classes.rightArrow} onClick={
+            () => setCount((count + 1) % subs.length)
+        }>
+            There's more!
+            <ArrowForward />
+        </Fab>
+    );
+    const leftArrow = (
+        <Fab color="primary" aria-label="add" className={classes.leftArrow} onClick={
+            () => setCount((count - 1) % subs.length)
+        }>
+            <ArrowBack />
+        </Fab>
+    );
     return (
         <ThemeProvider theme={titleTheme}>
             <div>
                 <Typography variant="h2" className={classes.title}>
                     {title}
                 </Typography>
-                <Button onClick={
-                    () => setCount((count + 1) % subs.length)
-                }>next</Button>
 
-                <div className={classes.back}>
+                <div className={classes.subBack}>
+                    {count < subs.length-1 ? rightArrow : null}
+                    {count > 0 ? leftArrow : null}
+
                     <Typography variant="h4" className={classes.subtitle}>
                         {subs[count][0]}
                     </Typography>
 
                     {subs[count][1]}
-                    <div className={classes.right}></div>
                 </div>
 
 
