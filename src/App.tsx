@@ -54,7 +54,7 @@ function App() {
     },
     {
       title: "AS AN APPLICATION DEVELOPER", subs: [
-        ["I've developed amazing applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
+        ["I've successfully developed and maintained applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
       ]
     }
   ]
