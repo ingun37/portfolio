@@ -6,6 +6,28 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import { blue } from '@material-ui/core/colors';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+const titleTheme = createMuiTheme({
+    typography: {
+        h2: {
+            fontFamily: [
+                'Anton',
+            ].join(','),
+        },
+        h4: {
+            fontFamily: [
+                'Bebas Neue',
+            ].join(','),
+        },
+        h5: {
+            fontFamily: [
+                'Bebas Neue', 'Do Hyeon',
+            ].join(','),
+        }
+    },
+});
 
 export interface TemplateProps {
     title: string,
@@ -16,7 +38,7 @@ export interface TemplateProps {
 const useStyles = makeStyles((theme) => ({
     title: {
         textAlign: "center",
-        fontWeight: 'bold'
+        // fontWeight: 'bold'
     },
     root: {
         width: '100%',
@@ -31,11 +53,12 @@ const useStyles = makeStyles((theme) => ({
     subtitle: {
         textAlign: "center",
         marginBottom: 16,
+        fontWeight: 'bold'
         // color: 'white'
     },
     back: {
         width: '100%',
-        // backgroundColor: '#930202',
+        backgroundColor: '#eeeeee',
         paddingTop: 16,
         paddingBottom: 16
     },
@@ -64,25 +87,29 @@ export function Template(props: TemplateProps) {
         </Stepper>
     );
     return (
-        <div>
-            <Typography variant="h2" className={classes.title}>
-                {title}
-            </Typography>
-            <Button onClick={
-                () => setCount((count + 1) % subs.length)
-            }>next</Button>
-
-            <div className={classes.back}>
-                <Typography variant="h4" className={classes.subtitle}>
-                    {subs[count][0]}
+        <ThemeProvider theme={titleTheme}>
+            <div>
+                <Typography variant="h2" className={classes.title}>
+                    {title}
                 </Typography>
-                {subs[count][1]}
-                <div className={classes.right}></div>
+                <Button onClick={
+                    () => setCount((count + 1) % subs.length)
+                }>next</Button>
+
+                <div className={classes.back}>
+                    <Typography variant="h4" className={classes.subtitle}>
+                        {subs[count][0]}
+                    </Typography>
+
+                    {subs[count][1]}
+                    <div className={classes.right}></div>
+                </div>
+
+
+                {subs.length > 1 ? stepper : null}
             </div>
+        </ThemeProvider>
 
-
-            {subs.length > 1 ? stepper : null}
-        </div>
     );
 }
 

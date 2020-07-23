@@ -14,11 +14,12 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from "@material-ui/core/SvgIcon";
 import Button from '@material-ui/core/Button';
-import {ReactComponent as SouthKorea} from './south-korea.svg';
-import {ReactComponent as Usa} from './usa.svg';
+import { ReactComponent as SouthKorea } from './south-korea.svg';
+import { ReactComponent as Usa } from './usa.svg';
 import { Template, TemplateProps } from './Pages/Template';
 import { AppProjects } from "./Pages/AppProjects";
 import { GraphicsProjects } from './Pages/GraphicsProjects';
+
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -31,63 +32,73 @@ const useLocalStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
     },
+    bar: {
+      width: 200,
+      borderRadius: '0px 0px 0px 32px'
+    }
   }),
 );
 
 function App() {
-  const pages:TemplateProps[] = [
-    {title: "Hi I'm Ingun", subs: [
-      ["Get to know me as a", Intro()]
-    ]},
-    {title: "AS A GAME DEVELOPER", subs: [
-      ["I've worked on commercially successful games.", GameProjects()],
-      ["I'm very knowledgeable about computer graphics", GraphicsProjects()]
-    ]},
-    {title: "AS AN APPLICATION DEVELOPER", subs: [
-      ["I've developed amazing applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
-    ]}
+  const pages: TemplateProps[] = [
+    {
+      title: "Hi I'm Ingun", subs: [
+        ["Get to know me as a", Intro()]
+      ]
+    },
+    {
+      title: "AS A GAME DEVELOPER", subs: [
+        ["I've worked on commercially successful games.", GameProjects()],
+        ["I'm very knowledgeable about computer graphics", GraphicsProjects()]
+      ]
+    },
+    {
+      title: "AS AN APPLICATION DEVELOPER", subs: [
+        ["I've developed amazing applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
+      ]
+    }
   ]
   const classes = useLocalStyles();
   return (
-    <div className={classes.root}>
-      <AppBar position="absolute">
-        <Toolbar>
-          
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <IconButton>
-            <SvgIcon>
-              <Usa/>
-            </SvgIcon>
-          </IconButton>
-          <IconButton>
-            <SvgIcon>
-              <SouthKorea/>
-            </SvgIcon>
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      <ReactFullpage
-        //fullpage options
-        licenseKey={'YOUR_KEY_HERE'}
-        scrollingSpeed={1000} /* Options here */
+      <div className={classes.root}>
+        <AppBar position="absolute" className={classes.bar}>
+          <Toolbar>
 
-        render={({ state, fullpageApi }) => {
-          return (
-            <ReactFullpage.Wrapper>
-              {pages.map(x => {
-                return (
-                  <div className="section">
-                    <Template {...x}></Template>
-                  </div>
-                )
-              })}
-            </ReactFullpage.Wrapper>
-          );
-        }}
-      />
-    </div>
+            <Typography variant="h6" className={classes.title}>
+
+            </Typography>
+            <IconButton>
+              <SvgIcon>
+                <Usa />
+              </SvgIcon>
+            </IconButton>
+            <IconButton>
+              <SvgIcon>
+                <SouthKorea />
+              </SvgIcon>
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <ReactFullpage
+          //fullpage options
+          licenseKey={'YOUR_KEY_HERE'}
+          scrollingSpeed={1000} /* Options here */
+
+          render={({ state, fullpageApi }) => {
+            return (
+              <ReactFullpage.Wrapper>
+                {pages.map(x => {
+                  return (
+                    <div className="section">
+                      <Template {...x}></Template>
+                    </div>
+                  )
+                })}
+              </ReactFullpage.Wrapper>
+            );
+          }}
+        />
+      </div>
   );
 }
 
