@@ -5,12 +5,11 @@ import CardContent from '@material-ui/core/CardContent';
 import useStyles from "./Styles";
 import Grid from '@material-ui/core/Grid';
 import CardMedia from '@material-ui/core/CardMedia';
-import cru from "./cru.jpg";
-import eos from "./eos.jpg";
-import contest from "./contest.jpeg";
 import { makeStyles } from '@material-ui/core/styles';
 import Business from '@material-ui/icons/Business';
 import AccessTime from '@material-ui/icons/AccessTime';
+import Notes from '@material-ui/icons/Notes';
+
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -27,7 +26,8 @@ export class ProjectProp {
         public name: string,
         public img: string,
         public organization: string | null,
-        public time: string,
+        public time: string | null,
+        public note: string | null = null,
     ) { }
 }
 export function ProjectCards(projects: ProjectProp[]) {
@@ -66,7 +66,8 @@ function ProjectCard(project: ProjectProp) {
 
                     <List dense={true} disablePadding={true}>
                         {project.organization ? <ProjectPropertyItem icon={<Business />} primary={project.organization} /> : null}
-                        <ProjectPropertyItem icon={<AccessTime />} primary={project.time} />
+                        {project.time ? <ProjectPropertyItem icon={<AccessTime />} primary={project.time} /> : null}
+                        {project.note ? <ProjectPropertyItem icon={<Notes />} primary={project.note} /> : null}
                     </List>
                 </CardContent>
             </Card>

@@ -19,7 +19,7 @@ import { ReactComponent as Usa } from './usa.svg';
 import { Template, TemplateProps } from './Pages/Template';
 import { AppProjects } from "./Pages/AppProjects";
 import { GraphicsProjects } from './Pages/GraphicsProjects';
-
+import { Math } from "./Pages/Math";
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -55,6 +55,11 @@ function App() {
     {
       title: "AS AN APPLICATION DEVELOPER", subs: [
         ["I've successfully developed and maintained applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
+      ]
+    },
+    {
+      title: "AS AN MATHEMATICS ENTHUSIAST", subs: [
+        ["I'm passionate at learning mathematics and applying to programming", Math()]
       ]
     }
   ]
