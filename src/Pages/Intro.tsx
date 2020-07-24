@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { palette } from '@material-ui/system';
 import globalTheme from './GlobalTheme';
+import Keywords, { KeywordProps } from './Keywords';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -25,60 +26,15 @@ const useLocalStyles = makeStyles((theme: Theme) =>
 );
 
 export function Intro() {
-    const jobs: ProfessionProps[] = [
+    const keywords: KeywordProps[] = [
         { title: "FullStack/Game/Application Developer", color: globalTheme.palette.primary.light },
         { title: "Functional Programmer", color: globalTheme.palette.primary.light },
         { title: "Mathematics Enthusiast", color: globalTheme.palette.primary.light },
         { title: "Authentic Painter", color: globalTheme.palette.primary.light },
     ]
-    const [spacing, setSpacing] = React.useState(2);
 
     return (
-        <div>
-            <Grid container spacing={2}>
-                <Grid item xs={12}>
-                    <Grid container justify="center" spacing={2}>
-                        {
-                            jobs.map(x => Profession(x))
-                        }
-                    </Grid>
-
-                </Grid>
-
-            </Grid>
-        </div>
+        Keywords(keywords)
 
     );
-}
-
-interface ProfessionProps {
-    title: string;
-    color: string;
-}
-function Profession(props: ProfessionProps) {
-    const { title, color } = props
-    const localClasses = useLocalStyles();
-
-
-    const cardClasses = makeStyles((theme: Theme) =>
-        createStyles({
-            paper: {
-                paddingTop: 8,
-                paddingBottom: 8,
-                backgroundColor: color,
-            },
-        }),
-    )();
-
-    return (
-        <Grid key={title} item>
-            <Paper className={cardClasses.paper}>
-                <div className={localClasses.innerCard}>
-                    <Typography variant="h5" className={localClasses.cardTitle}>
-                        {title}
-                    </Typography>
-                </div>
-            </Paper>
-        </Grid>
-    )
 }
