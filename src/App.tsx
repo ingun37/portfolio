@@ -53,15 +53,15 @@ function App() {
       ["Get to know me as a", Intro()]
     ],
     [
-      ["I've worked on commercially successful games.", GameProjects()],
+      ["I've successfully developed & maintained commercially successful games.", GameProjects()],
       ["I'm very knowledgeable about computer graphics", GraphicsProjects()]
     ],
     [
-      ["I've successfully developed and maintained applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
+      ["I've successfully developed & maintained applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
     ],
     [
-      ["I'm passionate at learning many different areas of mathematics", MathAreas()],
-      ["... and applying to programmings", MathProjects()],
+      ["I'm interested in various areas of mathematics", MathAreas()],
+      ["... and their applications in programmings", MathProjects()],
     ]
   ]
   const pages: TemplateProps[] = pageTitles.map((title, i)=>{
