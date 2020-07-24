@@ -2,7 +2,6 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import useStyles from "./Styles";
 import Grid from '@material-ui/core/Grid';
 import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,6 +18,9 @@ const useLocalStyles = makeStyles((theme) => ({
     card: {
         width: 300,
     },
+    media: {
+        height: 140,
+    },
 }));
 
 export class ProjectProp {
@@ -31,10 +33,9 @@ export class ProjectProp {
     ) { }
 }
 export function ProjectCards(projects: ProjectProp[]) {
-    const classes = useStyles();
 
     return (
-        <Grid container className={classes.root} spacing={2}>
+        <Grid container  spacing={2}>
             <Grid item xs={12}>
                 <Grid container justify="center" spacing={2}>
                     {
@@ -48,14 +49,13 @@ export function ProjectCards(projects: ProjectProp[]) {
 
 
 function ProjectCard(project: ProjectProp) {
-    const classes = useStyles();
     const localClasses = useLocalStyles();
 
     return (
         <Grid key={project.name} item>
             <Card className={localClasses.card}>
                 <CardMedia
-                    className={classes.media}
+                    className={localClasses.media}
                     image={project.img}
                     title="Contemplative Reptile"
                 />
