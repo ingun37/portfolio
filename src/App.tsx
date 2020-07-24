@@ -19,7 +19,8 @@ import { ReactComponent as Usa } from './usa.svg';
 import { Template, TemplateProps } from './Pages/Template';
 import { AppProjects } from "./Pages/AppProjects";
 import { GraphicsProjects } from './Pages/GraphicsProjects';
-import { Math } from "./Pages/Math";
+import { MathProjects } from "./Pages/MathProjects";
+import MathAreas from './Pages/MathAreas';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -59,7 +60,8 @@ function App() {
     },
     {
       title: "AS AN MATHEMATICS ENTHUSIAST", subs: [
-        ["I'm passionate at learning mathematics and applying to programming", Math()]
+        ["I'm passionate at learning many different areas of mathematics", MathAreas()],
+        ["... and applying to programmings", MathProjects()],
       ]
     }
   ]
