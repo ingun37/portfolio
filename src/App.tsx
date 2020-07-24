@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
 import logo from './logo.svg';
 import './App.css';
 import ReactFullpage from '@fullpage/react-fullpage';
@@ -21,6 +21,11 @@ import { AppProjects } from "./Pages/AppProjects";
 import { GraphicsProjects } from './Pages/GraphicsProjects';
 import { MathProjects } from "./Pages/MathProjects";
 import MathAreas from './Pages/MathAreas';
+import { Subject, Observable } from 'rxjs';
+import { filter, map } from "rxjs/operators";
+import * as _ from "lodash";
+import { page$ } from './Pages/State';
+import globalTheme from './Pages/GlobalTheme';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,34 +44,37 @@ const useLocalStyles = makeStyles((theme: Theme) =>
     }
   }),
 );
-
+const pageTitles = [
+  "Hi I'm Ingun", "AS A GAME DEVELOPER", "AS AN APPLICATION DEVELOPER", "AS AN MATHEMATICS ENTHUSIAST"
+]
 function App() {
-  const pages: TemplateProps[] = [
-    {
-      title: "Hi I'm Ingun", subs: [
-        ["Get to know me as a", Intro()]
-      ]
-    },
-    {
-      title: "AS A GAME DEVELOPER", subs: [
-        ["I've worked on commercially successful games.", GameProjects()],
-        ["I'm very knowledgeable about computer graphics", GraphicsProjects()]
-      ]
-    },
-    {
-      title: "AS AN APPLICATION DEVELOPER", subs: [
-        ["I've successfully developed and maintained applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
-      ]
-    },
-    {
-      title: "AS AN MATHEMATICS ENTHUSIAST", subs: [
-        ["I'm passionate at learning many different areas of mathematics", MathAreas()],
-        ["... and applying to programmings", MathProjects()],
-      ]
-    }
+  const pageSubs: [string, React.ReactElement][][] = [
+    [
+      ["Get to know me as a", Intro()]
+    ],
+    [
+      ["I've worked on commercially successful games.", GameProjects()],
+      ["I'm very knowledgeable about computer graphics", GraphicsProjects()]
+    ],
+    [
+      ["I've successfully developed and maintained applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
+    ],
+    [
+      ["I'm passionate at learning many different areas of mathematics", MathAreas()],
+      ["... and applying to programmings", MathProjects()],
+    ]
   ]
+  const pages: TemplateProps[] = pageTitles.map((title, i)=>{
+    return {
+      title,
+      subs: pageSubs[i],
+      verticalPage: i
+    }
+  })
   const classes = useLocalStyles();
   return (
+    <ThemeProvider theme={globalTheme}>
+
       <div className={classes.root}>
         <AppBar position="absolute" className={classes.bar}>
           <Toolbar>
@@ -90,7 +98,10 @@ function App() {
           //fullpage options
           licenseKey={'YOUR_KEY_HERE'}
           scrollingSpeed={1000} /* Options here */
-
+          afterLoad={(origin, dest)=>{
+            const pageNumber:[number,number] = [dest.index, 0]
+            page$.next(pageNumber)
+          }}
           render={({ state, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
@@ -106,6 +117,7 @@ function App() {
           }}
         />
       </div>
+      </ ThemeProvider>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button";
@@ -11,11 +11,14 @@ import Fab from '@material-ui/core/Fab';
 import ArrowForward from '@material-ui/icons/ArrowForward';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import globalTheme from './GlobalTheme';
-
+import { page$ } from './State';
+import { filter, take } from 'rxjs/operators';
+import "./Template.css";
 
 export interface TemplateProps {
     title: string,
-    subs: [string, React.ReactElement][]
+    subs: [string, React.ReactElement][],
+    verticalPage: number
 }
 
 
@@ -55,14 +58,45 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         marginTop: 26,
         left: 32
+    },
+    pulseAni: {
+        animation: 'pulse 2s'
     }
 }));
 
 
+interface PulseRightArrowProps {
+    verticalPageNumber: number,
+    onClick:()=>void
+}
+function PulseRightArrow(props: PulseRightArrowProps) {
+    const [trigger, setTrigger] = useState(false);
+    const classes = useStyles();
+
+    useEffect(() => {
+        const pageTurn = page$.pipe(filter(x => x[0] == props.verticalPageNumber), take(1)).subscribe({
+            next(x) {
+                setTrigger(true)
+            }
+        })
+        return function cleanup() {
+            pageTurn.unsubscribe()
+        }
+    })
+    return (
+        <Fab variant="extended" color="primary" aria-label="add" 
+            className={classes.rightArrow + " " + (trigger ? classes.pulseAni : "")} 
+            onClick={props.onClick}>
+            There's more!
+            <ArrowForward />
+        </Fab>
+    );
+}
+
 export function Template(props: TemplateProps) {
     const classes = useStyles();
     const [count, setCount] = useState(0);
-    const { title, subs } = props;
+    const { title, subs, verticalPage } = props;
     const steps = subs.map(x => x[0]);
     const stepper = (
         <Stepper activeStep={count} alternativeLabel>
@@ -73,14 +107,7 @@ export function Template(props: TemplateProps) {
             ))}
         </Stepper>
     );
-    const rightArrow = (
-        <Fab variant="extended" color="primary" aria-label="add" className={classes.rightArrow} onClick={
-            () => setCount((count + 1) % subs.length)
-        }>
-            There's more!
-            <ArrowForward />
-        </Fab>
-    );
+
     const leftArrow = (
         <Fab color="primary" aria-label="add" className={classes.leftArrow} onClick={
             () => setCount((count - 1) % subs.length)
@@ -89,14 +116,13 @@ export function Template(props: TemplateProps) {
         </Fab>
     );
     return (
-        <ThemeProvider theme={globalTheme}>
             <div>
                 <Typography variant="h2" className={classes.title}>
                     {title}
                 </Typography>
 
                 <div className={classes.subBack}>
-                    {count < subs.length-1 ? rightArrow : null}
+                    {count < subs.length - 1 ? <PulseRightArrow verticalPageNumber={verticalPage} onClick={()=>{setCount((count + 1) % subs.length)}} /> : null}
                     {count > 0 ? leftArrow : null}
 
                     <Typography variant="h4" className={classes.subtitle}>
@@ -109,7 +135,6 @@ export function Template(props: TemplateProps) {
 
                 {subs.length > 1 ? stepper : null}
             </div>
-        </ThemeProvider>
 
     );
 }
