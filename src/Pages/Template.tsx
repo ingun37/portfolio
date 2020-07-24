@@ -6,31 +6,12 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import { blue } from '@material-ui/core/colors';
-import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Fab from '@material-ui/core/Fab';
 import ArrowForward from '@material-ui/icons/ArrowForward';
 import ArrowBack from '@material-ui/icons/ArrowBack';
+import globalTheme from './GlobalTheme';
 
-const titleTheme = createMuiTheme({
-    typography: {
-        h2: {
-            fontFamily: [
-                'Anton',
-            ].join(','),
-        },
-        h4: {
-            fontFamily: [
-                'Bebas Neue',
-            ].join(','),
-        },
-        h5: {
-            fontFamily: [
-                'Bebas Neue', 'Do Hyeon',
-            ].join(','),
-        }
-    },
-});
 
 export interface TemplateProps {
     title: string,
@@ -108,7 +89,7 @@ export function Template(props: TemplateProps) {
         </Fab>
     );
     return (
-        <ThemeProvider theme={titleTheme}>
+        <ThemeProvider theme={globalTheme}>
             <div>
                 <Typography variant="h2" className={classes.title}>
                     {title}
