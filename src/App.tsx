@@ -26,6 +26,7 @@ import { filter, map } from "rxjs/operators";
 import * as _ from "lodash";
 import { page$ } from './Pages/State';
 import globalTheme from './Pages/GlobalTheme';
+import FullStack from './Pages/FullStack';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -45,7 +46,7 @@ const useLocalStyles = makeStyles((theme: Theme) =>
   }),
 );
 const pageTitles = [
-  "Hi I'm Ingun", "AS A GAME DEVELOPER", "AS AN APPLICATION DEVELOPER", "AS A MATHEMATICS ENTHUSIAST"
+  "Hi I'm Ingun", "AS A GAME DEVELOPER", "AS AN APPLICATION DEVELOPER", "AS A FULLSTACK DEVELOPER", "AS A MATHEMATICS ENTHUSIAST"
 ]
 function App() {
   const pageSubs: [string, React.ReactElement][][] = [
@@ -58,6 +59,9 @@ function App() {
     ],
     [
       ["I've successfully developed & maintained applications including the official application for one of the biggest radio channel in South Korea", AppProjects()]
+    ],
+    [
+      ["I have experiences with various platforms/libraries", FullStack()]
     ],
     [
       ["I'm interested in various areas of mathematics", MathAreas()],
