@@ -9,6 +9,7 @@ import FireBaseIcon from "./icons/firebase.svg";
 import DockerIcon from "./icons/docker.svg";
 import KubernetesIcon from "./icons/kubernetes.svg";
 import GRPCIcon from "./icons/grpc.svg";
+import DGraphIcon from "./icons/dgraph.svg";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -47,7 +48,7 @@ class SkillProps {
 const categoryNames = ["Front End", "Database", "Cloud", "DevOps", "API"]
 const skills: SkillProps[][] = [
     [new SkillProps("Angular", AngularIcon), new SkillProps("React", ReactIcon), new SkillProps("ThreeJS")],
-    [new SkillProps("Firestore", FirestoreIcon)],
+    [new SkillProps("Firestore", FirestoreIcon), new SkillProps("DGraph", DGraphIcon)],
     [new SkillProps("GCP", GCPIcon), new SkillProps("Firebase", FireBaseIcon)],
     [new SkillProps("Docker", DockerIcon), new SkillProps("Kebernetes", KubernetesIcon)],
     [new SkillProps("gRPC", GRPCIcon)],
