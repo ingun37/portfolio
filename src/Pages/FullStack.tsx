@@ -1,7 +1,11 @@
 import React, { ReactElement, ReactComponentElement } from 'react'
-import { Grid, Paper, makeStyles, Theme, createStyles, Typography, List, ListItem, ListItemText, SvgIcon, ListItemIcon } from '@material-ui/core';
+import { Grid, Paper, makeStyles, Theme, createStyles, Typography, List, ListItem, ListItemText, SvgIcon, ListItemIcon, Icon } from '@material-ui/core';
 import * as _ from "lodash";
-import {ReactComponent as AngularIcon} from "./icons/angular.svg";
+import AngularIcon from "./icons/angular.svg";
+import ReactIcon from "./icons/react.svg";
+import FirestoreIcon from "./icons/firestore.svg";
+import GCPIcon from "./icons/gcp.svg";
+import FireBaseIcon from "./icons/firebase.svg";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -12,25 +16,38 @@ const useStyles = makeStyles((theme: Theme) =>
         list: {
             overflow: 'auto',
             maxHeight: 150
-          },
-          listIcon: {
-              minWidth: '30px'
-          }
+        },
+        listIcon: {
+            minWidth: '30px',
+            overflow: 'visible'
+        },
+        imageIcon: {
+            maxHeight: '80%',
+            maxWidth: '80%',
+            overflow: 'visible',
+            marginBottom: 4
+        },
+        iconRoot: {
+            textAlign: 'center',
+            overflow: 'visible'
+        }
     }),
 );
 
 class SkillProps {
     constructor(
         public name: string,
-        public icon: React.FunctionComponent<React.SVGProps<SVGSVGElement> & { title?: string | undefined }>
-    ){}
+        public icon: string
+    ) { }
 }
 
-const categoryNames = ["Front End", "Database", "Back End", "Cloud", "DevOps", "API"]
-const skills:SkillProps[][] = [
-    [new SkillProps("Angular", AngularIcon)]
+const categoryNames = ["Front End", "Database", "Cloud", "DevOps", "API"]
+const skills: SkillProps[][] = [
+    [new SkillProps("Angular", AngularIcon), new SkillProps("React", ReactIcon)],
+    [new SkillProps("Firestore", FirestoreIcon)],
+    [new SkillProps("GCP", GCPIcon), new SkillProps("Firebase", FireBaseIcon)]
 ]
-const categories:CategoryProps[] = _.zipWith(categoryNames, skills, (x,y)=>({
+const categories: CategoryProps[] = _.zipWith(categoryNames, skills, (x, y) => ({
     name: x,
     skills: y || []
 }))
@@ -59,13 +76,13 @@ function CategoryItem(props: CategoryProps) {
             <Typography variant="h5">{props.name}</Typography>
             <List dense className={classes.list} disablePadding>
                 {
-                    props.skills.map(skill=>{
+                    props.skills.map(skill => {
                         return (
                             <ListItem key={skill.name} dense disableGutters>
                                 <ListItemIcon className={classes.listIcon}>
-                                    <SvgIcon>
-                                        <skill.icon />
-                                    </SvgIcon>
+                                    <Icon classes={{ root: classes.iconRoot }}>
+                                        <img className={classes.imageIcon} src={skill.icon} />
+                                    </Icon>
                                 </ListItemIcon>
                                 <ListItemText primary={skill.name}></ListItemText>
                             </ListItem>
