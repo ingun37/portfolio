@@ -45,7 +45,7 @@ const useLocalStyles = makeStyles((theme: Theme) =>
   }),
 );
 const pageTitles = [
-  "Hi I'm Ingun", "AS A GAME DEVELOPER", "AS AN APPLICATION DEVELOPER", "AS AN MATHEMATICS ENTHUSIAST"
+  "Hi I'm Ingun", "AS A GAME DEVELOPER", "AS AN APPLICATION DEVELOPER", "AS A MATHEMATICS ENTHUSIAST"
 ]
 function App() {
   const pageSubs: [string, React.ReactElement][][] = [
