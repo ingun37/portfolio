@@ -27,6 +27,7 @@ import * as _ from "lodash";
 import { page$ } from './Pages/State';
 import globalTheme from './Pages/GlobalTheme';
 import FullStack from './Pages/FullStack';
+import Writings from './Pages/Writings';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -46,7 +47,12 @@ const useLocalStyles = makeStyles((theme: Theme) =>
   }),
 );
 const pageTitles = [
-  "Hi I'm Ingun", "AS A GAME DEVELOPER", "AS AN APPLICATION DEVELOPER", "AS A FULLSTACK DEVELOPER", "AS A MATHEMATICS ENTHUSIAST"
+  "Hi I'm Ingun", 
+  "AS A GAME DEVELOPER", 
+  "AS AN APPLICATION DEVELOPER", 
+  "AS A FULLSTACK DEVELOPER",
+  "AS A MATHEMATICS ENTHUSIAST",
+  "AS A WRITER"
 ]
 function App() {
   const pageSubs: [string, React.ReactElement][][] = [
@@ -66,6 +72,9 @@ function App() {
     [
       ["I'm interested in various areas of mathematics", MathAreas()],
       ["... and their applications in programmings", MathProjects()],
+    ],
+    [
+      ["I've written articles on iOS, functional programming and mathematics", Writings()],
     ]
   ]
   const pages: TemplateProps[] = pageTitles.map((title, i)=>{
