@@ -6,6 +6,9 @@ import ReactIcon from "./icons/react.svg";
 import FirestoreIcon from "./icons/firestore.svg";
 import GCPIcon from "./icons/gcp.svg";
 import FireBaseIcon from "./icons/firebase.svg";
+import DockerIcon from "./icons/docker.svg";
+import KubernetesIcon from "./icons/kubernetes.svg";
+import GRPCIcon from "./icons/grpc.svg";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -37,15 +40,18 @@ const useStyles = makeStyles((theme: Theme) =>
 class SkillProps {
     constructor(
         public name: string,
-        public icon: string
+        public icon: string | null = null
     ) { }
 }
 
 const categoryNames = ["Front End", "Database", "Cloud", "DevOps", "API"]
 const skills: SkillProps[][] = [
-    [new SkillProps("Angular", AngularIcon), new SkillProps("React", ReactIcon)],
+    [new SkillProps("Angular", AngularIcon), new SkillProps("React", ReactIcon), new SkillProps("ThreeJS")],
     [new SkillProps("Firestore", FirestoreIcon)],
-    [new SkillProps("GCP", GCPIcon), new SkillProps("Firebase", FireBaseIcon)]
+    [new SkillProps("GCP", GCPIcon), new SkillProps("Firebase", FireBaseIcon)],
+    [new SkillProps("Docker", DockerIcon), new SkillProps("Kebernetes", KubernetesIcon)],
+    [new SkillProps("gRPC", GRPCIcon)],
+
 ]
 const categories: CategoryProps[] = _.zipWith(categoryNames, skills, (x, y) => ({
     name: x,
@@ -71,6 +77,13 @@ interface CategoryProps {
 }
 function CategoryItem(props: CategoryProps) {
     const classes = useStyles();
+    const icon = (src:string)=> (
+        <ListItemIcon className={classes.listIcon}>
+            <Icon classes={{ root: classes.iconRoot }}>
+                <img className={classes.imageIcon} src={src} />
+            </Icon>
+        </ListItemIcon>
+    )
     return (
         <Paper className={classes.paper}>
             <Typography variant="h5">{props.name}</Typography>
@@ -79,11 +92,7 @@ function CategoryItem(props: CategoryProps) {
                     props.skills.map(skill => {
                         return (
                             <ListItem key={skill.name} dense disableGutters>
-                                <ListItemIcon className={classes.listIcon}>
-                                    <Icon classes={{ root: classes.iconRoot }}>
-                                        <img className={classes.imageIcon} src={skill.icon} />
-                                    </Icon>
-                                </ListItemIcon>
+                                {skill.icon ? icon(skill.icon) : null}
                                 <ListItemText primary={skill.name}></ListItemText>
                             </ListItem>
                         )
