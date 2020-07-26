@@ -10,6 +10,7 @@ import DockerIcon from "./icons/docker.svg";
 import KubernetesIcon from "./icons/kubernetes.svg";
 import GRPCIcon from "./icons/grpc.svg";
 import DGraphIcon from "./icons/dgraph.svg";
+import MySvgIcon from './components/MySvgIcon';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -79,11 +80,7 @@ interface CategoryProps {
 function CategoryItem(props: CategoryProps) {
     const classes = useStyles();
     const icon = (src:string)=> (
-        <ListItemIcon className={classes.listIcon}>
-            <Icon classes={{ root: classes.iconRoot }}>
-                <img className={classes.imageIcon} src={src} />
-            </Icon>
-        </ListItemIcon>
+        <MySvgIcon src={src} />
     )
     return (
         <Paper className={classes.paper}>
