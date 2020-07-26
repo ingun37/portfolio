@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, useLayoutEffect } from 'react'
 import Parser from 'rss-parser';
 import { List, ListItem, ListItemText, Chip, makeStyles } from '@material-ui/core';
 import { on } from 'process';
+import { async } from 'rxjs';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,7 +25,7 @@ function Writings() {
     const ref = React.createRef<HTMLDivElement>()
 
     useEffect(() => {
-        (new Parser()).parseURL("https://dev.to/feed/ingun37").then(x => {
+        fetch("https://dev.to/feed/ingun37").then(x=>x.text()).then(x=>(new Parser()).parseString(x)).then(x=>{
             setModels(
                 x.items?.map(x => new WritingModel(x.title || "", x.categories || [])) || []
             )
