@@ -24,18 +24,9 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         listIcon: {
             minWidth: '30px',
-            overflow: 'visible'
-        },
-        imageIcon: {
-            maxHeight: '80%',
-            maxWidth: '80%',
             overflow: 'visible',
-            marginBottom: 4
+            paddingBottom: 4
         },
-        iconRoot: {
-            textAlign: 'center',
-            overflow: 'visible'
-        }
     }),
 );
 
@@ -79,8 +70,10 @@ interface CategoryProps {
 }
 function CategoryItem(props: CategoryProps) {
     const classes = useStyles();
-    const icon = (src:string)=> (
-        <MySvgIcon src={src} />
+    const icon = (src: string) => (
+        <ListItemIcon className={classes.listIcon}>
+            <MySvgIcon src={src} />
+        </ListItemIcon>
     )
     return (
         <Paper className={classes.paper}>

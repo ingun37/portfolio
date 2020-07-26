@@ -14,8 +14,8 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from "@material-ui/core/SvgIcon";
 import Button from '@material-ui/core/Button';
-import { ReactComponent as SouthKorea } from './south-korea.svg';
-import { ReactComponent as Usa } from './usa.svg';
+import SouthKorea from './south-korea.svg';
+import Usa from './usa.svg';
 import { Template, TemplateProps } from './Pages/Template';
 import { AppProjects } from "./Pages/AppProjects";
 import { GraphicsProjects } from './Pages/GraphicsProjects';
@@ -29,6 +29,7 @@ import globalTheme from './Pages/GlobalTheme';
 import FullStack from './Pages/FullStack';
 import Writings from './Pages/Writings';
 import Functional from './Pages/Functional';
+import MySvgIcon from './Pages/components/MySvgIcon';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -48,9 +49,9 @@ const useLocalStyles = makeStyles((theme: Theme) =>
   }),
 );
 const pageTitles = [
-  "Hi I'm Ingun", 
-  "AS A GAME DEVELOPER", 
-  "AS AN APPLICATION DEVELOPER", 
+  "Hi I'm Ingun",
+  "AS A GAME DEVELOPER",
+  "AS AN APPLICATION DEVELOPER",
   "AS A FULLSTACK DEVELOPER",
   "I'M A FUNCTIONAL PROGRAMMER",
   "AS A MATHEMATICS ENTHUSIAST",
@@ -82,7 +83,7 @@ function App() {
       ["I've written articles on iOS, functional programming and mathematics", Writings()],
     ]
   ]
-  const pages: TemplateProps[] = pageTitles.map((title, i)=>{
+  const pages: TemplateProps[] = pageTitles.map((title, i) => {
     return {
       title,
       subs: pageSubs[i],
@@ -101,14 +102,10 @@ function App() {
 
             </Typography>
             <IconButton>
-              <SvgIcon>
-                <Usa />
-              </SvgIcon>
+              <MySvgIcon src={Usa} />
             </IconButton>
             <IconButton>
-              <SvgIcon>
-                <SouthKorea />
-              </SvgIcon>
+              <MySvgIcon src={SouthKorea} />
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -116,8 +113,8 @@ function App() {
           //fullpage options
           licenseKey={'YOUR_KEY_HERE'}
           scrollingSpeed={1000} /* Options here */
-          afterLoad={(origin, dest)=>{
-            const pageNumber:[number,number] = [dest.index, 0]
+          afterLoad={(origin, dest) => {
+            const pageNumber: [number, number] = [dest.index, 0]
             page$.next(pageNumber)
           }}
           render={({ state, fullpageApi }) => {
@@ -135,7 +132,7 @@ function App() {
           }}
         />
       </div>
-      </ ThemeProvider>
+    </ ThemeProvider>
   );
 }
 
