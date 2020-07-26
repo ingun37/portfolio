@@ -28,6 +28,7 @@ import { page$ } from './Pages/State';
 import globalTheme from './Pages/GlobalTheme';
 import FullStack from './Pages/FullStack';
 import Writings from './Pages/Writings';
+import Functional from './Pages/Functional';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -51,6 +52,7 @@ const pageTitles = [
   "AS A GAME DEVELOPER", 
   "AS AN APPLICATION DEVELOPER", 
   "AS A FULLSTACK DEVELOPER",
+  "I'M A FUNCTIONAL PROGRAMMER",
   "AS A MATHEMATICS ENTHUSIAST",
   "AS A WRITER"
 ]
@@ -68,6 +70,9 @@ function App() {
     ],
     [
       ["I have experiences with various platforms/libraries", FullStack()]
+    ],
+    [
+      ["with solid understanding of application of category theory in programming languages. I can fully utilize following concepts in programming", Functional()]
     ],
     [
       ["I'm interested in various areas of mathematics", MathAreas()],
