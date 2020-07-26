@@ -73,7 +73,7 @@ function App() {
       ["I have experiences with various platforms/libraries", FullStack()]
     ],
     [
-      ["with solid understanding of application of category theory in programming languages. I can utilize following concepts in programming", Functional()]
+      ["with solid understanding of applications of category theory in programming languages. I can utilize following concepts in programming", Functional()]
     ],
     [
       ["I'm interested in various areas of mathematics", MathAreas()],
