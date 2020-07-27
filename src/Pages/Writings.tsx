@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef, useLayoutEffect } from 'react'
 import Parser from 'rss-parser';
-import { List, ListItem, ListItemText, Chip, makeStyles, Divider } from '@material-ui/core';
+import { List, ListItem, ListItemText, Chip, makeStyles, Divider, ListItemIcon } from '@material-ui/core';
 import { on } from 'process';
 import { async } from 'rxjs';
+import OpenInNew from '@material-ui/icons/OpenInNew';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -73,6 +74,10 @@ function Writings() {
                 }
                 <ListItem button onClick={() => window.open("https://dev.to/ingun37")}>
                     <ListItemText primary="See More" />
+                    <ListItemIcon>
+
+                    <OpenInNew />
+                    </ListItemIcon>
                 </ListItem>
             </List>
         </div>
