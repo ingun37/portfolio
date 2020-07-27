@@ -1,5 +1,5 @@
-import globalTheme from './GlobalTheme';
-import Keywords, { KeywordProps } from './Keywords';
+import globalTheme from '../global/GlobalTheme';
+import Keywords, { KeywordProps } from '../components/Keywords';
 
 
 function MathAreas() {

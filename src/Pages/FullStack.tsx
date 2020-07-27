@@ -1,16 +1,16 @@
 import React, { ReactElement, ReactComponentElement } from 'react'
 import { Grid, Paper, makeStyles, Theme, createStyles, Typography, List, ListItem, ListItemText, SvgIcon, ListItemIcon, Icon } from '@material-ui/core';
 import * as _ from "lodash";
-import AngularIcon from "./icons/angular.svg";
-import ReactIcon from "./icons/react.svg";
-import FirestoreIcon from "./icons/firestore.svg";
-import GCPIcon from "./icons/gcp.svg";
-import FireBaseIcon from "./icons/firebase.svg";
-import DockerIcon from "./icons/docker.svg";
-import KubernetesIcon from "./icons/kubernetes.svg";
-import GRPCIcon from "./icons/grpc.svg";
-import DGraphIcon from "./icons/dgraph.svg";
-import MySvgIcon from './components/MySvgIcon';
+import AngularIcon from "../icons/angular.svg";
+import ReactIcon from "../icons/react.svg";
+import FirestoreIcon from "../icons/firestore.svg";
+import GCPIcon from "../icons/gcp.svg";
+import FireBaseIcon from "../icons/firebase.svg";
+import DockerIcon from "../icons/docker.svg";
+import KubernetesIcon from "../icons/kubernetes.svg";
+import GRPCIcon from "../icons/grpc.svg";
+import DGraphIcon from "../icons/dgraph.svg";
+import MySvgIcon from '../components/MySvgIcon';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

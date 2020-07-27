@@ -10,8 +10,8 @@ import { ThemeProvider } from '@material-ui/styles';
 import Fab from '@material-ui/core/Fab';
 import ArrowForward from '@material-ui/icons/ArrowForward';
 import ArrowBack from '@material-ui/icons/ArrowBack';
-import globalTheme from './GlobalTheme';
-import { page$ } from './State';
+import globalTheme from '../global/GlobalTheme';
+import { page$ } from '../global/State';
 import { filter, take } from 'rxjs/operators';
 import "./Template.css";
 

@@ -1,9 +1,8 @@
 import React from 'react'
-import ebs from "./ebs.png";
-import matrix from "./matrix.jpeg";
+import ebs from "../images/ebs.png";
+import matrix from "../images/matrix.jpeg";
 
-import contest from "./contest.jpeg";
-import {ProjectCards, ProjectProp} from "./ProjectCards";
+import {ProjectCards, ProjectProp} from "../components/ProjectCards";
 export function AppProjects() {
     const games: ProjectProp[] = [
         new ProjectProp("Expressive Matrix Calculator", matrix, null, "2019"),

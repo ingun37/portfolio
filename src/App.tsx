@@ -1,35 +1,27 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
-import logo from './logo.svg';
 import './App.css';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { Skills } from "./Pages/Skills";
 import { Intro } from "./Pages/Intro";
-import { Chronicle } from "./Pages/Chronicle";
-import { Education } from "./Pages/Education";
 import { GameProjects } from "./Pages/GameProjects";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import SvgIcon from "@material-ui/core/SvgIcon";
-import Button from '@material-ui/core/Button';
 import SouthKorea from './south-korea.svg';
 import Usa from './usa.svg';
-import { Template, TemplateProps } from './Pages/Template';
+import { Template, TemplateProps } from './components/Template';
 import { AppProjects } from "./Pages/AppProjects";
 import { GraphicsProjects } from './Pages/GraphicsProjects';
 import { MathProjects } from "./Pages/MathProjects";
 import MathAreas from './Pages/MathAreas';
-import { Subject, Observable } from 'rxjs';
-import { filter, map } from "rxjs/operators";
 import * as _ from "lodash";
-import { page$ } from './Pages/State';
-import globalTheme from './Pages/GlobalTheme';
+import { page$ } from './global/State';
+import globalTheme from './global/GlobalTheme';
 import FullStack from './Pages/FullStack';
 import Writings from './Pages/Writings';
 import Functional from './Pages/Functional';
-import MySvgIcon from './Pages/components/MySvgIcon';
+import MySvgIcon from './components/MySvgIcon';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({

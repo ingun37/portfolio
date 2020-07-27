@@ -1,9 +1,9 @@
 import React from 'react'
-import animation from "./animation.jpg";
-import deferred from "./deferred.jpg";
-import c3d from "./3dc.jpg";
+import animation from "../images/animation.jpg";
+import deferred from "../images/deferred.jpg";
+import c3d from "../images/3dc.jpg";
 
-import {ProjectCards, ProjectProp} from "./ProjectCards";
+import {ProjectCards, ProjectProp} from "../components/ProjectCards";
 export function GraphicsProjects() {
     const games: ProjectProp[] = [
         new ProjectProp("Implementation of 3D Model animation using native graphics library (Metal/C++)", animation, null, "2015"),

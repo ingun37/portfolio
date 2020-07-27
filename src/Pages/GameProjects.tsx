@@ -1,8 +1,8 @@
 import React from 'react'
-import cru from "./cru.jpg";
-import eos from "./eos.jpg";
-import contest from "./contest.jpeg";
-import {ProjectCards, ProjectProp} from "./ProjectCards";
+import cru from "../images/cru.jpg";
+import eos from "../images/eos.jpg";
+import contest from "../images/contest.jpeg";
+import {ProjectCards, ProjectProp} from "../components/ProjectCards";
 export function GameProjects() {
     const games: ProjectProp[] = [
         new ProjectProp("Crusaders Quest", cru, "LoadComplete/NHN Entertainment", "2015~2017"),
