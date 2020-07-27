@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
 class WritingModel {
     constructor(
         public title: string,
-        public categories: string[]
+        public categories: string[],
+        public link:string,
     ) { }
 }
 const initialArray: WritingModel[] = []
@@ -34,7 +35,7 @@ function Writings() {
     useEffect(() => {
         fetch("https://dev.to/feed/ingun37").then(x => x.text()).then(x => (new Parser()).parseString(x)).then(x => {
             setModels(
-                x.items?.map(x => new WritingModel(x.title || "", x.categories || [])) || []
+                x.items?.map(x => new WritingModel(x.title || "", x.categories || [], x.link || "")) || []
             )
         })
 
@@ -55,7 +56,7 @@ function Writings() {
                         return (
                             <div>
 
-                                <ListItem key={model.title}>
+                                <ListItem key={model.title} button onClick={()=>window.open(model.link)}>
                                     <ListItemText primary={model.title} />
                                     {model.categories.map(x => (<Chip label={x} />))}
                                 </ListItem>
