@@ -119,8 +119,7 @@ function MyFullPage() {
       verticalPage: i
     }
   })
-  const theme = useTheme();
-  const upLG = useMediaQuery(theme.breakpoints.up('lg'));
+  
 
   return (
     <ReactFullpage
@@ -131,7 +130,7 @@ function MyFullPage() {
         const pageNumber: [number, number] = [dest.index, 0]
         page$.next(pageNumber)
       }}
-      autoScrolling={upLG}
+      autoScrolling={true}
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>

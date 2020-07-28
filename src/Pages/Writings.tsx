@@ -27,6 +27,14 @@ class WritingModel {
         public link: string,
     ) { }
 }
+let fetched = fetch("https://dev.to/feed/ingun37").then(x => x.text()).then(x => (new Parser()).parseString(x)).then(x => {
+    return x.items?.map(x => new WritingModel(x.title || "", x.categories || [], x.link || "")) || []
+}).then(rssWritings=>{
+    const article1 = new WritingModel("UIView shouldn’t be File’s Owner", ["#ios", "#xib", "#filesowner", "#uiview"], "https://dev.to/ingun37/file-s-owner-is-not-for-uiview-3n9g")
+    const article2 = new WritingModel("UIView 는 File’s Owner 가 될 수 없어요", ["#ios", "#xib", "#filesowner", "#uiview"], "https://dev.to/ingun37/uiview-file-s-owner-2a20")
+    const prefixWritings = [article1, article2]
+    return prefixWritings.concat(rssWritings)
+})
 const initialArray: WritingModel[] = []
 function Writings() {
     const [models, setModels] = useState(initialArray)
@@ -35,21 +43,16 @@ function Writings() {
 
 
     useEffect(() => {
-        fetch("https://dev.to/feed/ingun37").then(x => x.text()).then(x => (new Parser()).parseString(x)).then(x => {
-            const article1 = new WritingModel("UIView shouldn’t be File’s Owner", ["#ios", "#xib", "#filesowner", "#uiview"], "https://dev.to/ingun37/file-s-owner-is-not-for-uiview-3n9g")
-            const article2 = new WritingModel("UIView 는 File’s Owner 가 될 수 없어요", ["#ios", "#xib", "#filesowner", "#uiview"], "https://dev.to/ingun37/uiview-file-s-owner-2a20")
-            const prefixWritings = [article1, article2]
-            const rssWritings = x.items?.map(x => new WritingModel(x.title || "", x.categories || [], x.link || "")) || []
-            setModels(
-                prefixWritings.concat(rssWritings)
-            )
-        })
+        console.log('aoeuaoeu')
+        fetched.then(articles=>{
+            setModels(articles)
+        });
 
         ref.current?.addEventListener('wheel', (e) => {
             e.stopPropagation()
             return false
         })
-    })
+    }, [])
     const classes = useStyles();
 
 
