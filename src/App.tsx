@@ -24,6 +24,7 @@ import FunctionalMath from './Pages/FunctionalMath';
 import MySvgIcon from './components/MySvgIcon';
 import FunctionalProgramming from './Pages/FunctionalProgramming';
 import ContinuousIntegration from './Pages/ContinuousIntegration';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -42,6 +43,34 @@ const useLocalStyles = makeStyles((theme: Theme) =>
     }
   }),
 );
+
+function App() {
+
+  const classes = useLocalStyles();
+  return (
+    <ThemeProvider theme={globalTheme}>
+
+      <div className={classes.root}>
+        <AppBar position="absolute" className={classes.bar}>
+          <Toolbar>
+
+            <Typography variant="h6" className={classes.title}>
+
+            </Typography>
+            <IconButton>
+              <MySvgIcon src={Usa} />
+            </IconButton>
+            <IconButton>
+              <MySvgIcon src={SouthKorea} />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <MyFullPage />
+      </div>
+    </ ThemeProvider>
+  );
+}
+
 const pageTitles = [
   "Hi I'm Ingun",
   "GAME DEVELOPER",
@@ -52,7 +81,8 @@ const pageTitles = [
   "MATHEMATICS ENTHUSIAST",
   "WRITER"
 ]
-function App() {
+
+function MyFullPage() {
   const pageSubs: [string, React.ReactElement][][] = [
     [
       ["Get to know me as a", Intro()]
@@ -89,52 +119,35 @@ function App() {
       verticalPage: i
     }
   })
-  const classes = useLocalStyles();
+  const theme = useTheme();
+  const upLG = useMediaQuery(theme.breakpoints.up('lg'));
+
   return (
-    <ThemeProvider theme={globalTheme}>
-
-      <div className={classes.root}>
-        <AppBar position="absolute" className={classes.bar}>
-          <Toolbar>
-
-            <Typography variant="h6" className={classes.title}>
-
-            </Typography>
-            <IconButton>
-              <MySvgIcon src={Usa} />
-            </IconButton>
-            <IconButton>
-              <MySvgIcon src={SouthKorea} />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <ReactFullpage
-          //fullpage options
-          licenseKey={'YOUR_KEY_HERE'}
-          scrollingSpeed={1000} /* Options here */
-          afterLoad={(origin, dest) => {
-            const pageNumber: [number, number] = [dest.index, 0]
-            page$.next(pageNumber)
-          }}
-          render={({ state, fullpageApi }) => {
-            return (
-              <ReactFullpage.Wrapper>
-                {pages.map(x => {
-                  return (
-                    <div className="section">
-                      <Template {...x}></Template>
-                    </div>
-                  )
-                })}
-              </ReactFullpage.Wrapper>
-            );
-          }}
-        />
-      </div>
-    </ ThemeProvider>
+    <ReactFullpage
+      //fullpage options
+      licenseKey={'YOUR_KEY_HERE'}
+      scrollingSpeed={1000} /* Options here */
+      afterLoad={(origin, dest) => {
+        const pageNumber: [number, number] = [dest.index, 0]
+        page$.next(pageNumber)
+      }}
+      autoScrolling={upLG}
+      render={({ state, fullpageApi }) => {
+        return (
+          <ReactFullpage.Wrapper>
+            {pages.map(x => {
+              return (
+                <div className="section">
+                  <Template {...x}></Template>
+                </div>
+              )
+            })}
+          </ReactFullpage.Wrapper>
+        );
+      }}
+    />
   );
 }
-
 //Used recat-fullpage (https://github.com/alvarotrigo/react-fullpage)
 
 export default App;
