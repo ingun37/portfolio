@@ -8,6 +8,8 @@ export function Intro() {
         { title: "CI Developer", color: globalTheme.palette.primary.light },
         { title: "Functional Programmer", color: globalTheme.palette.primary.light },
         { title: "Mathematics Enthusiast", color: globalTheme.palette.primary.light },
+        { title: "Bilingual", color: globalTheme.palette.primary.light },
+        { title: "Open-Source Contributor", color: globalTheme.palette.primary.light },
         { title: "Authentic Painter", color: globalTheme.palette.primary.light },
     ]
 
