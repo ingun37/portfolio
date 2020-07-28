@@ -68,7 +68,7 @@ function App() {
       ["I have experiences with various platforms/libraries", FullStack()]
     ],
     [
-      ["With lots of related skills and experience of automating build pipeline for Crusaders Quest", ContinuousIntegration()]
+      ["Bag of related skills & Experience of automating the build pipeline for Crusaders Quest", ContinuousIntegration()]
     ],
     [
       ["I can utilize following functional paradigms in programming", FunctionalProgramming()],
