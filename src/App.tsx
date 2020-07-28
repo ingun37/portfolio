@@ -68,7 +68,7 @@ function App() {
             <IconButton>
               <MySvgIcon src={SouthKorea} />
             </IconButton>
-            <IconButton onClick={() => setDrawerState(true)}>
+            <IconButton color='inherit' onClick={() => setDrawerState(true)}>
               <Menu />
             </IconButton>
           </Toolbar>
