@@ -23,6 +23,7 @@ import Writings from './Pages/Writings';
 import FunctionalMath from './Pages/FunctionalMath';
 import MySvgIcon from './components/MySvgIcon';
 import FunctionalProgramming from './Pages/FunctionalProgramming';
+import ContinuousIntegration from './Pages/ContinuousIntegration';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -43,12 +44,13 @@ const useLocalStyles = makeStyles((theme: Theme) =>
 );
 const pageTitles = [
   "Hi I'm Ingun",
-  "AS A GAME DEVELOPER",
-  "AS AN APPLICATION DEVELOPER",
-  "AS A FULLSTACK DEVELOPER",
-  "AS A FUNCTIONAL PROGRAMMER",
-  "AS A MATHEMATICS ENTHUSIAST",
-  "AS A WRITER"
+  "GAME DEVELOPER",
+  "APPLICATION DEVELOPER",
+  "FULLSTACK DEVELOPER",
+  "CI DEVELOPER",
+  "FUNCTIONAL PROGRAMMER",
+  "MATHEMATICS ENTHUSIAST",
+  "WRITER"
 ]
 function App() {
   const pageSubs: [string, React.ReactElement][][] = [
@@ -64,6 +66,9 @@ function App() {
     ],
     [
       ["I have experiences with various platforms/libraries", FullStack()]
+    ],
+    [
+      ["With lots of related skills and experience of automating build pipeline for Crusaders Quest", ContinuousIntegration()]
     ],
     [
       ["I can utilize following functional paradigms in programming", FunctionalProgramming()],

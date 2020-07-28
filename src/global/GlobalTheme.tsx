@@ -14,7 +14,7 @@ const globalTheme = createMuiTheme({
         },
         h5: {
             fontFamily: [
-                'Bebas Neue', 'Do Hyeon',
+                'Fjalla One', 'Do Hyeon',
             ].join(','),
         }
     },
