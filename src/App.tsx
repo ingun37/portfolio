@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createStyles, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
 import './App.css';
 import ReactFullpage from '@fullpage/react-fullpage';
@@ -24,7 +24,8 @@ import FunctionalMath from './Pages/FunctionalMath';
 import MySvgIcon from './components/MySvgIcon';
 import FunctionalProgramming from './Pages/FunctionalProgramming';
 import ContinuousIntegration from './Pages/ContinuousIntegration';
-import { useMediaQuery, useTheme } from '@material-ui/core';
+import { useMediaQuery, useTheme, List, ListItem, ListItemText, Drawer } from '@material-ui/core';
+import Menu from '@material-ui/icons/Menu';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -46,6 +47,7 @@ const useLocalStyles = makeStyles((theme: Theme) =>
 
 function App() {
 
+  const [drawerState, setDrawerState] = useState(false);
   const classes = useLocalStyles();
   return (
     <ThemeProvider theme={globalTheme}>
@@ -63,8 +65,18 @@ function App() {
             <IconButton>
               <MySvgIcon src={SouthKorea} />
             </IconButton>
+            <IconButton onClick={() => setDrawerState(true)}>
+              <Menu />
+            </IconButton>
           </Toolbar>
         </AppBar>
+        <Drawer anchor='right' open={drawerState} onClose={() => setDrawerState(false)}>
+          <List>
+            <ListItem button key='aoeu'>
+              <ListItemText primary='aoeu' />
+            </ListItem>
+          </List>
+        </Drawer>
         <MyFullPage />
       </div>
     </ ThemeProvider>
@@ -119,7 +131,7 @@ function MyFullPage() {
       verticalPage: i
     }
   })
-  
+
 
   return (
     <ReactFullpage
