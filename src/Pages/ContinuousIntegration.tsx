@@ -6,7 +6,7 @@ import { Box, Typography } from '@material-ui/core';
 
 
 function ContinuousIntegration() {
-    const span = (title: string) => (<span style={{ color:'aquamarine' }}>{title}</span>);
+    const span = (title: string) => (<span style={{ color:'hotpink' }}>{title}</span>);
 
 
     const title1 = (
