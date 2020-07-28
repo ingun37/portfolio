@@ -3,6 +3,8 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import { Box } from '@material-ui/core';
+import { makeid } from '../global/Util';
 
 
 const useLocalStyles = makeStyles((theme: Theme) =>
@@ -43,7 +45,7 @@ function Keywords(keywords: KeywordProps[]) {
 
 export default Keywords;
 export interface KeywordProps {
-    title: string;
+    title: string | JSX.Element;
     color: string;
 }
 function KeywordCard(props: KeywordProps) {
@@ -62,7 +64,7 @@ function KeywordCard(props: KeywordProps) {
     )();
 
     return (
-        <Grid key={title} item>
+        <Grid key={makeid(8)} item>
             <Paper className={cardClasses.paper}>
                 <div className={localClasses.innerCard}>
                     <Typography variant="h5" className={localClasses.cardTitle}>
