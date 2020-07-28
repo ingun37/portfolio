@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createStyles, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
 import './App.css';
-import ReactFullpage from '@fullpage/react-fullpage';
+import ReactFullpage, { fullpageApi } from '@fullpage/react-fullpage';
 import { Intro } from "./Pages/Intro";
 import { GameProjects } from "./Pages/GameProjects";
 import AppBar from '@material-ui/core/AppBar';
@@ -26,6 +26,7 @@ import FunctionalProgramming from './Pages/FunctionalProgramming';
 import ContinuousIntegration from './Pages/ContinuousIntegration';
 import { useMediaQuery, useTheme, List, ListItem, ListItemText, Drawer } from '@material-ui/core';
 import Menu from '@material-ui/icons/Menu';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -44,6 +45,8 @@ const useLocalStyles = makeStyles((theme: Theme) =>
     }
   }),
 );
+
+var globalFullPageAPI:fullpageApi | null = null
 
 function App() {
 
@@ -72,9 +75,16 @@ function App() {
         </AppBar>
         <Drawer anchor='right' open={drawerState} onClose={() => setDrawerState(false)}>
           <List>
-            <ListItem button key='aoeu'>
-              <ListItemText primary='aoeu' />
-            </ListItem>
+            {
+              pageTitles.map((x,idx) => {
+                return (
+                  <ListItem button key={x} onClick={()=>globalFullPageAPI?.moveTo(idx+1)}>
+                    <ListItemText primary={x} />
+                  </ListItem>
+                )
+              })
+            }
+
           </List>
         </Drawer>
         <MyFullPage />
@@ -143,7 +153,10 @@ function MyFullPage() {
         page$.next(pageNumber)
       }}
       autoScrolling={true}
+
       render={({ state, fullpageApi }) => {
+        globalFullPageAPI = fullpageApi;
+
         return (
           <ReactFullpage.Wrapper>
             {pages.map(x => {
