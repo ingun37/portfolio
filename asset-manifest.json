@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.8ef1a29a.chunk.css",
-    "main.js": "/portfolio/static/js/main.7cf7fdaf.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.7cf7fdaf.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.6aae5dfe.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.6aae5dfe.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.209c2d7e.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.209c2d7e.js.map",
-    "static/js/2.05e3bdda.chunk.js": "/portfolio/static/js/2.05e3bdda.chunk.js",
-    "static/js/2.05e3bdda.chunk.js.map": "/portfolio/static/js/2.05e3bdda.chunk.js.map",
+    "static/js/2.7bd47ef1.chunk.js": "/portfolio/static/js/2.7bd47ef1.chunk.js",
+    "static/js/2.7bd47ef1.chunk.js.map": "/portfolio/static/js/2.7bd47ef1.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.7204230538104c948c5324e7ab4fc6c4.js": "/portfolio/precache-manifest.7204230538104c948c5324e7ab4fc6c4.js",
+    "precache-manifest.393b6bebc168b39ee064acf275ea80c4.js": "/portfolio/precache-manifest.393b6bebc168b39ee064acf275ea80c4.js",
     "service-worker.js": "/portfolio/service-worker.js",
     "static/css/main.8ef1a29a.chunk.css.map": "/portfolio/static/css/main.8ef1a29a.chunk.css.map",
-    "static/js/2.05e3bdda.chunk.js.LICENSE.txt": "/portfolio/static/js/2.05e3bdda.chunk.js.LICENSE.txt",
+    "static/js/2.7bd47ef1.chunk.js.LICENSE.txt": "/portfolio/static/js/2.7bd47ef1.chunk.js.LICENSE.txt",
     "static/media/3dc.jpg": "/portfolio/static/media/3dc.adac20d9.jpg",
     "static/media/algebra.png": "/portfolio/static/media/algebra.523b3ac7.png",
     "static/media/angular.svg": "/portfolio/static/media/angular.38c4b670.svg",
@@ -32,12 +32,13 @@
     "static/media/matrix.jpeg": "/portfolio/static/media/matrix.d59f4060.jpeg",
     "static/media/react.svg": "/portfolio/static/media/react.a0fd8559.svg",
     "static/media/south-korea.svg": "/portfolio/static/media/south-korea.8a067f19.svg",
+    "static/media/toefl.svg": "/portfolio/static/media/toefl.f3d3d995.svg",
     "static/media/usa.svg": "/portfolio/static/media/usa.36ab476e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.209c2d7e.js",
-    "static/js/2.05e3bdda.chunk.js",
+    "static/js/2.7bd47ef1.chunk.js",
     "static/css/main.8ef1a29a.chunk.css",
-    "static/js/main.7cf7fdaf.chunk.js"
+    "static/js/main.6aae5dfe.chunk.js"
   ]
 }
