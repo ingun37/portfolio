@@ -27,6 +27,7 @@ import ContinuousIntegration from './Pages/ContinuousIntegration';
 import { useMediaQuery, useTheme, List, ListItem, ListItemText, Drawer } from '@material-ui/core';
 import Menu from '@material-ui/icons/Menu';
 import { Subject, BehaviorSubject } from 'rxjs';
+import Bilingual from './Pages/Bilingual';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -101,7 +102,8 @@ const pageTitles = [
   "CI DEVELOPER",
   "FUNCTIONAL PROGRAMMER",
   "MATHEMATICS ENTHUSIAST",
-  "WRITER"
+  "WRITER",
+  "BILINGUAL"
 ]
 
 function MyFullPage() {
@@ -132,6 +134,9 @@ function MyFullPage() {
     ],
     [
       ["I've written articles on iOS, functional programming and mathematics", Writings()],
+    ],
+    [
+      ["Fluent Korean & English", Bilingual()],
     ]
   ]
   const pages: TemplateProps[] = pageTitles.map((title, i) => {
