@@ -49,8 +49,14 @@ function Writings() {
         });
 
         ref.current?.addEventListener('wheel', (e) => {
-            e.stopPropagation()
-            return false
+            e.stopPropagation();
+            return false;
+        });
+        [ "touchcancel", "touchend", "touchmove", "touchstart"].forEach(x=> {
+            ref.current?.addEventListener(x, function(event) {
+                event.stopPropagation();
+                return false;
+            });
         })
     }, [])
     const classes = useStyles();
