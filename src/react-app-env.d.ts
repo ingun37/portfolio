@@ -153,3 +153,5 @@ declare module '@fullpage/react-fullpage' {
   
     export default ReactFullpage
   }
+
+declare module '*.pdf'

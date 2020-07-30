@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import SouthKorea from './south-korea.svg';
 import Usa from './usa.svg';
+import Github from './icons/GitHub-Mark.svg'
 import { Template, TemplateProps } from './components/Template';
 import { AppProjects } from "./Pages/AppProjects";
 import { GraphicsProjects } from './Pages/GraphicsProjects';
@@ -24,10 +25,12 @@ import FunctionalMath from './Pages/FunctionalMath';
 import MySvgIcon from './components/MySvgIcon';
 import FunctionalProgramming from './Pages/FunctionalProgramming';
 import ContinuousIntegration from './Pages/ContinuousIntegration';
-import { useMediaQuery, useTheme, List, ListItem, ListItemText, Drawer } from '@material-ui/core';
-import Menu from '@material-ui/icons/Menu';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { useMediaQuery, useTheme, List, ListItem, ListItemText, Drawer, Button, MenuItem, Menu } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import Mail from '@material-ui/icons/Mail';
+
 import Bilingual from './Pages/Bilingual';
+import CV from './cv-전인건.pdf';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -41,18 +44,45 @@ const useLocalStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     bar: {
-      width: 200,
+      width: 300,
       borderRadius: '0px 0px 0px 32px'
+    },
+    AppBarTextBtn: {
+      fontFamily: 'Anton',
+      color: 'white'
     }
   }),
 );
 
-var globalFullPageAPI:fullpageApi | null = null
 
+var globalFullPageAPI: fullpageApi | null = null
+enum Lang { KR, EN };
 function App() {
 
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const handleResumeOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const isResumeOpen = Boolean(anchorEl);
+  const handleResumeClose = () => {
+    setAnchorEl(null);
+  };
+  const renderMenu = (
+    <Menu anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isResumeOpen}
+      onClose={handleResumeClose}>
+      <MenuItem onClick={() => {
+        window.open(CV);
+        handleResumeClose();
+      }}>cv-전인건.pdf</MenuItem>
+    </Menu>
+  );
   const [drawerState, setDrawerState] = useState(false);
   const classes = useLocalStyles();
+  const [langState, setlangState] = useState(Lang.EN)
   return (
     <ThemeProvider theme={globalTheme}>
 
@@ -60,26 +90,30 @@ function App() {
         <AppBar position="absolute" className={classes.bar}>
           <Toolbar>
 
-            <Typography variant="h6" className={classes.title}>
+            <Typography variant="h6" className={classes.title}></Typography>
 
-            </Typography>
-            <IconButton>
-              <MySvgIcon src={Usa} />
+            <Button className={classes.AppBarTextBtn} onClick={handleResumeOpen}>RESUME</Button>
+            <IconButton color='inherit' href="mailto:ingun37@gmail.com">
+              <Mail />
             </IconButton>
-            <IconButton>
-              <MySvgIcon src={SouthKorea} />
+            <IconButton onClick={() => window.open('https://github.com/ingun37')}>
+              <MySvgIcon src={Github} />
             </IconButton>
+            {
+              langState == Lang.KR ? (<IconButton><MySvgIcon src={Usa} /></IconButton>) : (<IconButton><MySvgIcon src={SouthKorea} /></IconButton>)
+            }
             <IconButton color='inherit' onClick={() => setDrawerState(true)}>
-              <Menu />
+              <MenuIcon />
             </IconButton>
           </Toolbar>
         </AppBar>
+        {renderMenu}
         <Drawer anchor='right' open={drawerState} onClose={() => setDrawerState(false)}>
           <List>
             {
-              pageTitles.map((x,idx) => {
+              pageTitles.map((x, idx) => {
                 return (
-                  <ListItem button key={x} onClick={()=>globalFullPageAPI?.moveTo(idx+1)}>
+                  <ListItem button key={x} onClick={() => globalFullPageAPI?.moveTo(idx + 1)}>
                     <ListItemText primary={x} />
                   </ListItem>
                 )
