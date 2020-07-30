@@ -58,7 +58,6 @@ const useLocalStyles = makeStyles((theme: Theme) =>
 var globalFullPageAPI: fullpageApi | null = null
 enum Lang { KR, EN };
 function App() {
-
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const handleResumeOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -83,6 +82,7 @@ function App() {
   const [drawerState, setDrawerState] = useState(false);
   const classes = useLocalStyles();
   const [langState, setlangState] = useState(Lang.EN)
+
   return (
     <ThemeProvider theme={globalTheme}>
 
@@ -191,7 +191,7 @@ function MyFullPage() {
         const pageNumber: [number, number] = [dest.index, 0]
         page$.next(pageNumber)
       }}
-      autoScrolling={true}
+      responsive={960}
 
       render={({ state, fullpageApi }) => {
         globalFullPageAPI = fullpageApi;
