@@ -10,8 +10,8 @@ import algebra from "../images/algebra.png";
 export function MathProjects() {
     const [spacing, setSpacing] = React.useState(2);
     const areas: ProjectProp[] = [
-        new ProjectProp("Original Answers to Math Books", mathpng, null, null, "The website I post my original answers to mathematical books."),
-        new ProjectProp("Complex Matrix Algebra", algebra, null, null, "Implementation of abstract algebra in Swift"),
+        new ProjectProp("Original Answers to Math Books", mathpng, null, null, "The website I post my original answers to mathematical books.", undefined, "https://ingun37.github.io/answers/"),
+        new ProjectProp("Complex Matrix Algebra", algebra, null, null, "Implementation of abstract algebra in Swift", undefined, "https://github.com/ingun37/ComplexMatrixAlgebra"),
     ];
     return (
         ProjectCards(areas)
