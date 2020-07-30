@@ -51,13 +51,18 @@ const useStyles = makeStyles((theme) => ({
     },
     rightArrow: {
         position: 'absolute',
-        marginTop: 26,
-        right: 32
+        marginTop: '1em',
+        right: 32,
+        zIndex: 10,
+        backgroundColor: 'rgb(0,0,0,0.4)'
     },
     leftArrow: {
         position: 'absolute',
-        marginTop: 26,
-        left: 32
+        marginTop: '1em',
+        left: 32,
+        zIndex: 10,
+        backgroundColor: 'rgb(0,0,0,0.4)'
+
     },
     pulseAni: {
         animation: 'pulse 2s'
