@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.8ef1a29a.chunk.css",
-    "main.js": "/portfolio/static/js/main.4602a2d7.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.4602a2d7.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.c7bed241.chunk.css",
+    "main.js": "/portfolio/static/js/main.05f5c73a.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.05f5c73a.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.209c2d7e.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.209c2d7e.js.map",
-    "static/js/2.d67b6ceb.chunk.js": "/portfolio/static/js/2.d67b6ceb.chunk.js",
-    "static/js/2.d67b6ceb.chunk.js.map": "/portfolio/static/js/2.d67b6ceb.chunk.js.map",
+    "static/js/2.3852d6e8.chunk.js": "/portfolio/static/js/2.3852d6e8.chunk.js",
+    "static/js/2.3852d6e8.chunk.js.map": "/portfolio/static/js/2.3852d6e8.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.1c3a43bf649d606f3c9a627b4380b20d.js": "/portfolio/precache-manifest.1c3a43bf649d606f3c9a627b4380b20d.js",
+    "precache-manifest.9892272479d8e3915fa438187713b39a.js": "/portfolio/precache-manifest.9892272479d8e3915fa438187713b39a.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.8ef1a29a.chunk.css.map": "/portfolio/static/css/main.8ef1a29a.chunk.css.map",
-    "static/js/2.d67b6ceb.chunk.js.LICENSE.txt": "/portfolio/static/js/2.d67b6ceb.chunk.js.LICENSE.txt",
+    "static/css/main.c7bed241.chunk.css.map": "/portfolio/static/css/main.c7bed241.chunk.css.map",
+    "static/js/2.3852d6e8.chunk.js.LICENSE.txt": "/portfolio/static/js/2.3852d6e8.chunk.js.LICENSE.txt",
     "static/media/3dc.jpg": "/portfolio/static/media/3dc.adac20d9.jpg",
+    "static/media/GitHub-Mark.svg": "/portfolio/static/media/GitHub-Mark.e7aadd2b.svg",
     "static/media/algebra.png": "/portfolio/static/media/algebra.523b3ac7.png",
     "static/media/angular.svg": "/portfolio/static/media/angular.38c4b670.svg",
     "static/media/animation.jpg": "/portfolio/static/media/animation.f33ee92e.jpg",
     "static/media/contest.jpeg": "/portfolio/static/media/contest.7872b99c.jpeg",
     "static/media/cru.jpg": "/portfolio/static/media/cru.fad27779.jpg",
+    "static/media/cv-전인건.pdf": "/portfolio/static/media/cv-전인건.fd0015e2.pdf",
     "static/media/deferred.jpg": "/portfolio/static/media/deferred.185ac1ad.jpg",
     "static/media/dgraph.svg": "/portfolio/static/media/dgraph.130a1621.svg",
     "static/media/docker.svg": "/portfolio/static/media/docker.9997aa6c.svg",
@@ -37,8 +39,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.209c2d7e.js",
-    "static/js/2.d67b6ceb.chunk.js",
-    "static/css/main.8ef1a29a.chunk.css",
-    "static/js/main.4602a2d7.chunk.js"
+    "static/js/2.3852d6e8.chunk.js",
+    "static/css/main.c7bed241.chunk.css",
+    "static/js/main.05f5c73a.chunk.js"
   ]
 }
