@@ -54,25 +54,26 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '1em',
         right: 32,
         zIndex: 10,
-        backgroundColor: 'rgb(0,0,0,0.4)'
+        backgroundColor: globalTheme.palette.primary.main + "88",
     },
     leftArrow: {
         position: 'absolute',
         marginTop: '1em',
         left: 32,
         zIndex: 10,
-        backgroundColor: 'rgb(0,0,0,0.4)'
+        backgroundColor: globalTheme.palette.primary.main + "88"
 
     },
     pulseAni: {
-        animation: 'pulse 2s'
+        animation: 'pulse 2s',
+        animationIterationCount: 3
     }
 }));
 
 
 interface PulseRightArrowProps {
     verticalPageNumber: number,
-    onClick:()=>void
+    onClick: () => void
 }
 function PulseRightArrow(props: PulseRightArrowProps) {
     const [trigger, setTrigger] = useState(false);
@@ -89,8 +90,8 @@ function PulseRightArrow(props: PulseRightArrowProps) {
         }
     })
     return (
-        <Fab variant="extended" color="primary" aria-label="add" 
-            className={classes.rightArrow + " " + (trigger ? classes.pulseAni : "")} 
+        <Fab variant="extended" color="primary" aria-label="add"
+            className={classes.rightArrow + " " + (trigger ? classes.pulseAni : "")}
             onClick={props.onClick}>
             There's more!
             <ArrowForward />
@@ -121,25 +122,25 @@ export function Template(props: TemplateProps) {
         </Fab>
     );
     return (
-            <div>
-                <Typography variant="h2" className={classes.title}>
-                    {title}
+        <div>
+            <Typography variant="h2" className={classes.title}>
+                {title}
+            </Typography>
+
+            <div className={classes.subBack}>
+                {count < subs.length - 1 ? <PulseRightArrow verticalPageNumber={verticalPage} onClick={() => { setCount((count + 1) % subs.length) }} /> : null}
+                {count > 0 ? leftArrow : null}
+
+                <Typography variant="h4" className={classes.subtitle}>
+                    {subs[count][0]}
                 </Typography>
 
-                <div className={classes.subBack}>
-                    {count < subs.length - 1 ? <PulseRightArrow verticalPageNumber={verticalPage} onClick={()=>{setCount((count + 1) % subs.length)}} /> : null}
-                    {count > 0 ? leftArrow : null}
-
-                    <Typography variant="h4" className={classes.subtitle}>
-                        {subs[count][0]}
-                    </Typography>
-
-                    {subs[count][1]}
-                </div>
-
-
-                {subs.length > 1 ? stepper : null}
+                {subs[count][1]}
             </div>
+
+
+            {subs.length > 1 ? stepper : null}
+        </div>
 
     );
 }
