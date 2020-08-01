@@ -30,7 +30,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Mail from '@material-ui/icons/Mail';
 
 import Bilingual from './Pages/Bilingual';
-import CV from './cv-전인건.pdf';
+import CV from './cv-resume-전인건.pdf';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -76,7 +76,7 @@ function App() {
       <MenuItem onClick={() => {
         window.open(CV);
         handleResumeClose();
-      }}>cv-전인건.pdf</MenuItem>
+      }}>cv-resume-전인건.pdf</MenuItem>
     </Menu>
   );
   const [drawerState, setDrawerState] = useState(false);
