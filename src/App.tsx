@@ -30,7 +30,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Mail from '@material-ui/icons/Mail';
 
 import Bilingual from './Pages/Bilingual';
-import CV from './cv-resume-전인건.pdf';
+import CVEN from './cv-en.pdf';
+import CVKR from './cv-kr.pdf';
+import CVPortfolioKR from './cv-kr+portfolio.pdf';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -74,9 +76,17 @@ function App() {
       open={isResumeOpen}
       onClose={handleResumeClose}>
       <MenuItem onClick={() => {
-        window.open(CV);
+        window.open(CVEN);
         handleResumeClose();
-      }}>cv-resume-전인건.pdf</MenuItem>
+      }}>cv-en.pdf</MenuItem>
+      <MenuItem onClick={() => {
+        window.open(CVKR);
+        handleResumeClose();
+      }}>cv-kr.pdf</MenuItem>
+      <MenuItem onClick={() => {
+        window.open(CVPortfolioKR);
+        handleResumeClose();
+      }}>portfolio-kr.pdf</MenuItem>
     </Menu>
   );
   const [drawerState, setDrawerState] = useState(false);
