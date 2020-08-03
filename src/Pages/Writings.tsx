@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useLayoutEffect } from 'react'
 import Parser from 'rss-parser';
-import { List, ListItem, ListItemText, Chip, makeStyles, Divider, ListItemIcon } from '@material-ui/core';
+import { List, ListItem, ListItemText, Chip, makeStyles, Divider, ListItemIcon, useMediaQuery, Theme } from '@material-ui/core';
 import { on } from 'process';
 import { async } from 'rxjs';
 import OpenInNew from '@material-ui/icons/OpenInNew';
@@ -62,7 +62,8 @@ function Writings() {
     const classes = useStyles();
 
 
-
+    const matches = useMediaQuery((theme:Theme)=>theme.breakpoints.down('sm'));
+    console.log('down sm?', matches)
     return (
         <div ref={ref} className={classes.root}>
             
@@ -70,11 +71,11 @@ function Writings() {
                 {
                     models.map(model => {
                         return (
-                            <div>
+                            <div key={model.title}>
 
                                 <ListItem key={model.title} button onClick={() => window.open(model.link)}>
-                                    <ListItemText primary={model.title} />
-                                    {model.categories.map(x => (<Chip label={x} />))}
+                                    <ListItemText primary={model.title} secondary={matches ? model.categories.join(" ") : null} />
+                                    {matches ? null : model.categories.map(x => (<Chip key={x} label={x} />))}
                                 </ListItem>
                                 <Divider />
                             </div>

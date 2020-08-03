@@ -210,7 +210,7 @@ function MyFullPage() {
           <ReactFullpage.Wrapper>
             {pages.map(x => {
               return (
-                <div className="section">
+                <div className="section" key={x.title}>
                   <Template {...x}></Template>
                 </div>
               )
