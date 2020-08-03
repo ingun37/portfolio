@@ -30,8 +30,8 @@ class WritingModel {
 let fetched = fetch("https://dev.to/feed/ingun37").then(x => x.text()).then(x => (new Parser()).parseString(x)).then(x => {
     return x.items?.map(x => new WritingModel(x.title || "", x.categories || [], x.link || "")) || []
 }).then(rssWritings=>{
-    const article1 = new WritingModel("UIView shouldn’t be File’s Owner", ["#ios", "#xib", "#filesowner", "#uiview"], "https://dev.to/ingun37/file-s-owner-is-not-for-uiview-3n9g")
-    const article2 = new WritingModel("UIView 는 File’s Owner 가 될 수 없어요", ["#ios", "#xib", "#filesowner", "#uiview"], "https://dev.to/ingun37/uiview-file-s-owner-2a20")
+    const article1 = new WritingModel("UIView shouldn’t be File’s Owner", ["ios", "xib", "filesowner", "uiview"], "https://dev.to/ingun37/file-s-owner-is-not-for-uiview-3n9g")
+    const article2 = new WritingModel("UIView 는 File’s Owner 가 될 수 없어요", ["ios", "xib", "filesowner", "uiview"], "https://dev.to/ingun37/uiview-file-s-owner-2a20")
     const prefixWritings = [article1, article2]
     return prefixWritings.concat(rssWritings)
 })
@@ -74,8 +74,8 @@ function Writings() {
                             <div key={model.title}>
 
                                 <ListItem key={model.title} button onClick={() => window.open(model.link)}>
-                                    <ListItemText primary={model.title} secondary={matches ? model.categories.join(" ") : null} />
-                                    {matches ? null : model.categories.map(x => (<Chip key={x} label={x} />))}
+                                    <ListItemText primary={model.title} secondary={matches ? model.categories.map(x=>'#'+x).join(" ") : null} />
+                                    {matches ? null : model.categories.map(x => (<Chip key={x} label={'#' + x} />))}
                                 </ListItem>
                                 <Divider />
                             </div>

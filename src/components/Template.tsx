@@ -93,7 +93,7 @@ function PulseRightArrow(props: PulseRightArrowProps) {
         }
     })
     return (
-        <Fab variant="extended" color="primary" aria-label="add"
+        <Fab variant={matches ? undefined : "extended"} color="primary" aria-label="add"
             className={classes.rightArrow + " " + (trigger ? classes.pulseAni : "")}
             onClick={props.onClick}>
                 {
