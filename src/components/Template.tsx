@@ -14,6 +14,7 @@ import globalTheme from '../global/GlobalTheme';
 import { page$ } from '../global/State';
 import { filter, take } from 'rxjs/operators';
 import "./Template.css";
+import { useMediaQuery, Theme } from '@material-ui/core';
 
 export interface TemplateProps {
     title: string,
@@ -79,6 +80,8 @@ function PulseRightArrow(props: PulseRightArrowProps) {
     const [trigger, setTrigger] = useState(false);
     const classes = useStyles();
 
+    const matches = useMediaQuery((theme:Theme)=>theme.breakpoints.down('sm'));
+
     useEffect(() => {
         const pageTurn = page$.pipe(filter(x => x[0] == props.verticalPageNumber), take(1)).subscribe({
             next(x) {
@@ -93,7 +96,10 @@ function PulseRightArrow(props: PulseRightArrowProps) {
         <Fab variant="extended" color="primary" aria-label="add"
             className={classes.rightArrow + " " + (trigger ? classes.pulseAni : "")}
             onClick={props.onClick}>
-            There's more!
+                {
+                    matches ? null : "There's more!"
+                }
+            
             <ArrowForward />
         </Fab>
     );
@@ -121,6 +127,7 @@ export function Template(props: TemplateProps) {
             <ArrowBack />
         </Fab>
     );
+
     return (
         <div>
             <Typography variant="h2" className={classes.title}>
