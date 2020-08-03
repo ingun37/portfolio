@@ -97,7 +97,7 @@ function App() {
     <ThemeProvider theme={globalTheme}>
 
       <div className={classes.root}>
-        <AppBar position="absolute" className={classes.bar}>
+        <AppBar position="fixed" className={classes.bar}>
           <Toolbar>
 
             <Typography variant="h6" className={classes.title}></Typography>
