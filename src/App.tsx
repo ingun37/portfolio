@@ -173,8 +173,8 @@ function MyFullPage() {
       ["I have solid understanding of applications of category theory in programming languages. I can utilize following mathematical concepts in programming", FunctionalMath()]
     ],
     [
+      ["I love applications of mathematics in programming", MathProjects()],
       ["I'm interested in various areas of mathematics", MathAreas()],
-      ["... and their applications in programmings", MathProjects()],
     ],
     [
       ["I've written articles on iOS, functional programming and mathematics", Writings()],
