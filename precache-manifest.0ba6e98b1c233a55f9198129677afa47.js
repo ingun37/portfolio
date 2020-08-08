@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "61eb430c214c8cd2c598a3febd11ac0d",
+    "revision": "8da779acf4bf2a0df02cd14f53c43329",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "d9d9f6dc1543aae11837",
+    "revision": "aad0aef25ffa9167b694",
     "url": "/portfolio/static/css/main.966cf583.chunk.css"
   },
   {
-    "revision": "d1e3aab280404b7d67b4",
-    "url": "/portfolio/static/js/2.fb7013fc.chunk.js"
+    "revision": "37d3daac6c8bd1bf07e0",
+    "url": "/portfolio/static/js/2.b9266c41.chunk.js"
   },
   {
     "revision": "af10f10b47d8516eee16b642ddcbd3d8",
-    "url": "/portfolio/static/js/2.fb7013fc.chunk.js.LICENSE.txt"
+    "url": "/portfolio/static/js/2.b9266c41.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d9d9f6dc1543aae11837",
-    "url": "/portfolio/static/js/main.dee8dd4d.chunk.js"
+    "revision": "aad0aef25ffa9167b694",
+    "url": "/portfolio/static/js/main.5866306a.chunk.js"
   },
   {
     "revision": "7a6cc99bd8f08f9fa6ec",
@@ -50,18 +50,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fad277796d6213cc33696da4666d80f5",
     "url": "/portfolio/static/media/cru.fad27779.jpg"
-  },
-  {
-    "revision": "d779ba60be0181cf615a5b9c5a0fb12b",
-    "url": "/portfolio/static/media/cv-en.d779ba60.pdf"
-  },
-  {
-    "revision": "cad5955df8660d0822d0818eb8d9bea2",
-    "url": "/portfolio/static/media/cv-kr+portfolio.cad5955d.pdf"
-  },
-  {
-    "revision": "ce4b29a508d92d7eb9e14b6a2a93ea8d",
-    "url": "/portfolio/static/media/cv-kr.ce4b29a5.pdf"
   },
   {
     "revision": "185ac1ad36fe10dd0ce90151a9142c85",
@@ -114,6 +102,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a0fd85590b6d0031492e12f3d5cd0636",
     "url": "/portfolio/static/media/react.a0fd8559.svg"
+  },
+  {
+    "revision": "5bb5b5a9d0cb2a804e1373358de4c200",
+    "url": "/portfolio/static/media/resume+portfolio.5bb5b5a9.pdf"
+  },
+  {
+    "revision": "565c32082a2eacf53fa8f6178d2adc1e",
+    "url": "/portfolio/static/media/resume.565c3208.pdf"
   },
   {
     "revision": "8a067f19c6a32f781b8cb971a3214629",
