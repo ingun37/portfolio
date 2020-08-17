@@ -22,6 +22,8 @@ import globalTheme from './global/GlobalTheme';
 import FullStack from './Pages/FullStack';
 import Writings from './Pages/Writings';
 import FunctionalMath from './Pages/FunctionalMath';
+import { Contributions } from "./Pages/Contributions";
+
 import MySvgIcon from './components/MySvgIcon';
 import FunctionalProgramming from './Pages/FunctionalProgramming';
 import ContinuousIntegration from './Pages/ContinuousIntegration';
@@ -142,6 +144,7 @@ const pageTitles = [
   "FUNCTIONAL PROGRAMMER",
   "MATHEMATICS ENTHUSIAST",
   "WRITER",
+  "OPENSOURCE CONTRIBUTIONS",
   "BILINGUAL"
 ]
 
@@ -173,6 +176,9 @@ function MyFullPage() {
     ],
     [
       ["I've written articles on iOS, functional programming and mathematics", Writings()],
+    ],
+    [
+      ["I have contributed to these open-source projects", Contributions()],
     ],
     [
       ["Fluent Korean & English", Bilingual()],

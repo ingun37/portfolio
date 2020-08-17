@@ -27,7 +27,7 @@ const useLocalStyles = makeStyles((theme) => ({
 export class ProjectProp {
     constructor(
         public name: string,
-        public img: string,
+        public img: string | null,
         public organization: string | null,
         public time: string | null,
         public note: string | null = null,
@@ -66,7 +66,7 @@ function ProjectCard(project: ProjectProp) {
                 }}>
                     <CardMedia
                         className={localClasses.media}
-                        image={project.img}
+                        image={project.img || undefined}
                         title="Contemplative Reptile"
                     />
                     <CardContent>
