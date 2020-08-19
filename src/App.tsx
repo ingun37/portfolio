@@ -32,8 +32,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Mail from '@material-ui/icons/Mail';
 
 import Bilingual from './Pages/Bilingual';
-import Resume from './resume.pdf';
+import ResumePdf from './resume.pdf';
 import ResumePortfolio from './resume+portfolio.pdf';
+import Resume from './Pages/Resume';
 
 const useLocalStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -77,7 +78,7 @@ function App() {
       open={isResumeOpen}
       onClose={handleResumeClose}>
       <MenuItem onClick={() => {
-        window.open(Resume);
+        window.open(ResumePdf);
         handleResumeClose();
       }}>resume.pdf</MenuItem>
       <MenuItem onClick={() => {
@@ -145,7 +146,8 @@ const pageTitles = [
   "MATHEMATICS ENTHUSIAST",
   "WRITER",
   "OPENSOURCE CONTRIBUTIONS",
-  "BILINGUAL"
+  "BILINGUAL",
+  "RESUME",
 ]
 
 function MyFullPage() {
@@ -182,7 +184,10 @@ function MyFullPage() {
     ],
     [
       ["Fluent Korean & English", Bilingual()],
-    ]
+    ],
+    [
+      ["Please consider checking out my resume", Resume()],
+    ],
   ]
   const pages: TemplateProps[] = pageTitles.map((title, i) => {
     return {
