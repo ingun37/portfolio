@@ -106,7 +106,7 @@ function App() {
   );
   const [drawerState, setDrawerState] = useState(false);
   const classes = useLocalStyles();
-  const [langState, ] = useState(Lang.EN);
+  const [langState] = useState(Lang.EN);
 
   return (
     <ThemeProvider theme={globalTheme}>
@@ -172,6 +172,7 @@ function App() {
 const pageTitles = [
   "Hi I'm Ingun",
   "GAME DEVELOPER",
+  "COMPUTER GRAPHICS",
   "APPLICATION DEVELOPER",
   "FULLSTACK DEVELOPER",
   "CI DEVELOPER",
@@ -191,8 +192,8 @@ function MyFullPage() {
         "I've successfully developed & maintained commercially successful games.",
         GameProjects(),
       ],
-      ["I'm very knowledgeable about computer graphics", GraphicsProjects()],
     ],
+    [["I'm knowledgeable about computer graphics", GraphicsProjects()]],
     [
       [
         "I've successfully developed & maintained applications including the official application for one of the biggest radio channel in South Korea",
