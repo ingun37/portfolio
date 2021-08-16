@@ -208,17 +208,14 @@ function MyFullPage() {
       ],
     ],
     [
-      [
-        "I can utilize following functional paradigms in programming",
-        FunctionalProgramming(),
-      ],
-      [
-        "I have solid understanding of applications of category theory in programming languages. I can utilize following mathematical concepts in programming",
-        FunctionalMath(),
-      ],
+      ["I familiar with programming paradigms", FunctionalProgramming()],
+      ["I have no language barrier", FunctionalMath()],
     ],
     [
-      ["I love applications of mathematics in programming", MathProjects()],
+      [
+        "I love mathematics and it's applications in programming",
+        MathProjects(),
+      ],
       ["I'm interested in various areas of mathematics", MathAreas()],
     ],
     [
