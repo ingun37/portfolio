@@ -171,7 +171,7 @@ function App() {
 
 const pageTitles = [
   "Hi I'm Ingun",
-  "GAME DEVELOPER",
+  "PROJECTS",
   "COMPUTER GRAPHICS",
   "APPLICATION DEVELOPER",
   "FULLSTACK DEVELOPER",
@@ -189,7 +189,7 @@ function MyFullPage() {
     [["Get to know me as a", Intro()]],
     [
       [
-        "I've successfully developed & maintained commercially successful games.",
+        "I've successfully developed & maintained commercially successful projects.",
         GameProjects(),
       ],
     ],
