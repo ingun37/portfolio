@@ -171,8 +171,8 @@ function App() {
 
 const pageTitles = [
   "Hi I'm Ingun",
-  "PROJECTS",
-  "COMPUTER GRAPHICS",
+  "COMPUTER GRAPHICS DEVELOPER",
+  "COMPUTER GRAPHICS SHOWCASE",
   "APPLICATION DEVELOPER",
   "FULLSTACK DEVELOPER",
   "CI DEVELOPER",
@@ -189,7 +189,7 @@ function MyFullPage() {
     [["Get to know me as a", Intro()]],
     [
       [
-        "I've successfully developed & maintained commercially successful projects.",
+        "I've developed & maintained commercially successful games and other CG-related products",
         GameProjects(),
       ],
     ],
@@ -200,10 +200,10 @@ function MyFullPage() {
         AppProjects(),
       ],
     ],
-    [["I have experiences with various platforms/libraries", FullStack()]],
+    [["I have experiences with various platforms and libraries", FullStack()]],
     [
       [
-        "Bag of related skills & Experience of automating the build pipeline for Crusaders Quest",
+        "I'm capable of setting up CI. I have experiences of building CI pipelines for Crusaders Quest and CLO-SET",
         ContinuousIntegration(),
       ],
     ],

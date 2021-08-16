@@ -5,7 +5,6 @@ import contest from "../images/contest.jpeg";
 import { ProjectCards, ProjectProp } from "../components/ProjectCards";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 import closet from "../images/closet.jpg";
-import ebs from "../images/ebs.png";
 
 export function GameProjects() {
   const games: ProjectProp[] = [
@@ -14,7 +13,7 @@ export function GameProjects() {
       closet,
       "CLO Virtual Fashion",
       "2020~",
-      null,
+      "Typescript/WebGL",
       CLOSETDialogue,
       undefined
     ),
@@ -34,14 +33,6 @@ export function GameProjects() {
       "Unreal/C++/Scaleform",
       EOSDialogue
     ),
-    new ProjectProp(
-      "EBS어학FM",
-      ebs,
-      "Swink/EBSFM",
-      "2013~2014",
-      "Objective-C",
-      EBSDialogue
-    ),
 
     new ProjectProp(
       "국림과천과학관 온라인과학게임대회",
@@ -60,26 +51,26 @@ function CLOSETDialogue() {
     <List>
       <ListItem>
         <ListItemText
-          primary="Graphics Optimization"
-          secondary="I had reduced rendering time by 20% by making polygons that resembles the textures and using it as depthmask."
+          primary="Rendering Test"
+          secondary="Developed rendering test system(patent pending) using Puppeteer and OpenCV and integrated into CI."
         />
       </ListItem>
       <ListItem>
         <ListItemText
-          primary="CI Development"
-          secondary="Automated the build system for data sheets and Unity3d & Android & Xcode projects and their 300 kinds of build targets using Jenkins and Gradle."
+          primary="3D Model Loading System"
+          secondary="Developed responsive and highly optimized 3D model loading system using RxJS, FP-TS and Draco3D."
         />
       </ListItem>
       <ListItem>
         <ListItemText
-          primary="Authentication System Development"
-          secondary="I was responsible for authentication of users via Google, Facebook, Apple and 13 different Chinese authenticaton services."
+          primary="Rendering Performance Benchmarking System"
+          secondary="Developed rendering performance benchmarking system using Puppeteer and integrated into CI."
         />
       </ListItem>
       <ListItem>
         <ListItemText
-          primary="Platform Specific Native Library Development"
-          secondary="I had developed various platform-specific native libraries including iOS ForceTouch, Android screen recoder and many others."
+          primary="CI"
+          secondary="Set up CI using AWS, Github Flow, semantic-release"
         />
       </ListItem>
     </List>
@@ -141,16 +132,6 @@ function ContestDialogue() {
     <List>
       <ListItem>
         <ListItemText primary="국립과천과학관 주최, 교육부 주관 전국 단위 경진대회용 게임 10여가지 개발/유지보수" />
-      </ListItem>
-    </List>
-  );
-}
-
-function EBSDialogue() {
-  return (
-    <List>
-      <ListItem>
-        <ListItemText primary="I had developed the entire application including UI, Network Session Threading and Audio Streaming." />
       </ListItem>
     </List>
   );
