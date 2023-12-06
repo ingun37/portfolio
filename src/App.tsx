@@ -224,7 +224,7 @@ function MyFullPage() {
         Writings(),
       ],
     ],
-    [["I have contributed to these open-source projects", Contributions()]],
+    [["I contributed to these open-source projects", Contributions()]],
     [["Fluent Korean & English", Bilingual()]],
     [["Please consider checking out my resume", Resume()]],
   ];
