@@ -220,7 +220,7 @@ function MyFullPage() {
     ],
     [
       [
-        "I've written articles on iOS, functional programming and mathematics",
+        "I wrote articles on iOS, functional programming and mathematics",
         Writings(),
       ],
     ],
