@@ -49,8 +49,10 @@ import ScrollFade from "@/components/ScrollFade.vue";
 <style scoped>
 .hero {
   position: relative;
-  min-height: 100svh;
   width: 100%;
+  height: 100svh;
+  max-height: 100svh;
+  overflow: hidden;
 }
 .hero-bg :deep(img) {
   filter: saturate(110%) contrast(105%);
