@@ -2,18 +2,17 @@
   <section class="hero">
     <div class="hero-bg">
       <div class="collage">
-        <img class="logo" src="@/assets/logos/haskell.svg" alt="JavaScript" />
-        <img class="logo" src="@/assets/logos/c++.svg" alt="TypeScript" />
-        <img class="logo" src="@/assets/logos/haskell.svg" alt="Python" />
-        <img class="logo" src="@/assets/logos/c++.svg" alt="Java" />
-        <img class="logo" src="@/assets/logos/haskell.svg" alt="Go" />
-        <img class="logo" src="@/assets/logos/c++.svg" alt="Rust" />
-        <img class="logo" src="@/assets/logos/haskell.svg" alt="C#" />
-        <img class="logo" src="@/assets/logos/c++.svg" alt="PHP" />
-        <img class="logo" src="@/assets/logos/haskell.svg" alt="Swift" />
-        <img class="logo" src="@/assets/logos/c++.svg" alt="Kotlin" />
-        <img class="logo" src="@/assets/logos/haskell.svg" alt="Dart" />
-        <img class="logo" src="@/assets/logos/c++.svg" alt="C++" />
+        <img class="logo" src="@/assets/logos/haskell.svg" alt="haskell" />
+        <img class="logo" src="@/assets/logos/c++.svg" alt="c++" />
+        <img class="logo" src="@/assets/logos/ts.svg" alt="ts" />
+        <img class="logo" src="@/assets/logos/c_sharp.svg" alt="c#" />
+        <img class="logo" src="@/assets/logos/swift.svg" alt="swift" />
+        <img class="logo" src="@/assets/logos/rust.svg" alt="rust" />
+        <img class="logo" src="@/assets/logos/f_sharp.svg" alt="f#" />
+        <img class="logo" src="@/assets/logos/python.svg" alt="python" />
+        <img class="logo" src="@/assets/logos/ruby.svg" alt="ruby" />
+        <img class="logo" src="@/assets/logos/webgpu.svg" alt="webgpu" />
+        <img class="logo" src="@/assets/logos/threejs.svg" alt="threejs" />
       </div>
 
       <div class="overlay" />
