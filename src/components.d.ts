@@ -9,8 +9,14 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
+    CTASection: typeof import('./components/sections/CTASection.vue')['default']
+    FeaturePanels: typeof import('./components/sections/FeaturePanels.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    HeroSection: typeof import('./components/sections/HeroSection.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScrollFade: typeof import('./components/ScrollFade.vue')['default']
+    StickyShowcase: typeof import('./components/sections/StickyShowcase.vue')['default']
+    VideoSection: typeof import('./components/sections/VideoSection.vue')['default']
   }
 }

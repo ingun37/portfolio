@@ -20,9 +20,6 @@ importers:
       vue:
         specifier: ^3.5.17
         version: 3.5.20(typescript@5.8.3)
-      vuetify:
-        specifier: ^3.9.1
-        version: 3.9.6(typescript@5.8.3)(vite-plugin-vuetify@2.1.2)(vue@3.5.20(typescript@5.8.3))
     devDependencies:
       '@tsconfig/node22':
         specifier: ^22.0.0
@@ -45,6 +42,9 @@ importers:
       npm-run-all2:
         specifier: ^7.0.2
         version: 7.0.2
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
       sass-embedded:
         specifier: ^1.89.2
         version: 1.91.0
@@ -78,6 +78,9 @@ importers:
       vue-tsc:
         specifier: ^3.0.1
         version: 3.0.6(typescript@5.8.3)
+      vuetify:
+        specifier: ^3.9.1
+        version: 3.9.6(typescript@5.8.3)(vite-plugin-vuetify@2.1.2)(vue@3.5.20(typescript@5.8.3))
 
 packages:
 
@@ -1647,6 +1650,11 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -3654,6 +3662,8 @@ snapshots:
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
+
+  prettier@3.6.2: {}
 
   punycode@2.3.1: {}
 
