@@ -34,9 +34,23 @@ const svgUrls = [
 
 <template>
   <h1>Language Expert</h1>
+  <v-container>
+    <v-row>
+      <v-col cols="12" md="6">
+        <v-card>
+          <v-card-title>Empirical Quality</v-card-title>
+        </v-card>
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-card>
+          <v-card-title>Theoretical Knowledge</v-card-title>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
   <div class="logo-banner" aria-label="Technology logos carousel">
     <div class="track">
-      <div class="list" v-for="(_, i) in 2" :key="`a-${i}`">
+      <div class="list">
         <img
           v-for="(src, i) in svgUrls"
           :key="`a-${i}`"
