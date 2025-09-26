@@ -3,7 +3,7 @@
     <Sect color="transparent">
       <HeroSection />
     </Sect>
-    <Sect color="#e86fbf">
+    <Sect color="#f5cee8">
       <LanguageExpert />
     </Sect>
     <Sect color="#3A506B">
