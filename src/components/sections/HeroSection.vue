@@ -14,49 +14,62 @@
       <ScrollFade direction="up" :delay="'120ms'">
         <p>as a</p>
       </ScrollFade>
-
-      <ScrollFade direction="up" :delay="'160ms'">
-        <div class="d-flex flex-column mb-6">
-          <ToonCard
-            text1="Programming"
-            text2="Language"
-            text3="Expert"
-            :start-color="'#e86fbf'"
-            :end-color="'#f0a8dc'"
-            class="mb-1"
-          />
-          <ToonCard
-            text1="Computer"
-            text2="Grapahics"
-            text3="Engineer"
-            :start-color="'#67cfe0'"
-            :end-color="'#37bddd'"
-            class="mb-1"
-          />
-          <ToonCard
-            text1=""
-            text2="Game"
-            text3="Developer"
-            :start-color="'#f2e37a'"
-            :end-color="'#e8c45c'"
-            class="mb-1"
-          />
-          <ToonCard
-            text1=""
-            text2="Application"
-            text3="Developer"
-            :start-color="'#86de78'"
-            :end-color="'#4fc56d'"
-            class="mb-1"
-          />
-          <ToonCard
-            text1=""
-            text2="Devops"
-            text3="Engineer"
-            :start-color="'#a08fe6'"
-            :end-color="'#836fde'"
-            class="mb-1"
-          />
+      <ScrollFade direction="up" :delay="'160ms'" class="w-100">
+        <div class="w-100 bg-surface-variant">
+          <v-container class="w-100">
+            <v-row no-gutters>
+              <v-col cols="12">
+                <ToonCard
+                  class="w-100"
+                  text1="Programming"
+                  text2="Language"
+                  text3="Expert"
+                  :start-color="'#e86fbf'"
+                  :end-color="'#f0a8dc'"
+                />
+              </v-col>
+              <v-col cols="12">
+                <ToonCard
+                  class="w-100"
+                  text1="Computer"
+                  text2="Grapahics"
+                  text3="Engineer"
+                  :start-color="'#67cfe0'"
+                  :end-color="'#37bddd'"
+                />
+              </v-col>
+              <v-col cols="12">
+                <ToonCard
+                  class="w-100"
+                  text1=""
+                  text2="Game"
+                  text3="Developer"
+                  :start-color="'#f2e37a'"
+                  :end-color="'#e8c45c'"
+                />
+              </v-col>
+              <v-col cols="12">
+                <ToonCard
+                  class="w-100"
+                  text1=""
+                  text2="Application"
+                  text3="Developer"
+                  :start-color="'#86de78'"
+                  :end-color="'#4fc56d'"
+                />
+              </v-col>
+              <v-col cols="12">
+                <ToonCard
+                  class="w-100"
+                  text1=""
+                  text2="Devops"
+                  text3="Engineer"
+                  :start-color="'#a08fe6'"
+                  :end-color="'#836fde'"
+                />
+              </v-col>
+            </v-row>
+          </v-container>
         </div>
       </ScrollFade>
     </div>
@@ -83,9 +96,5 @@ import ToonCard from "@/components/ToonCard.vue";
 
 .hero-bg :deep(img) {
   filter: saturate(110%) contrast(105%);
-}
-
-.hero-title {
-  letter-spacing: -0.02em;
 }
 </style>
