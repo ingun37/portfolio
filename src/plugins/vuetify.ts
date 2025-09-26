@@ -6,6 +6,7 @@
 
 // Styles
 import "@mdi/font/css/materialdesignicons.css";
+import "@fontsource/jetbrains-mono";
 import "vuetify/styles";
 
 // Composables
@@ -18,20 +19,20 @@ export default createVuetify({
       myCustomLightTheme: {
         dark: false,
         colors: {
-          background: "#FFFFFF",
-          surface: "#FFFFFF",
+          background: "#F0EAD6",
+          surface: "#D8C3A5",
           "surface-bright": "#FFFFFF",
           "surface-light": "#EEEEEE",
           "surface-variant": "#424242",
           "on-surface-variant": "#EEEEEE",
-          primary: "#1867C0",
+          primary: "#8E8D8A",
           "primary-darken-1": "#1F5592",
-          secondary: "#48A9A6",
+          secondary: "#E98074",
           "secondary-darken-1": "#018786",
-          error: "#B00020",
-          info: "#2196F3",
-          success: "#4CAF50",
-          warning: "#FB8C00",
+          error: "#E85A4F",
+          info: "#8E8D8A",
+          success: "#A2D4AB",
+          warning: "#E9C46A",
         },
         variables: {
           "border-color": "#000000",

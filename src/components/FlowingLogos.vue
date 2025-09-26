@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onMounted, onBeforeUnmount, ref } from "vue";
 
 type LogoItem = { src: string; alt?: string };
 
@@ -7,51 +7,63 @@ const props = withDefaults(
   defineProps<{
     title: string;
     logos: LogoItem[];
-    rows?: number; // how many horizontal lanes of logos
     speed?: number; // seconds to complete one loop
     opacity?: number; // background visibility
+    bandExtraPx?: number; // extra width added to the title width for the flowing band
   }>(),
   {
-    rows: 3,
     speed: 40,
     opacity: 0.2,
+    bandExtraPx: 240,
   },
 );
 
-// Build N lanes. Each lane has two identical tracks for a seamless loop.
-const lanes = computed(() => Array.from({ length: props.rows }, (_, i) => i));
+// measure title width -> drive band width to be "a bit bigger than title"
+const titleEl = ref<HTMLElement | null>(null);
+const titleWidth = ref(0);
+let ro: ResizeObserver | null = null;
 
-// Stagger speeds slightly per lane to avoid perfect sync.
-const laneDuration = (i: number) =>
-  Math.max(8, props.speed + (i % 2 === 0 ? i * 4 : -i * 3));
+onMounted(() => {
+  if (!titleEl.value) return;
+  const measure = () => {
+    if (!titleEl.value) return;
+    const rect = titleEl.value.getBoundingClientRect();
+    titleWidth.value = Math.round(rect.width);
+  };
+  measure();
+  ro = new ResizeObserver(measure);
+  ro.observe(titleEl.value);
+});
+
+onBeforeUnmount(() => {
+  ro?.disconnect();
+  ro = null;
+});
 </script>
 
 <template>
   <section class="flow-hero">
     <!-- flowing background -->
-    <div class="bg" :style="{ opacity: String(opacity) }" aria-hidden="true">
-      <div
-        v-for="laneIndex in lanes"
-        :key="`lane-${laneIndex}`"
-        class="lane"
-        :style="{ '--duration': `${laneDuration(laneIndex)}s` }"
-      >
+    <div
+      class="bg"
+      :style="{
+        opacity: String(props.opacity),
+        '--content-w': `${titleWidth}px`,
+        '--extra': `${props.bandExtraPx}px`,
+        '--duration': `${Math.max(8, props.speed)}s`,
+      }"
+      aria-hidden="true"
+    >
+      <!-- Single full-height lane -->
+      <div class="lane">
         <!-- Two tracks with same content for seamless loop -->
         <div class="track">
-          <div
-            class="logo"
-            v-for="(logo, i) in logos"
-            :key="`a-${laneIndex}-${i}`"
-          >
+          <div class="logo" v-for="(logo, i) in logos" :key="`a-${i}`">
             <img :src="logo.src" :alt="logo.alt ?? ''" loading="lazy" />
           </div>
         </div>
         <div class="track">
-          <div
-            class="logo"
-            v-for="(logo, i) in logos"
-            :key="`b-${laneIndex}-${i}`"
-          >
+          <div class="logo" v-for="(logo, i) in logos" :key="`b-${i}`">
             <img :src="logo.src" :alt="logo.alt ?? ''" loading="lazy" />
           </div>
         </div>
@@ -60,7 +72,7 @@ const laneDuration = (i: number) =>
 
     <!-- centered content -->
     <div class="content">
-      <h1 class="title">{{ title }}</h1>
+      <h1 class="title" ref="titleEl">{{ title }}</h1>
     </div>
   </section>
 </template>
@@ -73,33 +85,36 @@ const laneDuration = (i: number) =>
   display: grid;
   place-items: center;
   overflow: hidden;
-  isolation: isolate; /* keep background effects contained */
+  isolation: isolate;
 }
 
-/* background container */
+/* background container
+   - full component width available (100%)
+   - visually clamped to a bit wider than the title:
+     width = min(100%, titleWidth + extra) */
 .bg {
   position: absolute;
   inset: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, calc(var(--content-w, 640px) + var(--extra, 240px)));
   pointer-events: none;
   display: grid;
-  gap: 18px;
-  padding: 24px 0;
+  padding: 0; /* let the lane occupy full height */
   z-index: -1;
-  /* subtle darkening gradient for text readability */
   background: radial-gradient(
-    1000px 400px at 50% 20%,
+    900px 360px at 50% 20%,
     rgba(0, 0, 0, 0.25),
     transparent 70%
   );
 }
 
-/* One horizontal lane of logos */
+/* Single lane fills all available height */
 .lane {
-  --duration: 40s;
   position: relative;
   display: flex;
   width: 100%;
-  height: 96px;
+  height: 100%;
   align-items: center;
   overflow: hidden;
 }
@@ -109,7 +124,8 @@ const laneDuration = (i: number) =>
   display: inline-flex;
   gap: 16px;
   padding-inline: 16px;
-  animation: scroll var(--duration) linear infinite;
+  height: 100%;
+  animation: scroll var(--duration, 40s) linear infinite;
   will-change: transform;
 }
 
@@ -118,56 +134,37 @@ const laneDuration = (i: number) =>
   margin-inline-start: 16px; /* match the gap */
 }
 
-/* Slight vertical offsets per lane for visual variety */
-.lane:nth-child(odd) {
-  transform: translateY(0);
-}
-.lane:nth-child(2n) {
-  transform: translateY(0);
-}
-
-/* Logo item box */
+/* Logo item: auto width, full lane height */
 .logo {
   flex: 0 0 auto;
-  width: 140px;
-  height: 80px;
+  height: 100%;
   display: grid;
   place-items: center;
-  border-radius: 12px;
-  background: color-mix(
-    in srgb,
-    var(--v-theme-surface, #0b0b0b) 12%,
-    transparent
-  );
-  box-shadow: 0 0 0 1px
-    color-mix(in srgb, var(--v-theme-outline-variant, #ffffff) 20%, transparent)
-    inset;
-  backdrop-filter: saturate(110%) contrast(105%);
 }
 
+/* Image preserves ratio and takes full height */
 .logo img {
-  max-width: 100%;
-  max-height: 70%;
+  height: 100%;
+  width: auto;
   object-fit: contain;
-  filter: saturate(110%) contrast(105%);
   display: block;
+  filter: saturate(110%) contrast(105%);
 }
 
-/* Animation: move content fully across and repeat */
+/* Animation */
 @keyframes scroll {
   from {
     transform: translateX(0);
   }
   to {
-    /* -100% moves this track completely out, revealing the following twin track */
     transform: translateX(-100%);
   }
 }
 
-/* Reduce animation for users preferring less motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .track {
-    animation-duration: calc(var(--duration) * 4);
+    animation-duration: calc(var(--duration, 40s) * 4);
   }
 }
 

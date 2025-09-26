@@ -12,7 +12,10 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.8",
     "@fontsource/roboto": "5.2.6",
+    "@fontsource/roboto-mono": "^5.2.8",
+    "@fontsource/vt323": "^5.2.7",
     "@mdi/font": "7.4.47",
     "pinia": "^3.0.3",
     "vue": "^3.5.17"

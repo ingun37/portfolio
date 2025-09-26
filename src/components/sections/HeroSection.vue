@@ -1,59 +1,73 @@
 <template>
   <section class="hero">
-    <div class="hero-bg">
-      <div class="collage">
-        <img class="logo" src="@/assets/logos/haskell.svg" alt="haskell" />
-        <img class="logo" src="@/assets/logos/c++.svg" alt="c++" />
-        <img class="logo" src="@/assets/logos/ts.svg" alt="ts" />
-        <img class="logo" src="@/assets/logos/c_sharp.svg" alt="c#" />
-        <img class="logo" src="@/assets/logos/swift.svg" alt="swift" />
-        <img class="logo" src="@/assets/logos/rust.svg" alt="rust" />
-        <img class="logo" src="@/assets/logos/f_sharp.svg" alt="f#" />
-        <img class="logo" src="@/assets/logos/python.svg" alt="python" />
-        <img class="logo" src="@/assets/logos/ruby.svg" alt="ruby" />
-        <img class="logo" src="@/assets/logos/webgpu.svg" alt="webgpu" />
-        <img class="logo" src="@/assets/logos/threejs.svg" alt="threejs" />
-      </div>
+    <div
+      class="d-flex flex-column justify-center align-center text-center w-100"
+    >
+      <ScrollFade direction="up">
+        <p>Get to know</p>
+      </ScrollFade>
 
-      <div class="overlay" />
-      <v-container class="fill-height">
-        <div
-          class="d-flex flex-column justify-center align-center text-center w-100"
-        >
-          <ScrollFade direction="up">
-            <div class="text-overline text-white mb-4">Introducing</div>
-          </ScrollFade>
+      <ScrollFade direction="up" :delay="'80ms'">
+        <h1>INGUN JON</h1>
+      </ScrollFade>
 
-          <ScrollFade direction="up" :delay="'80ms'">
-            <h1 class="display-2 font-weight-black text-white hero-title">
-              Nova X
-            </h1>
-          </ScrollFade>
+      <ScrollFade direction="up" :delay="'120ms'">
+        <p>as a</p>
+      </ScrollFade>
 
-          <ScrollFade direction="up" :delay="'160ms'">
-            <p class="text-h6 text-white text-high-emphasis mb-8">
-              Bold design. Pro‑grade performance. Effortless experience.
-            </p>
-          </ScrollFade>
-
-          <ScrollFade direction="up" :delay="'220ms'">
-            <div class="d-flex ga-4">
-              <v-btn size="large" color="primary" class="px-6" rounded="lg"
-                >Buy</v-btn
-              >
-              <v-btn size="large" variant="outlined" class="px-6" rounded="lg"
-                >Learn more</v-btn
-              >
-            </div>
-          </ScrollFade>
+      <ScrollFade direction="up" :delay="'160ms'">
+        <div class="d-flex flex-column mb-6">
+          <ToonCard
+            text1="Programming"
+            text2="Language"
+            text3="Expert"
+            :start-color="'#e86fbf'"
+            :end-color="'#f0a8dc'"
+            class="mb-1"
+          />
+          <ToonCard
+            text1="Computer"
+            text2="Grapahics"
+            text3="Engineer"
+            :start-color="'#67cfe0'"
+            :end-color="'#37bddd'"
+            class="mb-1"
+          />
+          <ToonCard
+            text1=""
+            text2="Game"
+            text3="Developer"
+            :start-color="'#f2e37a'"
+            :end-color="'#e8c45c'"
+            class="mb-1"
+          />
+          <ToonCard
+            text1=""
+            text2="Application"
+            text3="Developer"
+            :start-color="'#86de78'"
+            :end-color="'#4fc56d'"
+            class="mb-1"
+          />
+          <ToonCard
+            text1=""
+            text2="Devops"
+            text3="Engineer"
+            :start-color="'#a08fe6'"
+            :end-color="'#836fde'"
+            class="mb-1"
+          />
         </div>
-      </v-container>
+      </ScrollFade>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-import ScrollFade from "@/components/ScrollFade.vue";
+// ... existing code ...
+import ToonCard from "@/components/ToonCard.vue";
+
+// ... existing code ...
 </script>
 
 <style scoped>
@@ -63,44 +77,15 @@ import ScrollFade from "@/components/ScrollFade.vue";
   height: 100svh;
   max-height: 100svh;
   overflow: hidden;
+  display: grid; /* center child vertically and horizontally */
+  place-items: center; /* grid centering */
 }
+
 .hero-bg :deep(img) {
   filter: saturate(110%) contrast(105%);
 }
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    1200px 600px at 50% 20%,
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.65)
-  );
-}
+
 .hero-title {
   letter-spacing: -0.02em;
-}
-/* Responsive grid of logos */
-.collage {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-auto-rows: minmax(110px, 1fr);
-  gap: 28px;
-  padding: 48px;
-  opacity: 0.25; /* Subtle */
-  filter: saturate(110%) contrast(105%);
-}
-/* Each logo tile */
-.logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: color-mix(in srgb, var(--v-theme-surface) 10%, transparent);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 0 0 1px
-    color-mix(in srgb, var(--v-theme-outline-variant) 25%, transparent) inset;
-  mix-blend-mode: screen; /* Helps white-on-dark pop; adjust if needed */
 }
 </style>

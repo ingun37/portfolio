@@ -18,6 +18,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     ScrollFade: typeof import('./components/ScrollFade.vue')['default']
     StickyShowcase: typeof import('./components/sections/StickyShowcase.vue')['default']
+    ToonCard: typeof import('./components/ToonCard.vue')['default']
     VideoSection: typeof import('./components/sections/VideoSection.vue')['default']
   }
 }
