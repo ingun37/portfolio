@@ -33,6 +33,13 @@ export default createVuetify({
           info: "#8E8D8A",
           success: "#A2D4AB",
           warning: "#E9C46A",
+          "pink-start": "#e86fbf",
+          "pink-end": "#f59898",
+          "pink-fade": "#fac0e7",
+          "blue-start": "#67cfe0",
+          "blue-end": "#37bddd",
+          "yellow-start": "#f2e37a",
+          "yellow-end": "#e8c45c",
         },
         variables: {
           "border-color": "#000000",

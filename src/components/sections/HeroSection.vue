@@ -21,8 +21,8 @@
                 text1="Programming"
                 text2="Language"
                 text3="Expert"
-                :start-color="'#e86fbf'"
-                :end-color="'#f0a8dc'"
+                :start-color="theme.current.value.colors['pink-start']"
+                :end-color="theme.current.value.colors['pink-end']"
               />
             </v-col>
             <v-col cols="12">
@@ -31,8 +31,8 @@
                 text1="Computer"
                 text2="Grapahics"
                 text3="Engineer"
-                :start-color="'#67cfe0'"
-                :end-color="'#37bddd'"
+                :start-color="theme.current.value.colors['blue-start']"
+                :end-color="theme.current.value.colors['blue-end']"
               />
             </v-col>
             <v-col cols="12">
@@ -41,8 +41,8 @@
                 text1=""
                 text2="Game"
                 text3="Developer"
-                :start-color="'#f2e37a'"
-                :end-color="'#e8c45c'"
+                :start-color="theme.current.value.colors['yellow-start']"
+                :end-color="theme.current.value.colors['yellow-end']"
               />
             </v-col>
             <v-col cols="12">
@@ -75,7 +75,8 @@
 <script lang="ts" setup>
 // ... existing code ...
 import ToonCard from "@/components/ToonCard.vue";
-
+import { useTheme } from "vuetify/framework";
+const theme = useTheme();
 // ... existing code ...
 </script>
 

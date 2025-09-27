@@ -13,6 +13,7 @@ import _kotlin from "@/assets/logos/kotlin.svg";
 import _java from "@/assets/logos/java.svg";
 import _c from "@/assets/logos/c.svg";
 import _lua from "@/assets/logos/lua.svg";
+import { useTheme } from "vuetify/framework";
 const svgUrls = [
   _c,
   _cPlusPlus,
@@ -31,12 +32,7 @@ const svgUrls = [
 ];
 const handsOn = ref([
   {
-    text1: "I'm",
-    text2: "currently proficient",
-    text3: "in 6 languages",
-  },
-  {
-    text1: "But I've",
+    text1: "I've",
     text2: "learned, forgotten, and re-learned",
     text3: "20+ languages throughout my career.",
   },
@@ -54,51 +50,60 @@ const theoretical = ref([
     text2: "abstract algebra",
     text3: "and",
     text4: "category theory",
-    text5: "that is the mathematical foundation of the language design.",
-  },
-  {
-    text1:
-      "I read many textbooks regarding the theory of programming languages. One of which is",
-    text2: "Category Theory for Programmers - Bartosz Milewski",
-    text3: "and you can see my notes on",
-    text4: "here",
+    text5: "that is the mathematical foundation of the language theory.",
   },
 ]);
+const theoreticaLinks = ref<Array<{ href: string; label: string }>>([
+  {
+    href: "https://ingun37.github.io/answers/?sha1=b614f31d04b3bc2b3d23ee4337475251429e5a9f",
+    label: "Notes on Category Theory for Programmers - Bartosz Milewski",
+  },
+]);
+const theme = useTheme();
 </script>
 
 <template>
-  <h1>Language Expert</h1>
-  <v-container>
-    <v-row>
-      <v-col cols="12" md="6">
-        <ToonCardEx
-          title="Hands-on Experience"
-          :text-list="handsOn"
-        ></ToonCardEx>
-      </v-col>
-      <v-col cols="12" md="6">
-        <ToonCardEx
-          title="Theoretical Knowledge"
-          :text-list="theoretical"
-        ></ToonCardEx>
-      </v-col>
-    </v-row>
-  </v-container>
-  <div class="logo-banner" aria-label="Technology logos carousel">
-    <div class="track">
-      <div class="list">
-        <img
-          v-for="(src, i) in svgUrls"
-          :key="`a-${i}`"
-          class="logo"
-          :src="src"
-          :alt="`logo-${i + 1}`"
-          loading="lazy"
-          decoding="async"
-        />
+  <h1 class="mb-2">Language Expert</h1>
+  <v-sheet
+    class="d-flex flex-column bg-surface-variant justify-center align-center"
+  >
+    <v-container class="mb-2">
+      <v-row>
+        <v-col cols="12" md="6">
+          <ToonCardEx
+            title="Hands-on Experience"
+            :text-list="handsOn"
+            :start-color="theme.current.value.colors['blue-start']"
+            :end-color="theme.current.value.colors['blue-end']"
+          ></ToonCardEx>
+        </v-col>
+        <v-col cols="12" md="6">
+          <ToonCardEx
+            title="Theoretical Knowledge"
+            :text-list="theoretical"
+            :links="theoreticaLinks"
+            :start-color="theme.current.value.colors['yellow-start']"
+            :end-color="theme.current.value.colors['yellow-end']"
+          ></ToonCardEx>
+        </v-col>
+      </v-row>
+    </v-container>
+    <div class="logo-banner mb-2" aria-label="Technology logos carousel">
+      <div class="track">
+        <div class="list">
+          <img
+            v-for="(src, i) in svgUrls"
+            :key="`a-${i}`"
+            class="logo"
+            :src="src"
+            :alt="`logo-${i + 1}`"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
     </div>
-  </div>
+  </v-sheet>
 </template>
 
 <style scoped>
@@ -113,7 +118,7 @@ const theoretical = ref([
   display: flex;
   width: max-content;
   align-items: center;
-  gap: 24px;
+  gap: 40px;
   animation: scroll-x 30s linear infinite;
   will-change: transform;
 }
@@ -122,12 +127,12 @@ const theoretical = ref([
 .list {
   display: inline-flex;
   align-items: center;
-  gap: 24px;
+  gap: 40px;
 }
 
 /* Logo sizing: adjust height as needed */
 .logo {
-  height: 100px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -148,7 +153,7 @@ const theoretical = ref([
 /* Larger screens: slightly bigger logos */
 @media (min-width: 768px) {
   .logo {
-    height: 130px;
+    height: 90px;
   }
 }
 

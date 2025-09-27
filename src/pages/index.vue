@@ -3,10 +3,10 @@
     <Sect color="transparent">
       <HeroSection />
     </Sect>
-    <Sect color="#f5cee8">
+    <Sect :color="theme.current.value.colors['pink-fade']">
       <LanguageExpert />
     </Sect>
-    <Sect color="#3A506B">
+    <Sect color="transparent">
       <LanguageExpert />
     </Sect>
   </div>
@@ -17,7 +17,8 @@
 import { onMounted, onBeforeUnmount, ref } from "vue";
 import HeroSection from "@/components/sections/HeroSection.vue";
 import LanguageExpert from "@/components/sections/LanguageExpert.vue";
-
+import { useTheme } from "vuetify/framework";
+const theme = useTheme();
 const activeColor = ref<string>("#0B132B");
 
 let observer: IntersectionObserver | null = null;
