@@ -1,7 +1,7 @@
 <!-- src/components/ToonCard.vue -->
 <template>
   <v-card
-    class="toon-card"
+    class="toon-card pb-1"
     elevation="0"
     :ripple="false"
     rounded="lg"
@@ -9,7 +9,7 @@
     :style="gradientStyle"
   >
     <v-card-title class="font-weight-black">{{ title }}</v-card-title>
-    <v-card-text class="font-weight-black">
+    <v-card-text class="font-weight-black pb-0">
       <v-list
         lines="one"
         v-for="(item, idx) in textList"
@@ -25,20 +25,18 @@
         />
       </v-list>
     </v-card-text>
-    <v-card-actions
-      v-if="limitedLinks.length"
-      class="toon-card__links"
-      data-testid="toon-card-links"
-    >
+    <slot></slot>
+    <v-card-actions v-if="limitedLinks.length" class="p-0">
       <v-btn
         v-for="(link, i) in limitedLinks"
         :key="i"
         :href="link.href"
         target="_blank"
         rel="noopener noreferrer"
-        variant="tonal"
+        variant="elevated"
         size="small"
         color="primary"
+        prepend-icon="mdi-open-in-new"
       >
         {{ link.label }}
       </v-btn>

@@ -52,11 +52,14 @@ const theoretical = ref([
     text4: "category theory",
     text5: "that is the mathematical foundation of the language theory.",
   },
+  {
+    text1: "Checkout",
+  },
 ]);
 const theoreticaLinks = ref<Array<{ href: string; label: string }>>([
   {
     href: "https://ingun37.github.io/answers/?sha1=b614f31d04b3bc2b3d23ee4337475251429e5a9f",
-    label: "Notes on Category Theory for Programmers - Bartosz Milewski",
+    label: "Notes on Category Theory for Programmers (2019)",
   },
 ]);
 const theme = useTheme();
@@ -65,7 +68,7 @@ const theme = useTheme();
 <template>
   <h1 class="mb-2">Language Expert</h1>
   <v-sheet
-    class="d-flex flex-column bg-surface-variant justify-center align-center"
+    class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
     <v-container class="mb-2">
       <v-row>
@@ -75,7 +78,26 @@ const theme = useTheme();
             :text-list="handsOn"
             :start-color="theme.current.value.colors['blue-start']"
             :end-color="theme.current.value.colors['blue-end']"
-          ></ToonCardEx>
+          >
+            <div
+              class="logo-banner mb-2"
+              aria-label="Technology logos carousel"
+            >
+              <div class="track">
+                <div class="list">
+                  <img
+                    v-for="(src, i) in svgUrls"
+                    :key="`a-${i}`"
+                    class="logo"
+                    :src="src"
+                    :alt="`logo-${i + 1}`"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+          </ToonCardEx>
         </v-col>
         <v-col cols="12" md="6">
           <ToonCardEx
@@ -88,21 +110,6 @@ const theme = useTheme();
         </v-col>
       </v-row>
     </v-container>
-    <div class="logo-banner mb-2" aria-label="Technology logos carousel">
-      <div class="track">
-        <div class="list">
-          <img
-            v-for="(src, i) in svgUrls"
-            :key="`a-${i}`"
-            class="logo"
-            :src="src"
-            :alt="`logo-${i + 1}`"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
-    </div>
   </v-sheet>
 </template>
 
@@ -132,7 +139,7 @@ const theme = useTheme();
 
 /* Logo sizing: adjust height as needed */
 .logo {
-  height: 70px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -147,14 +154,7 @@ const theme = useTheme();
     transform: translateX(0);
   }
   to {
-    transform: translateX(-30%);
-  }
-}
-
-/* Larger screens: slightly bigger logos */
-@media (min-width: 768px) {
-  .logo {
-    height: 90px;
+    transform: translateX(-90%);
   }
 }
 
