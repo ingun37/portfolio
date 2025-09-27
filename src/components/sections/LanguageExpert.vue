@@ -136,7 +136,8 @@ const theme = useTheme();
   width: auto;
   object-fit: contain;
   display: block;
-  filter: saturate(110%) contrast(105%);
+  filter: saturate(110%) contrast(105%)
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8));
   opacity: 0.95;
 }
 
