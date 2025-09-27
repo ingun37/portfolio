@@ -51,8 +51,8 @@
                 text1=""
                 text2="Application"
                 text3="Developer"
-                :start-color="'#86de78'"
-                :end-color="'#4fc56d'"
+                :start-color="theme.current.value.colors['green-start']"
+                :end-color="theme.current.value.colors['green-end']"
               />
             </v-col>
             <v-col cols="12">
@@ -61,8 +61,8 @@
                 text1=""
                 text2="Devops"
                 text3="Engineer"
-                :start-color="'#a08fe6'"
-                :end-color="'#836fde'"
+                :start-color="theme.current.value.colors['purple-start']"
+                :end-color="theme.current.value.colors['purple-end']"
               />
             </v-col>
           </v-row>

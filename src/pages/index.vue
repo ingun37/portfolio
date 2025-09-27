@@ -6,8 +6,8 @@
     <Sect :color="theme.current.value.colors['pink-fade']">
       <LanguageExpert />
     </Sect>
-    <Sect color="transparent">
-      <LanguageExpert />
+    <Sect :color="theme.current.value.colors['blue-fade']">
+      <GraphicsEngineer />
     </Sect>
   </div>
 </template>

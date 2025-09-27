@@ -12,6 +12,7 @@ declare module 'vue' {
     CTASection: typeof import('./components/sections/CTASection.vue')['default']
     FeaturePanels: typeof import('./components/sections/FeaturePanels.vue')['default']
     FlowingLogos: typeof import('./components/FlowingLogos.vue')['default']
+    GraphicsEngineer: typeof import('./components/sections/GraphicsEngineer.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     HeroSection: typeof import('./components/sections/HeroSection.vue')['default']
     LanguageExpert: typeof import('./components/sections/LanguageExpert.vue')['default']

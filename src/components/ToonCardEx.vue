@@ -9,6 +9,7 @@
     :style="gradientStyle"
   >
     <v-card-title class="font-weight-black">{{ title }}</v-card-title>
+    <v-card-subtitle v-if="subtitle">{{ subtitle }}</v-card-subtitle>
     <v-card-text class="font-weight-black pb-0">
       <v-list
         lines="one"
@@ -51,6 +52,7 @@ import ToonCardRow from "@/components/ToonCardRow.vue";
 
 const props = defineProps<{
   title: string;
+  subtitle?: string;
   textList: {
     text1?: string;
     text2?: string;
