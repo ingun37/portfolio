@@ -21,6 +21,8 @@ declare module 'vue' {
     Sect: typeof import('./components/sections/Sect.vue')['default']
     StickyShowcase: typeof import('./components/sections/StickyShowcase.vue')['default']
     ToonCard: typeof import('./components/ToonCard.vue')['default']
+    ToonCardEx: typeof import('./components/ToonCardEx.vue')['default']
+    ToonCardRow: typeof import('./components/ToonCardRow.vue')['default']
     VideoSection: typeof import('./components/sections/VideoSection.vue')['default']
   }
 }

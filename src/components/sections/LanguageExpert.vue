@@ -29,7 +29,41 @@ const svgUrls = [
   _java,
   _lua,
 ];
-// ... existing code ...
+const handsOn = ref([
+  {
+    text1: "I'm",
+    text2: "currently proficient",
+    text3: "in 6 languages",
+  },
+  {
+    text1: "But I've",
+    text2: "learned, forgotten, and re-learned",
+    text3: "20+ languages throughout my career.",
+  },
+  {
+    text1: "I am",
+    text2: "not restricted",
+    text3:
+      "to any language. I can drop in any projects and language will not be a problem.",
+  },
+]);
+
+const theoretical = ref([
+  {
+    text1: "I'm knowledgeable in",
+    text2: "abstract algebra",
+    text3: "and",
+    text4: "category theory",
+    text5: "that is the mathematical foundation of the language design.",
+  },
+  {
+    text1:
+      "I read many textbooks regarding the theory of programming languages. One of which is",
+    text2: "Category Theory for Programmers - Bartosz Milewski",
+    text3: "and you can see my notes on",
+    text4: "here",
+  },
+]);
 </script>
 
 <template>
@@ -37,14 +71,16 @@ const svgUrls = [
   <v-container>
     <v-row>
       <v-col cols="12" md="6">
-        <v-card>
-          <v-card-title>Empirical Quality</v-card-title>
-        </v-card>
+        <ToonCardEx
+          title="Hands-on Experience"
+          :text-list="handsOn"
+        ></ToonCardEx>
       </v-col>
       <v-col cols="12" md="6">
-        <v-card>
-          <v-card-title>Theoretical Knowledge</v-card-title>
-        </v-card>
+        <ToonCardEx
+          title="Theoretical Knowledge"
+          :text-list="theoretical"
+        ></ToonCardEx>
       </v-col>
     </v-row>
   </v-container>
