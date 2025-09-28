@@ -64,6 +64,5 @@ onBeforeUnmount(() => {
 .page {
   /* Smooth transition between section colors */
   transition: background-color 500ms ease;
-  min-height: 100svh;
 }
 </style>

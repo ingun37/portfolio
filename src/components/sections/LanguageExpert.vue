@@ -71,6 +71,18 @@ const theoreticaLinks = ref<Array<{ href: string; label: string }>>([
     label: "Notes on Category Theory for Programmers (2019)",
   },
 ]);
+
+const diagram = ref([
+  {
+    text1:
+      "I can accurately represents any architecture, relation, and logic in diagrams",
+  },
+  {
+    text1: "I believe maintaining the diagram of the every source code is",
+    text2: "necessary",
+    text3: "part of the software development.",
+  },
+]);
 const theme = useTheme();
 </script>
 
@@ -83,10 +95,10 @@ const theme = useTheme();
       <v-row>
         <v-col cols="12" md="6">
           <ToonCardEx
-            title="Hands-on Experience"
+            title="No Language Barrier"
             :text-list="handsOn"
-            :start-color="theme.current.value.colors['blue-start']"
-            :end-color="theme.current.value.colors['blue-end']"
+            :start-color="theme.current.value.colors['pink-start']"
+            :end-color="theme.current.value.colors['pink-end']"
           >
             <SlidingLogoBanner
               class="mb-2"
@@ -104,14 +116,22 @@ const theme = useTheme();
             title="Theoretical Knowledge"
             :text-list="theoretical"
             :links="theoreticaLinks"
-            :start-color="theme.current.value.colors['yellow-start']"
-            :end-color="theme.current.value.colors['yellow-end']"
+            :start-color="theme.current.value.colors['blue-start']"
+            :end-color="theme.current.value.colors['blue-end']"
           ></ToonCardEx>
         </v-col>
         <v-col cols="12" md="6">
           <ToonCardEx
             title="Professional Functional Programmer"
             :text-list="functional"
+            :start-color="theme.current.value.colors['yellow-start']"
+            :end-color="theme.current.value.colors['yellow-end']"
+          ></ToonCardEx>
+        </v-col>
+        <v-col cols="12" md="6">
+          <ToonCardEx
+            title="Diagram Nerd"
+            :text-list="diagram"
             :start-color="theme.current.value.colors['green-start']"
             :end-color="theme.current.value.colors['green-end']"
           ></ToonCardEx>

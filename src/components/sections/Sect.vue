@@ -7,7 +7,7 @@ const props = defineProps<{
 <template>
   <section
     class="d-flex justify-center align-center w-100 sect flex-column"
-    style="height: 100svh"
+    style="min-height: 100svh"
     :data-color="props.color"
   >
     <slot />

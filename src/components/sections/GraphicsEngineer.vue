@@ -30,6 +30,12 @@ const outline = ref([
   },
 ]);
 
+const theoretical = ref([
+  {
+    text1: "I understand",
+  },
+]);
+
 const tools = ref([
   {
     text1: "My experties spans from",
@@ -61,6 +67,33 @@ const theme = useTheme();
       <v-row>
         <v-col cols="12" md="6">
           <ToonCardEx
+            title="APIs, Frameworks, and Engines"
+            :text-list="tools"
+            :start-color="theme.current.value.colors['pink-start']"
+            :end-color="theme.current.value.colors['pink-end']"
+          >
+            <SlidingLogoBanner
+              class="mb-2"
+              :images="svgUrls"
+              :height="40"
+              :gap="40"
+              :duration="30"
+              alt-prefix="logo"
+              aria-label="Technology logos carousel"
+            />
+          </ToonCardEx>
+        </v-col>
+        <v-col cols="12" md="6">
+          <ToonCardEx
+            title="Theoretical Knowledge"
+            :text-list="theoretical"
+            :start-color="theme.current.value.colors['blue-start']"
+            :end-color="theme.current.value.colors['blue-end']"
+          >
+          </ToonCardEx>
+        </v-col>
+        <v-col cols="12" md="6">
+          <ToonCardEx
             title="WebGL Depth Peeling"
             subtitle="CLO Virtual fashion, 2022 ~ "
             :text-list="depthPeeling"
@@ -74,27 +107,9 @@ const theme = useTheme();
             title="ThreeJS Contribution"
             :text-list="outline"
             :links="outlinePR"
-            :start-color="theme.current.value.colors['pink-start']"
-            :end-color="theme.current.value.colors['pink-end']"
-          ></ToonCardEx>
-        </v-col>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="APIs, Frameworks, and Engines"
-            :text-list="tools"
             :start-color="theme.current.value.colors['green-start']"
             :end-color="theme.current.value.colors['green-end']"
-          >
-            <SlidingLogoBanner
-              class="mb-2"
-              :images="svgUrls"
-              :height="40"
-              :gap="40"
-              :duration="30"
-              alt-prefix="logo"
-              aria-label="Technology logos carousel"
-            />
-          </ToonCardEx>
+          ></ToonCardEx>
         </v-col>
       </v-row>
     </v-container>
