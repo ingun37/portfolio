@@ -6,7 +6,7 @@ const depthPeeling = ref([
     text1: "I've implemented",
     text2: "accurate and robust",
     text3:
-      "depth peeling for the CLO-SET and CONNECT. It's contributed to the success of the product.",
+      "depth peeling for the CLO-SET and CONNECT, contributing to their commercial success.",
   },
 ]);
 
@@ -18,6 +18,20 @@ const outline = ref([
     text3: "THREEJS's outline pass, and",
     text4: "contributed",
     text5: "the open source project by fixing it.",
+  },
+]);
+
+const tools = ref([
+  {
+    text1: "My experties spans from",
+    text2: "low-level graphics API",
+    text3: "to",
+    text4: "high-level frameworks and engines",
+    text5: ", and from",
+    text6: "traditional",
+    text7: "to",
+    text8: "modern",
+    text9: "graphics pipeline",
   },
 ]);
 const outlinePR = ref<Array<{ href: string; label: string }>>([
@@ -53,6 +67,14 @@ const theme = useTheme();
             :links="outlinePR"
             :start-color="theme.current.value.colors['pink-start']"
             :end-color="theme.current.value.colors['pink-end']"
+          ></ToonCardEx>
+        </v-col>
+        <v-col cols="12" md="6">
+          <ToonCardEx
+            title="APIs, Frameworks, and Engines"
+            :text-list="tools"
+            :start-color="theme.current.value.colors['green-start']"
+            :end-color="theme.current.value.colors['green-end']"
           ></ToonCardEx>
         </v-col>
       </v-row>

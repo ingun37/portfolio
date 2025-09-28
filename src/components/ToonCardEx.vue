@@ -23,6 +23,10 @@
           :text3="item.text3"
           :text4="item.text4"
           :text5="item.text5"
+          :text6="item.text6"
+          :text7="item.text7"
+          :text8="item.text8"
+          :text9="item.text9"
         />
       </v-list>
     </v-card-text>
@@ -59,6 +63,10 @@ const props = defineProps<{
     text3?: string;
     text4?: string;
     text5?: string;
+    text6?: string;
+    text7?: string;
+    text8?: string;
+    text9?: string;
   }[];
   startColor?: string; // gradient start color
   endColor?: string; // gradient end color

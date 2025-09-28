@@ -13,6 +13,19 @@
   }}</span>
   <span v-if="text4" class="toon-card__gap" aria-hidden="true"></span>
   <span v-if="text5">{{ text5 }}</span>
+  <span v-if="text6" class="toon-card__gap" aria-hidden="true"></span>
+  <span v-if="text6" class="toon-card__part toon-card__part--highlight">{{
+    text6
+  }}</span>
+  <span v-if="text6" class="toon-card__gap" aria-hidden="true"></span>
+  <span v-if="text7">{{ text7 }}</span>
+
+  <span v-if="text8" class="toon-card__gap" aria-hidden="true"></span>
+  <span v-if="text8" class="toon-card__part toon-card__part--highlight">{{
+    text8
+  }}</span>
+  <span v-if="text8" class="toon-card__gap" aria-hidden="true"></span>
+  <span v-if="text9">{{ text9 }}</span>
 </template>
 
 <script lang="ts" setup>
@@ -22,6 +35,10 @@ const props = defineProps<{
   text3?: string;
   text4?: string;
   text5?: string;
+  text6?: string;
+  text7?: string;
+  text8?: string;
+  text9?: string;
 }>();
 </script>
 

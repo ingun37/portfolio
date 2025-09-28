@@ -56,6 +56,14 @@ const theoretical = ref([
     text1: "Checkout",
   },
 ]);
+
+const functional = ref([
+  {
+    text1: "I can professionally leverage the",
+    text2: "typeclasses",
+    text3: "to boost the productivity in any language.",
+  },
+]);
 const theoreticaLinks = ref<Array<{ href: string; label: string }>>([
   {
     href: "https://ingun37.github.io/answers/?sha1=b614f31d04b3bc2b3d23ee4337475251429e5a9f",
@@ -106,6 +114,14 @@ const theme = useTheme();
             :links="theoreticaLinks"
             :start-color="theme.current.value.colors['yellow-start']"
             :end-color="theme.current.value.colors['yellow-end']"
+          ></ToonCardEx>
+        </v-col>
+        <v-col cols="12" md="6">
+          <ToonCardEx
+            title="Professional Functional Programmer"
+            :text-list="functional"
+            :start-color="theme.current.value.colors['green-start']"
+            :end-color="theme.current.value.colors['green-end']"
           ></ToonCardEx>
         </v-col>
       </v-row>
