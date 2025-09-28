@@ -3,10 +3,10 @@
     <Sect color="transparent">
       <HeroSection />
     </Sect>
-    <Sect :color="theme.current.value.colors['pink-fade']">
+    <Sect color="transparent">
       <LanguageExpert />
     </Sect>
-    <Sect :color="theme.current.value.colors['blue-fade']">
+    <Sect color="transparent">
       <GraphicsEngineer />
     </Sect>
   </div>

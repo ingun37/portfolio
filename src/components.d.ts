@@ -20,6 +20,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     ScrollFade: typeof import('./components/ScrollFade.vue')['default']
     Sect: typeof import('./components/sections/Sect.vue')['default']
+    SlidingLogoBanner: typeof import('./components/SlidingLogoBanner.vue')['default']
     StickyShowcase: typeof import('./components/sections/StickyShowcase.vue')['default']
     ToonCard: typeof import('./components/ToonCard.vue')['default']
     ToonCardEx: typeof import('./components/ToonCardEx.vue')['default']

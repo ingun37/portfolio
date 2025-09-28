@@ -1,6 +1,15 @@
 <script setup lang="ts">
+import _three from "@/assets/logos/threejs.svg";
+import _unity from "@/assets/logos/unity.svg";
+import _webgpu from "@/assets/logos/webgpu.svg";
+import _opengl from "@/assets/logos/opengl.svg";
+import _babylon from "@/assets/logos/babylon.svg";
+import _directx from "@/assets/logos/directx.svg";
+import _metal from "@/assets/logos/metal.svg";
 import { useTheme } from "vuetify/framework";
+import SlidingLogoBanner from "@/components/SlidingLogoBanner.vue";
 
+const svgUrls = [_three, _unity, _webgpu, _opengl, _babylon, _directx, _metal];
 const depthPeeling = ref([
   {
     text1: "I've implemented",
@@ -75,7 +84,17 @@ const theme = useTheme();
             :text-list="tools"
             :start-color="theme.current.value.colors['green-start']"
             :end-color="theme.current.value.colors['green-end']"
-          ></ToonCardEx>
+          >
+            <SlidingLogoBanner
+              class="mb-2"
+              :images="svgUrls"
+              :height="40"
+              :gap="40"
+              :duration="30"
+              alt-prefix="logo"
+              aria-label="Technology logos carousel"
+            />
+          </ToonCardEx>
         </v-col>
       </v-row>
     </v-container>

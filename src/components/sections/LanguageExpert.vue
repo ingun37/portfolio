@@ -14,6 +14,7 @@ import _java from "@/assets/logos/java.svg";
 import _c from "@/assets/logos/c.svg";
 import _lua from "@/assets/logos/lua.svg";
 import { useTheme } from "vuetify/framework";
+import SlidingLogoBanner from "@/components/SlidingLogoBanner.vue";
 const svgUrls = [
   _c,
   _cPlusPlus,
@@ -87,24 +88,15 @@ const theme = useTheme();
             :start-color="theme.current.value.colors['blue-start']"
             :end-color="theme.current.value.colors['blue-end']"
           >
-            <div
-              class="logo-banner mb-2"
+            <SlidingLogoBanner
+              class="mb-2"
+              :images="svgUrls"
+              :height="40"
+              :gap="40"
+              :duration="30"
+              alt-prefix="logo"
               aria-label="Technology logos carousel"
-            >
-              <div class="track">
-                <div class="list">
-                  <img
-                    v-for="(src, i) in svgUrls"
-                    :key="`a-${i}`"
-                    class="logo"
-                    :src="src"
-                    :alt="`logo-${i + 1}`"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-            </div>
+            />
           </ToonCardEx>
         </v-col>
         <v-col cols="12" md="6">
@@ -129,55 +121,4 @@ const theme = useTheme();
   </v-sheet>
 </template>
 
-<style scoped>
-.logo-banner {
-  width: 100%;
-  overflow: hidden;
-  padding-block: 8px;
-}
-
-/* The track contains two identical lists for seamless loop */
-.track {
-  display: flex;
-  width: max-content;
-  align-items: center;
-  gap: 40px;
-  animation: scroll-x 30s linear infinite;
-  will-change: transform;
-}
-
-/* Each list is a row of logos */
-.list {
-  display: inline-flex;
-  align-items: center;
-  gap: 40px;
-}
-
-/* Logo sizing: adjust height as needed */
-.logo {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  filter: saturate(110%) contrast(105%)
-    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8));
-  opacity: 0.95;
-}
-
-/* Continuous scroll by shifting half the track width */
-@keyframes scroll-x {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-90%);
-  }
-}
-
-/* Respect reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .track {
-    animation-duration: 120s;
-  }
-}
-</style>
+<style scoped></style>

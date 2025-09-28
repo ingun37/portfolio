@@ -101,7 +101,14 @@ const gradientStyle = computed(() => {
     filter 120ms ease;
   user-select: none;
 }
-
+.toon-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px 10px 16px 8px;
+  box-shadow: inset -9px -12px 0 rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
 /* Hover wobble and chunkier shadow */
 .toon-card:hover {
   transform: translate(-2px, -2px) rotate(-0.8deg) skew(-2deg);
