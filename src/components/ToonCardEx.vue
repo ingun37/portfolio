@@ -17,17 +17,7 @@
         :key="idx"
         style="background-color: transparent"
       >
-        <ToonCardRow
-          :text1="item.text1"
-          :text2="item.text2"
-          :text3="item.text3"
-          :text4="item.text4"
-          :text5="item.text5"
-          :text6="item.text6"
-          :text7="item.text7"
-          :text8="item.text8"
-          :text9="item.text9"
-        />
+        <ToonCardRow :texts="item.texts" />
       </v-list>
     </v-card-text>
     <slot></slot>
@@ -58,15 +48,7 @@ const props = defineProps<{
   title: string;
   subtitle?: string;
   textList: {
-    text1?: string;
-    text2?: string;
-    text3?: string;
-    text4?: string;
-    text5?: string;
-    text6?: string;
-    text7?: string;
-    text8?: string;
-    text9?: string;
+    texts: string[];
   }[];
   startColor?: string; // gradient start color
   endColor?: string; // gradient end color

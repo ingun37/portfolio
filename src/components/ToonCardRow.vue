@@ -1,45 +1,27 @@
 <!-- src/components/ToonCardRow.vue -->
 <template>
-  <span v-if="text1">{{ text1 }}</span>
-  <span v-if="text2" class="toon-card__gap" aria-hidden="true"></span>
-  <span v-if="text2" class="toon-card__part toon-card__part--highlight">{{
-    text2
-  }}</span>
-  <span v-if="text2" class="toon-card__gap" aria-hidden="true"></span>
-  <span v-if="text3">{{ text3 }}</span>
-  <span v-if="text4" class="toon-card__gap" aria-hidden="true"></span>
-  <span v-if="text4" class="toon-card__part toon-card__part--highlight">{{
-    text4
-  }}</span>
-  <span v-if="text4" class="toon-card__gap" aria-hidden="true"></span>
-  <span v-if="text5">{{ text5 }}</span>
-  <span v-if="text6" class="toon-card__gap" aria-hidden="true"></span>
-  <span v-if="text6" class="toon-card__part toon-card__part--highlight">{{
-    text6
-  }}</span>
-  <span v-if="text6" class="toon-card__gap" aria-hidden="true"></span>
-  <span v-if="text7">{{ text7 }}</span>
+  <template v-for="(text, idx) in texts" :key="idx">
+    <template v-if="text">
+      <span v-if="isEven(idx)" class="toon-card__gap" aria-hidden="true"></span>
+      <span
+        v-if="isEven(idx)"
+        class="toon-card__part toon-card__part--highlight"
+      >
+        {{ text }}
+      </span>
+      <span v-if="isEven(idx)" class="toon-card__gap" aria-hidden="true"></span>
 
-  <span v-if="text8" class="toon-card__gap" aria-hidden="true"></span>
-  <span v-if="text8" class="toon-card__part toon-card__part--highlight">{{
-    text8
-  }}</span>
-  <span v-if="text8" class="toon-card__gap" aria-hidden="true"></span>
-  <span v-if="text9">{{ text9 }}</span>
+      <span v-else>{{ text }}</span>
+    </template>
+  </template>
 </template>
 
 <script lang="ts" setup>
 const props = defineProps<{
-  text1?: string;
-  text2?: string;
-  text3?: string;
-  text4?: string;
-  text5?: string;
-  text6?: string;
-  text7?: string;
-  text8?: string;
-  text9?: string;
+  texts?: string[];
 }>();
+
+const isEven = (idx: number) => (idx + 1) % 2 === 0;
 </script>
 
 <style scoped>

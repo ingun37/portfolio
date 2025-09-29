@@ -12,43 +12,62 @@ import SlidingLogoBanner from "@/components/SlidingLogoBanner.vue";
 const svgUrls = [_three, _unity, _webgpu, _opengl, _babylon, _directx, _metal];
 const depthPeeling = ref([
   {
-    text1: "I've implemented",
-    text2: "accurate and robust",
-    text3:
+    texts: [
+      "I've implemented",
+      "accurate and robust",
       "depth peeling for the CLO-SET and CONNECT, contributing to their commercial success.",
+    ],
   },
 ]);
-
+// ... existing code ...
 const outline = ref([
   {
-    text1:
+    texts: [
       "I've detected a problem in the probability density function that is being used by the",
-    text2: "widely used",
-    text3: "THREEJS's outline pass, and",
-    text4: "contributed",
-    text5: "the open source project by fixing it.",
+      "widely used",
+      "THREEJS's outline pass, and",
+      "contributed",
+      "the open source project by fixing it.",
+    ],
   },
 ]);
-
+// ... existing code ...
 const theoretical = ref([
   {
-    text1: "I understand",
+    texts: [
+      "Throughout my career, I've worked on",
+      "PBR",
+      ",",
+      "skinning",
+      ",",
+      "animation",
+      ",",
+      "vfx",
+      ",",
+      "antialiasing",
+      ",",
+      "polygon reduction",
+      ", etc. as either native implementation or high-level adaptation or both.",
+    ],
+  },
+]);
+// ... existing code ...
+const tools = ref([
+  {
+    texts: [
+      "My experties spans from",
+      "low-level graphics API",
+      "to",
+      "high-level frameworks and engines",
+      ", and from",
+      "traditional",
+      "to",
+      "modern",
+      "graphics pipeline",
+    ],
   },
 ]);
 
-const tools = ref([
-  {
-    text1: "My experties spans from",
-    text2: "low-level graphics API",
-    text3: "to",
-    text4: "high-level frameworks and engines",
-    text5: ", and from",
-    text6: "traditional",
-    text7: "to",
-    text8: "modern",
-    text9: "graphics pipeline",
-  },
-]);
 const outlinePR = ref<Array<{ href: string; label: string }>>([
   {
     href: "https://github.com/mrdoob/three.js/pull/24262",

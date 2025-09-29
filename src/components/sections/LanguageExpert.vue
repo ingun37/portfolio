@@ -33,38 +33,46 @@ const svgUrls = [
 ];
 const handsOn = ref([
   {
-    text1: "I've",
-    text2: "learned, forgotten, and re-learned",
-    text3: "20+ languages throughout my career.",
+    texts: [
+      "I've",
+      "learned, forgotten, and re-learned",
+      "20+ languages throughout my career.",
+    ],
   },
   {
-    text1: "I am",
-    text2: "not restricted",
-    text3:
+    texts: [
+      "I am",
+      "not restricted",
       "to any language. I can drop in any projects and language will not be a problem.",
+    ],
   },
 ]);
 
 const theoretical = ref([
   {
-    text1: "I'm knowledgeable in",
-    text2: "abstract algebra",
-    text3: "and",
-    text4: "category theory",
-    text5: "that is the mathematical foundation of the language theory.",
+    texts: [
+      "I'm knowledgeable in",
+      "abstract algebra",
+      "and",
+      "category theory",
+      "that is the mathematical foundation of the language theory.",
+    ],
   },
   {
-    text1: "Checkout",
+    texts: ["Checkout"],
   },
 ]);
 
 const functional = ref([
   {
-    text1: "I can professionally leverage the",
-    text2: "typeclasses",
-    text3: "to boost the productivity in any language.",
+    texts: [
+      "I can professionally leverage the",
+      "typeclasses",
+      "to boost the productivity in any language.",
+    ],
   },
 ]);
+
 const theoreticaLinks = ref<Array<{ href: string; label: string }>>([
   {
     href: "https://ingun37.github.io/answers/?sha1=b614f31d04b3bc2b3d23ee4337475251429e5a9f",
@@ -74,13 +82,16 @@ const theoreticaLinks = ref<Array<{ href: string; label: string }>>([
 
 const diagram = ref([
   {
-    text1:
+    texts: [
       "I can accurately represents any architecture, relation, and logic in diagrams",
+    ],
   },
   {
-    text1: "I believe maintaining the diagram of the every source code is",
-    text2: "necessary",
-    text3: "part of the software development.",
+    texts: [
+      "I believe maintaining the diagram of the every source code is",
+      "necessary",
+      "part of the software development.",
+    ],
   },
 ]);
 const theme = useTheme();
