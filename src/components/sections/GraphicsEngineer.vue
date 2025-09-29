@@ -7,7 +7,6 @@ import _babylon from "@/assets/logos/babylon.svg";
 import _directx from "@/assets/logos/directx.svg";
 import _metal from "@/assets/logos/metal.svg";
 import { useTheme } from "vuetify/framework";
-import SlidingLogoBanner from "@/components/SlidingLogoBanner.vue";
 
 const svgUrls = [_three, _unity, _webgpu, _opengl, _babylon, _directx, _metal];
 const depthPeeling = ref([
@@ -70,18 +69,6 @@ const tools = ref([
   },
 ]);
 
-const nvrhi = ref([
-  {
-    texts: [
-      "Currently I'm actively developing a",
-      "WebGPU backend",
-      "for",
-      "NVRHI",
-      ", NVIDIA's open source rendering hardware interface, to use it on my company's upcoming web application.",
-    ],
-  },
-]);
-
 const outlinePR = ref<Array<{ href: string; label: string }>>([
   {
     href: "https://github.com/mrdoob/three.js/pull/24262",
@@ -130,9 +117,20 @@ const items = computed(() => [
   {
     props: {
       title: "WebGPU Backend for NVRHI",
+      subtitle: "CLO Virtual Fashion, 2025 ~",
       startColor: theme.current.value.colors["purple-start"],
       endColor: theme.current.value.colors["purple-end"],
-      textList: nvrhi.value,
+      textList: [
+        {
+          texts: [
+            "I'm currently actively developing a",
+            "WebGPU backend",
+            "for",
+            "NVRHI",
+            ", NVIDIA's open source rendering hardware interface, to enable the web support through WebAssembly",
+          ],
+        },
+      ],
     },
   },
 ]);
