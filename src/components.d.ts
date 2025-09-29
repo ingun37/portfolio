@@ -12,6 +12,7 @@ declare module 'vue' {
     CTASection: typeof import('./components/sections/CTASection.vue')['default']
     FeaturePanels: typeof import('./components/sections/FeaturePanels.vue')['default']
     FlowingLogos: typeof import('./components/FlowingLogos.vue')['default']
+    GameDeveolper: typeof import('./components/sections/GameDeveolper.vue')['default']
     GraphicsEngineer: typeof import('./components/sections/GraphicsEngineer.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     HeroSection: typeof import('./components/sections/HeroSection.vue')['default']
@@ -25,6 +26,7 @@ declare module 'vue' {
     ToonCard: typeof import('./components/ToonCard.vue')['default']
     ToonCardEx: typeof import('./components/ToonCardEx.vue')['default']
     ToonCardRow: typeof import('./components/ToonCardRow.vue')['default']
+    ToonCardTable: typeof import('./components/ToonCardTable.vue')['default']
     VideoSection: typeof import('./components/sections/VideoSection.vue')['default']
   }
 }

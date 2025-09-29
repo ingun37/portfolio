@@ -43,8 +43,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 import ToonCardRow from "@/components/ToonCardRow.vue";
-
-const props = defineProps<{
+export type ToonCardProps = {
   title: string;
   subtitle?: string;
   textList: {
@@ -53,7 +52,8 @@ const props = defineProps<{
   startColor?: string; // gradient start color
   endColor?: string; // gradient end color
   links?: Array<{ href: string; label: string }>; // up to 3 external links
-}>();
+};
+const props = defineProps<ToonCardProps>();
 const limitedLinks = computed(() => (props.links ?? []).slice(0, 3));
 
 // Fallback gradient palette to keep previous feel without CSS classes

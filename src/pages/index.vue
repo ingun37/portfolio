@@ -9,6 +9,9 @@
     <Sect color="transparent">
       <GraphicsEngineer />
     </Sect>
+    <Sect color="transparent">
+      <GameDeveolper :items="[1, 2, 3, 4, 5, 6]" />
+    </Sect>
   </div>
 </template>
 
@@ -18,6 +21,7 @@ import { onMounted, onBeforeUnmount, ref } from "vue";
 import HeroSection from "@/components/sections/HeroSection.vue";
 import LanguageExpert from "@/components/sections/LanguageExpert.vue";
 import { useTheme } from "vuetify/framework";
+import GameDeveolper from "@/components/sections/GameDeveolper.vue";
 const theme = useTheme();
 const activeColor = ref<string>("#0B132B");
 

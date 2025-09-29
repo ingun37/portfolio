@@ -85,10 +85,57 @@ const nvrhi = ref([
 const outlinePR = ref<Array<{ href: string; label: string }>>([
   {
     href: "https://github.com/mrdoob/three.js/pull/24262",
-    label: "probability density function correction (2022)",
+    label: "probability density function correction",
   },
 ]);
 const theme = useTheme();
+
+const items = computed(() => [
+  {
+    props: {
+      title: "APIs, Frameworks, and Engines",
+      startColor: theme.current.value.colors["pink-start"],
+      endColor: theme.current.value.colors["pink-end"],
+      textList: tools.value,
+    },
+    svgUrls,
+  },
+  {
+    props: {
+      title: "Theoretical Knowledge",
+      startColor: theme.current.value.colors["blue-start"],
+      endColor: theme.current.value.colors["blue-end"],
+      textList: theoretical.value,
+    },
+  },
+  {
+    props: {
+      title: "Depth Peeling",
+      subtitle: "CLO Virtual Fashion, 2022 ~ ",
+      startColor: theme.current.value.colors["yellow-start"],
+      endColor: theme.current.value.colors["yellow-end"],
+      textList: depthPeeling.value,
+    },
+  },
+  {
+    props: {
+      title: "OpenSource Contribution",
+      subtitle: "ThreeJS, 2022",
+      startColor: theme.current.value.colors["green-start"],
+      endColor: theme.current.value.colors["green-end"],
+      textList: outline.value,
+      links: outlinePR.value,
+    },
+  },
+  {
+    props: {
+      title: "WebGPU Backend for NVRHI",
+      startColor: theme.current.value.colors["purple-start"],
+      endColor: theme.current.value.colors["purple-end"],
+      textList: nvrhi.value,
+    },
+  },
+]);
 </script>
 
 <template>
@@ -96,64 +143,7 @@ const theme = useTheme();
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
-    <v-container class="mb-2">
-      <v-row>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="APIs, Frameworks, and Engines"
-            :text-list="tools"
-            :start-color="theme.current.value.colors['pink-start']"
-            :end-color="theme.current.value.colors['pink-end']"
-          >
-            <SlidingLogoBanner
-              class="mb-2"
-              :images="svgUrls"
-              :height="40"
-              :gap="40"
-              :duration="30"
-              alt-prefix="logo"
-              aria-label="Technology logos carousel"
-            />
-          </ToonCardEx>
-        </v-col>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="Theoretical Knowledge"
-            :text-list="theoretical"
-            :start-color="theme.current.value.colors['blue-start']"
-            :end-color="theme.current.value.colors['blue-end']"
-          >
-          </ToonCardEx>
-        </v-col>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="Depth Peeling"
-            subtitle="CLO Virtual fashion, 2022 ~ "
-            :text-list="depthPeeling"
-            :start-color="theme.current.value.colors['yellow-start']"
-            :end-color="theme.current.value.colors['yellow-end']"
-          >
-          </ToonCardEx>
-        </v-col>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="OpenSource Contribution"
-            :text-list="outline"
-            :links="outlinePR"
-            :start-color="theme.current.value.colors['green-start']"
-            :end-color="theme.current.value.colors['green-end']"
-          ></ToonCardEx>
-        </v-col>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="WebGPU Backend for NVRHI"
-            :text-list="nvrhi"
-            :start-color="theme.current.value.colors['purple-start']"
-            :end-color="theme.current.value.colors['purple-end']"
-          ></ToonCardEx>
-        </v-col>
-      </v-row>
-    </v-container>
+    <ToonCardTable :items="items" />
   </v-sheet>
 </template>
 

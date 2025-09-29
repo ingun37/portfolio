@@ -95,6 +95,43 @@ const diagram = ref([
   },
 ]);
 const theme = useTheme();
+
+const items = computed(() => [
+  {
+    props: {
+      title: "No Language Barrier",
+      startColor: theme.current.value.colors["pink-start"],
+      endColor: theme.current.value.colors["pink-end"],
+      textList: handsOn.value,
+    },
+    svgUrls,
+  },
+  {
+    props: {
+      title: "Theoretical Knowledge",
+      startColor: theme.current.value.colors["blue-start"],
+      endColor: theme.current.value.colors["blue-end"],
+      textList: theoretical.value,
+      links: theoreticaLinks.value,
+    },
+  },
+  {
+    props: {
+      title: "Professional Functional Programmer",
+      startColor: theme.current.value.colors["yellow-start"],
+      endColor: theme.current.value.colors["yellow-end"],
+      textList: functional.value,
+    },
+  },
+  {
+    props: {
+      title: "Diagram Nerd",
+      startColor: theme.current.value.colors["green-start"],
+      endColor: theme.current.value.colors["green-end"],
+      textList: diagram.value,
+    },
+  },
+]);
 </script>
 
 <template>
@@ -102,53 +139,7 @@ const theme = useTheme();
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
-    <v-container class="mb-2">
-      <v-row>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="No Language Barrier"
-            :text-list="handsOn"
-            :start-color="theme.current.value.colors['pink-start']"
-            :end-color="theme.current.value.colors['pink-end']"
-          >
-            <SlidingLogoBanner
-              class="mb-2"
-              :images="svgUrls"
-              :height="40"
-              :gap="40"
-              :duration="30"
-              alt-prefix="logo"
-              aria-label="Technology logos carousel"
-            />
-          </ToonCardEx>
-        </v-col>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="Theoretical Knowledge"
-            :text-list="theoretical"
-            :links="theoreticaLinks"
-            :start-color="theme.current.value.colors['blue-start']"
-            :end-color="theme.current.value.colors['blue-end']"
-          ></ToonCardEx>
-        </v-col>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="Professional Functional Programmer"
-            :text-list="functional"
-            :start-color="theme.current.value.colors['yellow-start']"
-            :end-color="theme.current.value.colors['yellow-end']"
-          ></ToonCardEx>
-        </v-col>
-        <v-col cols="12" md="6">
-          <ToonCardEx
-            title="Diagram Nerd"
-            :text-list="diagram"
-            :start-color="theme.current.value.colors['green-start']"
-            :end-color="theme.current.value.colors['green-end']"
-          ></ToonCardEx>
-        </v-col>
-      </v-row>
-    </v-container>
+    <ToonCardTable :items="items" />
   </v-sheet>
 </template>
 
