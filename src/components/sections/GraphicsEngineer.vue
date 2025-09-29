@@ -141,7 +141,7 @@ const items = computed(() => [
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
-    <ToonCardTable :items="items" />
+    <MyCardTable :items="items" />
   </v-sheet>
 </template>
 

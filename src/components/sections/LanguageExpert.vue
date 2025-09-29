@@ -14,7 +14,6 @@ import _java from "@/assets/logos/java.svg";
 import _c from "@/assets/logos/c.svg";
 import _lua from "@/assets/logos/lua.svg";
 import { useTheme } from "vuetify/framework";
-import SlidingLogoBanner from "@/components/SlidingLogoBanner.vue";
 const svgUrls = [
   _c,
   _cPlusPlus,
@@ -139,7 +138,7 @@ const items = computed(() => [
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
-    <ToonCardTable :items="items" />
+    <MyCardTable :items="items" />
   </v-sheet>
 </template>
 

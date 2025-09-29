@@ -16,7 +16,7 @@
         <v-container class="w-100">
           <v-row no-gutters>
             <v-col cols="12">
-              <ToonCard
+              <MyCard
                 class="w-100"
                 text1="Programming"
                 text2="Language"
@@ -26,7 +26,7 @@
               />
             </v-col>
             <v-col cols="12">
-              <ToonCard
+              <MyCard
                 class="w-100"
                 text1="Computer"
                 text2="Grapahics"
@@ -36,7 +36,7 @@
               />
             </v-col>
             <v-col cols="12">
-              <ToonCard
+              <MyCard
                 class="w-100"
                 text1=""
                 text2="Game"
@@ -46,7 +46,7 @@
               />
             </v-col>
             <v-col cols="12">
-              <ToonCard
+              <MyCard
                 class="w-100"
                 text1=""
                 text2="Application"
@@ -56,7 +56,7 @@
               />
             </v-col>
             <v-col cols="12">
-              <ToonCard
+              <MyCard
                 class="w-100"
                 text1=""
                 text2="Devops"
@@ -74,7 +74,7 @@
 
 <script lang="ts" setup>
 // ... existing code ...
-import ToonCard from "@/components/ToonCard.vue";
+import MyCard from "@/components/MyCard.vue";
 import { useTheme } from "vuetify/framework";
 const theme = useTheme();
 // ... existing code ...

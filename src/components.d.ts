@@ -17,6 +17,10 @@ declare module 'vue' {
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     HeroSection: typeof import('./components/sections/HeroSection.vue')['default']
     LanguageExpert: typeof import('./components/sections/LanguageExpert.vue')['default']
+    MyCard: typeof import('./components/MyCard.vue')['default']
+    MyCardEx: typeof import('./components/MyCardEx.vue')['default']
+    MyCardParagraph: typeof import('./components/MyCardParagraph.vue')['default']
+    MyCardTable: typeof import('./components/MyCardTable.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollFade: typeof import('./components/ScrollFade.vue')['default']
@@ -24,9 +28,6 @@ declare module 'vue' {
     SlidingLogoBanner: typeof import('./components/SlidingLogoBanner.vue')['default']
     StickyShowcase: typeof import('./components/sections/StickyShowcase.vue')['default']
     ToonCard: typeof import('./components/ToonCard.vue')['default']
-    ToonCardEx: typeof import('./components/ToonCardEx.vue')['default']
-    ToonCardRow: typeof import('./components/ToonCardRow.vue')['default']
-    ToonCardTable: typeof import('./components/ToonCardTable.vue')['default']
     VideoSection: typeof import('./components/sections/VideoSection.vue')['default']
   }
 }

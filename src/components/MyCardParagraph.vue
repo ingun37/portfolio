@@ -1,4 +1,4 @@
-<!-- src/components/ToonCardRow.vue -->
+<!-- src/components/MyCardParagraph.vue -->
 <template>
   <template v-for="(text, idx) in texts" :key="idx">
     <template v-if="text">

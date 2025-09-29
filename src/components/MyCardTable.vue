@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useDisplay } from "vuetify";
-import type { ToonCardProps } from "@/components/ToonCardEx.vue";
+import type { MyCardExProps } from "@/components/MyCardEx.vue";
 import SlidingLogoBanner from "@/components/SlidingLogoBanner.vue";
 const props = defineProps<{
-  items: { props: ToonCardProps; svgUrls?: string[] }[];
+  items: { props: MyCardExProps; svgUrls?: string[] }[];
 }>();
 const { name } = useDisplay();
 
@@ -47,7 +47,7 @@ function itemsForColumn(ci: number) {
             :key="index"
             cols="12"
           >
-            <ToonCardEx
+            <MyCardEx
               :title="item.props.title"
               :subtitle="item.props.subtitle"
               :start-color="item.props.startColor"
@@ -65,7 +65,7 @@ function itemsForColumn(ci: number) {
                 alt-prefix="logo"
                 aria-label="Technology logos carousel"
               />
-            </ToonCardEx>
+            </MyCardEx>
           </v-col>
         </v-row>
       </v-col>

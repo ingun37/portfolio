@@ -33,7 +33,7 @@ function itemsForColumn(ci: number) {
 </script>
 
 <template>
-  <h1 class="mb-2">Computer Graphics Engineer</h1>
+  <h1 class="mb-2">Game Developer</h1>
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
@@ -45,17 +45,17 @@ function itemsForColumn(ci: number) {
         >
           <v-row>
             <v-col
-              v-for="(item, index) in itemsForColumn(cidx - 1)"
+              v-for="(_, index) in itemsForColumn(cidx - 1)"
               :key="index"
               cols="12"
             >
-              <ToonCardEx
+              <MyCardEx
                 title="title"
                 subtitle="subtitle"
                 :text-list="[{ texts: ['text', 'text', 'text'] }]"
               >
                 {{ cidx }}
-              </ToonCardEx>
+              </MyCardEx>
             </v-col>
           </v-row>
         </v-col>
