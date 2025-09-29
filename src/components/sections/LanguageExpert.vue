@@ -14,6 +14,7 @@ import _java from "@/assets/logos/java.svg";
 import _c from "@/assets/logos/c.svg";
 import _lua from "@/assets/logos/lua.svg";
 import { useTheme } from "vuetify/framework";
+import type { MyCardTableCell } from "@/components/MyCardTable.vue";
 const svgUrls = [
   _c,
   _cPlusPlus,
@@ -30,78 +31,31 @@ const svgUrls = [
   _java,
   _lua,
 ];
-const handsOn = ref([
-  {
-    texts: [
-      "I've",
-      "learned, forgotten, and re-learned",
-      "20+ languages throughout my career.",
-    ],
-  },
-  {
-    texts: [
-      "I am",
-      "not restricted",
-      "to any language. I can drop in any projects and language will not be a problem.",
-    ],
-  },
-]);
 
-const theoretical = ref([
-  {
-    texts: [
-      "I'm knowledgeable in",
-      "abstract algebra",
-      "and",
-      "category theory",
-      "that is the mathematical foundation of the language theory.",
-    ],
-  },
-  {
-    texts: ["Checkout"],
-  },
-]);
-
-const functional = ref([
-  {
-    texts: [
-      "I can professionally leverage the",
-      "typeclasses",
-      "to boost the productivity in any language.",
-    ],
-  },
-]);
-
-const theoreticaLinks = ref<Array<{ href: string; label: string }>>([
-  {
-    href: "https://ingun37.github.io/answers/?sha1=b614f31d04b3bc2b3d23ee4337475251429e5a9f",
-    label: "Notes on Category Theory for Programmers (2019)",
-  },
-]);
-
-const diagram = ref([
-  {
-    texts: [
-      "I can accurately represents any architecture, relation, and logic in diagrams",
-    ],
-  },
-  {
-    texts: [
-      "I believe maintaining diagrams is",
-      "necessary",
-      "part of the software development.",
-    ],
-  },
-]);
 const theme = useTheme();
 
-const items = computed(() => [
+const items = computed<MyCardTableCell[]>(() => [
   {
     props: {
       title: "No Language Barrier",
       startColor: theme.current.value.colors["pink-start"],
       endColor: theme.current.value.colors["pink-end"],
-      textList: handsOn.value,
+      textList: [
+        {
+          texts: [
+            "I've",
+            "learned, forgotten, and re-learned",
+            "20+ languages throughout my career.",
+          ],
+        },
+        {
+          texts: [
+            "I am",
+            "not restricted",
+            "to any language. I can drop in any projects and language will not be a problem.",
+          ],
+        },
+      ],
     },
     svgUrls,
   },
@@ -110,8 +64,26 @@ const items = computed(() => [
       title: "Theoretical Knowledge",
       startColor: theme.current.value.colors["blue-start"],
       endColor: theme.current.value.colors["blue-end"],
-      textList: theoretical.value,
-      links: theoreticaLinks.value,
+      textList: [
+        {
+          texts: [
+            "I'm knowledgeable in",
+            "abstract algebra",
+            "and",
+            "category theory",
+            "that is the mathematical foundation of the language theory.",
+          ],
+        },
+        {
+          texts: ["Checkout"],
+        },
+      ],
+      links: [
+        {
+          href: "https://ingun37.github.io/answers/?sha1=b614f31d04b3bc2b3d23ee4337475251429e5a9f",
+          label: "Notes on Category Theory for Programmers (2019)",
+        },
+      ],
     },
   },
   {
@@ -119,7 +91,15 @@ const items = computed(() => [
       title: "Professional Functional Programmer",
       startColor: theme.current.value.colors["yellow-start"],
       endColor: theme.current.value.colors["yellow-end"],
-      textList: functional.value,
+      textList: [
+        {
+          texts: [
+            "I can professionally leverage the",
+            "typeclasses",
+            "to boost the productivity in any language.",
+          ],
+        },
+      ],
     },
   },
   {
@@ -127,7 +107,20 @@ const items = computed(() => [
       title: "Diagram Nerd",
       startColor: theme.current.value.colors["green-start"],
       endColor: theme.current.value.colors["green-end"],
-      textList: diagram.value,
+      textList: [
+        {
+          texts: [
+            "I can accurately represents any architecture, relation, and logic in diagrams",
+          ],
+        },
+        {
+          texts: [
+            "I believe maintaining diagrams is",
+            "necessary",
+            "part of the software development.",
+          ],
+        },
+      ],
     },
   },
 ]);

@@ -3,9 +3,13 @@ import { computed } from "vue";
 import { useDisplay } from "vuetify";
 import type { MyCardExProps } from "@/components/MyCardEx.vue";
 import SlidingLogoBanner from "@/components/SlidingLogoBanner.vue";
+
+export type MyCardTableCell = { props: MyCardExProps; svgUrls?: string[] };
+
 const props = defineProps<{
-  items: { props: MyCardExProps; svgUrls?: string[] }[];
+  items: MyCardTableCell[];
 }>();
+
 const { name } = useDisplay();
 
 const columnNumber = computed(() => {

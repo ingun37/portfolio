@@ -9,72 +9,7 @@ import _metal from "@/assets/logos/metal.svg";
 import { useTheme } from "vuetify/framework";
 
 const svgUrls = [_three, _unity, _webgpu, _opengl, _babylon, _directx, _metal];
-const depthPeeling = ref([
-  {
-    texts: [
-      "I've implemented",
-      "accurate and robust",
-      "depth peeling for the CLO-SET and CONNECT, contributing to their commercial success.",
-    ],
-  },
-]);
-// ... existing code ...
-const outline = ref([
-  {
-    texts: [
-      "I've detected a problem in the widely used",
-      "ThreeJS's outline pass",
-      ", and",
-      "contributed",
-      "the open source project by fixing it.",
-    ],
-  },
-]);
-// ... existing code ...
-const theoretical = ref([
-  {
-    texts: [
-      "Throughout my career, I've worked on",
-      "PBR",
-      ",",
-      "skinning",
-      ",",
-      "animation",
-      ",",
-      "VFX",
-      ",",
-      "antialiasing",
-      ",",
-      "polygon reduction",
-      ",",
-      "OIT",
-      ", etc. and developed strong fundamental knowledges and skills.",
-    ],
-  },
-]);
-// ... existing code ...
-const tools = ref([
-  {
-    texts: [
-      "My experties spans from",
-      "low-level graphics API",
-      "to",
-      "high-level frameworks and engines",
-      ", and from",
-      "traditional",
-      "to",
-      "modern",
-      "graphics pipeline",
-    ],
-  },
-]);
 
-const outlinePR = ref<Array<{ href: string; label: string }>>([
-  {
-    href: "https://github.com/mrdoob/three.js/pull/24262",
-    label: "probability density function correction",
-  },
-]);
 const theme = useTheme();
 
 const items = computed(() => [
@@ -83,7 +18,21 @@ const items = computed(() => [
       title: "APIs, Frameworks, and Engines",
       startColor: theme.current.value.colors["pink-start"],
       endColor: theme.current.value.colors["pink-end"],
-      textList: tools.value,
+      textList: [
+        {
+          texts: [
+            "My experties spans from",
+            "low-level graphics API",
+            "to",
+            "high-level frameworks and engines",
+            ", and from",
+            "traditional",
+            "to",
+            "modern",
+            "graphics pipeline",
+          ],
+        },
+      ],
     },
     svgUrls,
   },
@@ -92,7 +41,27 @@ const items = computed(() => [
       title: "Theoretical Knowledge",
       startColor: theme.current.value.colors["blue-start"],
       endColor: theme.current.value.colors["blue-end"],
-      textList: theoretical.value,
+      textList: [
+        {
+          texts: [
+            "Throughout my career, I've worked on",
+            "PBR",
+            ",",
+            "skinning",
+            ",",
+            "animation",
+            ",",
+            "VFX",
+            ",",
+            "antialiasing",
+            ",",
+            "polygon reduction",
+            ",",
+            "OIT",
+            ", etc. and developed strong fundamental knowledges and skills.",
+          ],
+        },
+      ],
     },
   },
   {
@@ -101,7 +70,15 @@ const items = computed(() => [
       subtitle: "CLO Virtual Fashion, 2022 ~ ",
       startColor: theme.current.value.colors["yellow-start"],
       endColor: theme.current.value.colors["yellow-end"],
-      textList: depthPeeling.value,
+      textList: [
+        {
+          texts: [
+            "I've implemented",
+            "accurate and robust",
+            "depth peeling for the CLO-SET and CONNECT, contributing to their commercial success.",
+          ],
+        },
+      ],
     },
   },
   {
@@ -110,8 +87,23 @@ const items = computed(() => [
       subtitle: "ThreeJS, 2022",
       startColor: theme.current.value.colors["green-start"],
       endColor: theme.current.value.colors["green-end"],
-      textList: outline.value,
-      links: outlinePR.value,
+      textList: [
+        {
+          texts: [
+            "I've detected a problem in the widely used",
+            "ThreeJS's outline pass",
+            ", and",
+            "contributed",
+            "the open source project by fixing it.",
+          ],
+        },
+      ],
+      links: [
+        {
+          href: "https://github.com/mrdoob/three.js/pull/24262",
+          label: "probability density function correction",
+        },
+      ],
     },
   },
   {
