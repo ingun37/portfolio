@@ -6,18 +6,13 @@ import _opengl from "@/assets/logos/opengl.svg";
 import _babylon from "@/assets/logos/babylon.svg";
 import _directx from "@/assets/logos/directx.svg";
 import _metal from "@/assets/logos/metal.svg";
-import { useTheme } from "vuetify/framework";
 
 const svgUrls = [_three, _unity, _webgpu, _opengl, _babylon, _directx, _metal];
-
-const theme = useTheme();
 
 const items = computed(() => [
   {
     props: {
       title: "APIs, Frameworks, and Engines",
-      startColor: theme.current.value.colors["pink-start"],
-      endColor: theme.current.value.colors["pink-end"],
       textList: [
         {
           texts: [
@@ -39,8 +34,6 @@ const items = computed(() => [
   {
     props: {
       title: "Theoretical Knowledge",
-      startColor: theme.current.value.colors["blue-start"],
-      endColor: theme.current.value.colors["blue-end"],
       textList: [
         {
           texts: [
@@ -68,8 +61,6 @@ const items = computed(() => [
     props: {
       title: "Depth Peeling",
       subtitle: "CLO Virtual Fashion, 2022 ~ ",
-      startColor: theme.current.value.colors["yellow-start"],
-      endColor: theme.current.value.colors["yellow-end"],
       textList: [
         {
           texts: [
@@ -85,8 +76,6 @@ const items = computed(() => [
     props: {
       title: "OpenSource Contribution",
       subtitle: "ThreeJS, 2022",
-      startColor: theme.current.value.colors["green-start"],
-      endColor: theme.current.value.colors["green-end"],
       textList: [
         {
           texts: [
@@ -110,8 +99,6 @@ const items = computed(() => [
     props: {
       title: "WebGPU Backend for NVRHI",
       subtitle: "CLO Virtual Fashion, 2025 ~",
-      startColor: theme.current.value.colors["purple-start"],
-      endColor: theme.current.value.colors["purple-end"],
       textList: [
         {
           texts: [

@@ -3,6 +3,7 @@ import { computed } from "vue";
 import { useDisplay } from "vuetify";
 import type { MyCardExProps } from "@/components/MyCardEx.vue";
 import SlidingLogoBanner from "@/components/SlidingLogoBanner.vue";
+import { useTheme } from "vuetify/framework";
 
 export type MyCardTableCell = { props: MyCardExProps; svgUrls?: string[] };
 
@@ -32,9 +33,28 @@ const columnNumber = computed(() => {
 
   return Math.min(upTo(), props.items.length);
 });
+const colors = ["pink", "blue", "yellow", "green", "purple"];
+const theme = useTheme();
 
+const startColors = colors.map((c) => theme.current.value.colors[`${c}-start`]);
+const endColors = colors.map((c) => theme.current.value.colors[`${c}-end`]);
 function itemsForColumn(ci: number) {
-  return props.items.filter((_, index) => index % columnNumber.value === ci);
+  return props.items.flatMap((item, index) => {
+    if (index % columnNumber.value === ci) {
+      return [
+        {
+          props: item.props,
+          svgUrls: item.svgUrls,
+          color: {
+            start: startColors[index % colors.length],
+            end: endColors[index % colors.length],
+          },
+        },
+      ];
+    } else {
+      return [];
+    }
+  });
 }
 </script>
 
@@ -54,8 +74,8 @@ function itemsForColumn(ci: number) {
             <MyCardEx
               :title="item.props.title"
               :subtitle="item.props.subtitle"
-              :start-color="item.props.startColor"
-              :end-color="item.props.endColor"
+              :start-color="item.color.start"
+              :end-color="item.color.end"
               :text-list="item.props.textList"
               :links="item.props.links"
             >

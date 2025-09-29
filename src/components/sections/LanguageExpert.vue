@@ -13,7 +13,6 @@ import _kotlin from "@/assets/logos/kotlin.svg";
 import _java from "@/assets/logos/java.svg";
 import _c from "@/assets/logos/c.svg";
 import _lua from "@/assets/logos/lua.svg";
-import { useTheme } from "vuetify/framework";
 import type { MyCardTableCell } from "@/components/MyCardTable.vue";
 const svgUrls = [
   _c,
@@ -32,14 +31,10 @@ const svgUrls = [
   _lua,
 ];
 
-const theme = useTheme();
-
 const items = computed<MyCardTableCell[]>(() => [
   {
     props: {
       title: "No Language Barrier",
-      startColor: theme.current.value.colors["pink-start"],
-      endColor: theme.current.value.colors["pink-end"],
       textList: [
         {
           texts: [
@@ -62,8 +57,6 @@ const items = computed<MyCardTableCell[]>(() => [
   {
     props: {
       title: "Theoretical Knowledge",
-      startColor: theme.current.value.colors["blue-start"],
-      endColor: theme.current.value.colors["blue-end"],
       textList: [
         {
           texts: [
@@ -89,8 +82,6 @@ const items = computed<MyCardTableCell[]>(() => [
   {
     props: {
       title: "Professional Functional Programmer",
-      startColor: theme.current.value.colors["yellow-start"],
-      endColor: theme.current.value.colors["yellow-end"],
       textList: [
         {
           texts: [
@@ -105,8 +96,6 @@ const items = computed<MyCardTableCell[]>(() => [
   {
     props: {
       title: "Diagram Nerd",
-      startColor: theme.current.value.colors["green-start"],
-      endColor: theme.current.value.colors["green-end"],
       textList: [
         {
           texts: [

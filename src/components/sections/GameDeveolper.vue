@@ -1,35 +1,28 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useDisplay } from "vuetify";
-const props = defineProps<{
-  items: ToonCardProps[];
-}>();
-const { name } = useDisplay();
+import { ref } from "vue";
+import type { MyCardTableCell } from "@/components/MyCardTable.vue";
 
-const columnNumber = computed(() => {
-  const upTo = () => {
-    switch (name.value) {
-      case "xs":
-        return 1;
-      case "sm":
-        return 2;
-      case "md":
-        return 2;
-      case "lg":
-        return 3;
-      case "xl":
-        return 3;
-      case "xxl":
-        return 4;
-    }
-  };
-
-  return Math.min(upTo(), props.items.length);
-});
-
-function itemsForColumn(ci: number) {
-  return props.items.filter((_, index) => index % columnNumber.value === ci);
-}
+const items = ref<MyCardTableCell[]>([
+  {
+    props: {
+      title: "Crusaders Quest",
+      subtitle: "LoadComplete 2015 ~ 2018",
+      textList: [
+        {
+          texts: [
+            "I've developed",
+            "Crusaders Quest",
+            "from scratch",
+            "using",
+            "C++",
+            "and",
+            "Unity",
+          ],
+        },
+      ],
+    },
+  },
+]);
 </script>
 
 <template>
@@ -37,30 +30,7 @@ function itemsForColumn(ci: number) {
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
-    <v-container class="mb-2">
-      <v-row>
-        <v-col
-          v-for="cidx in columnNumber"
-          :cols="(12 / columnNumber).toString()"
-        >
-          <v-row>
-            <v-col
-              v-for="(_, index) in itemsForColumn(cidx - 1)"
-              :key="index"
-              cols="12"
-            >
-              <MyCardEx
-                title="title"
-                subtitle="subtitle"
-                :text-list="[{ texts: ['text', 'text', 'text'] }]"
-              >
-                {{ cidx }}
-              </MyCardEx>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
+    <MyCardTable :items="items" />
   </v-sheet>
 </template>
 
