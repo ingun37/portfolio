@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-column justify-center align-center text-center w-100">
     <ScrollFade direction="up">
-      <p>Get to know</p>
+      <p>Hi, I'm</p>
     </ScrollFade>
 
     <ScrollFade direction="up" :delay="'80ms'">
@@ -9,7 +9,7 @@
     </ScrollFade>
 
     <ScrollFade direction="up" :delay="'120ms'">
-      <p>as a</p>
+      <p>get to know me as a</p>
     </ScrollFade>
     <ScrollFade direction="up" :delay="'160ms'" class="w-100">
       <div class="w-100 bg-surface-variant">

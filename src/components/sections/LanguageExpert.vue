@@ -88,7 +88,7 @@ const diagram = ref([
   },
   {
     texts: [
-      "I believe maintaining the diagram of the every source code is",
+      "I believe maintaining diagrams is",
       "necessary",
       "part of the software development.",
     ],

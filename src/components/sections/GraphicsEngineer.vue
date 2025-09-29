@@ -23,9 +23,9 @@ const depthPeeling = ref([
 const outline = ref([
   {
     texts: [
-      "I've detected a problem in the probability density function that is being used by the",
-      "widely used",
-      "THREEJS's outline pass, and",
+      "I've detected a problem in the widely used",
+      "ThreeJS's outline pass",
+      ", and",
       "contributed",
       "the open source project by fixing it.",
     ],
@@ -42,12 +42,14 @@ const theoretical = ref([
       ",",
       "animation",
       ",",
-      "vfx",
+      "VFX",
       ",",
       "antialiasing",
       ",",
       "polygon reduction",
-      ", etc. as either native implementation or high-level adaptation or both.",
+      ",",
+      "OIT",
+      ", etc. and developed strong fundamental knowledges and skills.",
     ],
   },
 ]);
@@ -64,6 +66,18 @@ const tools = ref([
       "to",
       "modern",
       "graphics pipeline",
+    ],
+  },
+]);
+
+const nvrhi = ref([
+  {
+    texts: [
+      "Currently I'm actively developing a",
+      "WebGPU backend",
+      "for",
+      "NVRHI",
+      ", NVIDIA's open source rendering hardware interface, to use it on my company's upcoming web application.",
     ],
   },
 ]);
@@ -113,7 +127,7 @@ const theme = useTheme();
         </v-col>
         <v-col cols="12" md="6">
           <ToonCardEx
-            title="WebGL Depth Peeling"
+            title="Depth Peeling"
             subtitle="CLO Virtual fashion, 2022 ~ "
             :text-list="depthPeeling"
             :start-color="theme.current.value.colors['yellow-start']"
@@ -123,11 +137,19 @@ const theme = useTheme();
         </v-col>
         <v-col cols="12" md="6">
           <ToonCardEx
-            title="ThreeJS Contribution"
+            title="OpenSource Contribution"
             :text-list="outline"
             :links="outlinePR"
             :start-color="theme.current.value.colors['green-start']"
             :end-color="theme.current.value.colors['green-end']"
+          ></ToonCardEx>
+        </v-col>
+        <v-col cols="12" md="6">
+          <ToonCardEx
+            title="WebGPU Backend for NVRHI"
+            :text-list="nvrhi"
+            :start-color="theme.current.value.colors['purple-start']"
+            :end-color="theme.current.value.colors['purple-end']"
           ></ToonCardEx>
         </v-col>
       </v-row>
