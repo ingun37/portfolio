@@ -6,6 +6,7 @@ import _opengl from "@/assets/logos/opengl.svg";
 import _babylon from "@/assets/logos/babylon.svg";
 import _directx from "@/assets/logos/directx.svg";
 import _metal from "@/assets/logos/metal.svg";
+import _closet from "@/assets/clo.webp";
 
 const svgUrls = [_three, _unity, _webgpu, _opengl, _babylon, _directx, _metal];
 
@@ -59,14 +60,30 @@ const items = computed(() => [
   },
   {
     props: {
-      title: "Depth Peeling",
+      title: 'Current "Web Graphics Engineer"',
       subtitle: "CLO Virtual Fashion, 2022 ~ ",
+      cover: _closet,
       textList: [
         {
           texts: [
-            "I've implemented",
-            "accurate and robust",
-            "depth peeling for the CLO-SET and CONNECT, contributing to their commercial success.",
+            "I've developed",
+            "Depth Peeling",
+            ",",
+            "Resource Management",
+            ",",
+            "Environment Lighting",
+            ",",
+            "Rendering & Performance Test",
+            ", and many other things for the web services of CVF, contributing to their commercial success.",
+          ],
+        },
+        {
+          texts: [
+            "I'm currently actively developing a",
+            "WebGPU backend",
+            "for",
+            "NVRHI",
+            ", NVIDIA's open source rendering hardware interface, to enable the web support through WebAssembly",
           ],
         },
       ],
@@ -91,23 +108,6 @@ const items = computed(() => [
         {
           href: "https://github.com/mrdoob/three.js/pull/24262",
           label: "probability density function correction",
-        },
-      ],
-    },
-  },
-  {
-    props: {
-      title: "WebGPU Backend for NVRHI",
-      subtitle: "CLO Virtual Fashion, 2025 ~",
-      textList: [
-        {
-          texts: [
-            "I'm currently actively developing a",
-            "WebGPU backend",
-            "for",
-            "NVRHI",
-            ", NVIDIA's open source rendering hardware interface, to enable the web support through WebAssembly",
-          ],
         },
       ],
     },

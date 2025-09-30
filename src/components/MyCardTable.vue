@@ -78,6 +78,7 @@ function itemsForColumn(ci: number) {
               :end-color="item.color.end"
               :text-list="item.props.textList"
               :links="item.props.links"
+              :cover="item.props.cover"
             >
               <SlidingLogoBanner
                 class="mb-2"

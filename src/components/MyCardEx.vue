@@ -8,6 +8,8 @@
     border="md"
     :style="gradientStyle"
   >
+    <v-img v-if="cover" color="surface-variant" height="200" :src="cover" cover>
+    </v-img>
     <v-card-title class="font-weight-black">{{ title }}</v-card-title>
     <v-card-subtitle v-if="subtitle">{{ subtitle }}</v-card-subtitle>
     <v-card-text class="font-weight-black pb-0">
@@ -49,6 +51,7 @@ export type MyCardExProps = {
   textList: {
     texts: string[];
   }[];
+  cover?: string;
   startColor?: string; // gradient start color
   endColor?: string; // gradient end color
   links?: Array<{ href: string; label: string }>; // up to 3 external links
