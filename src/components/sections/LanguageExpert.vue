@@ -67,14 +67,15 @@ const items = computed<MyCardTableCell[]>(() => [
             "that is the mathematical foundation of the language theory.",
           ],
         },
-        {
-          texts: ["Checkout"],
-        },
       ],
       links: [
         {
           href: "https://ingun37.github.io/answers/?sha1=b614f31d04b3bc2b3d23ee4337475251429e5a9f",
           label: "Notes on Category Theory for Programmers (2019)",
+        },
+        {
+          href: "https://github.com/ingun37/ComplexMatrixAlgebra",
+          label: "Complex Matrix Algebra Swift Library",
         },
       ],
     },

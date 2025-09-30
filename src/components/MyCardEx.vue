@@ -23,13 +23,13 @@
       </v-list>
     </v-card-text>
     <slot></slot>
-    <v-card-actions v-if="limitedLinks.length" class="p-0">
+    <v-card-actions v-if="limitedLinks.length" class="d-flex flex-column p-0">
       <v-btn
         v-for="(link, i) in limitedLinks"
         :key="i"
         :href="link.href"
+        block
         target="_blank"
-        rel="noopener noreferrer"
         variant="elevated"
         size="small"
         color="primary"

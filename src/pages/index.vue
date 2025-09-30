@@ -3,9 +3,6 @@
     <HeroSection />
   </Sect>
   <Sect>
-    <LanguageExpert />
-  </Sect>
-  <Sect>
     <GraphicsEngineer />
   </Sect>
   <Sect>
@@ -13,6 +10,9 @@
   </Sect>
   <Sect>
     <AppDeveloper />
+  </Sect>
+  <Sect>
+    <LanguageExpert />
   </Sect>
 </template>
 
