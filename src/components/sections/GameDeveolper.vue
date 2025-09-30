@@ -19,7 +19,7 @@ const items = ref<MyCardTableCell[]>([
         },
         {
           texts: [
-            "I had set up",
+            "I've set up",
             "CI/CD",
             "that builds Unity3d/Android/Xcode projects with 300 different build targets for different markets over the world.",
           ],
@@ -33,7 +33,7 @@ const items = ref<MyCardTableCell[]>([
         },
         {
           texts: [
-            "I had developed",
+            "I've developed",
             "native libraries",
             "for various platforms including iOS ForceTouch, Android Screen Recorder, etc.",
           ],
@@ -49,7 +49,7 @@ const items = ref<MyCardTableCell[]>([
       textList: [
         {
           texts: [
-            "I had maintained and done bug fixes using",
+            "I've maintained the commercially successful 3D MMORPG using",
             "Unreal Engine",
             ", and",
             "Scaleform",
@@ -58,7 +58,7 @@ const items = ref<MyCardTableCell[]>([
         },
         {
           texts: [
-            "I had developed map area indicator feature using",
+            "I've developed map area indicator feature using",
             "Ear Clipping Algorithm",
             "using WPF and C++",
           ],
