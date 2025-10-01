@@ -1,24 +1,38 @@
 <script setup lang="ts">
-import _cPlusPlus from "@/assets/logos/docker-long.svg";
-import _cSharp from "@/assets/logos/nix.svg";
+import _docker from "@/assets/logos/docker-long.svg";
+import _nix from "@/assets/logos/nix.svg";
 import type { MyCardTableCell } from "@/components/MyCardTable.vue";
-const svgUrls = [_cPlusPlus, _cSharp];
+const svgUrls = [_docker, _nix];
 
 const items = computed<MyCardTableCell[]>(() => [
   {
     props: {
       title: "Virtualization",
       textList: [
-        "I can__virtualize__,__containerize__,__sandbox__any build for runtime environment using__Docker__and__NixOS",
+        "I can__virtualize__/__containerize__,__sandbox__any build for runtime environment using__Docker__and__NixOS",
       ],
     },
     svgUrls,
+  },
+  {
+    props: {
+      title: "Automated E2E Testing",
+      textList: [
+        "I can develop a __automated__, __scalable__ E2E testing for the 3D rendering systems, and run it on a __gpu-accelerated__ cloud computing platform.",
+      ],
+    },
+  },
+  {
+    props: {
+      title: "Performance Data Analysis",
+    },
   },
 ]);
 </script>
 
 <template>
   <h1 class="mb-2">DevOps Engineer</h1>
+  <p class="mb-2">These are my values as a dev-ops engineer</p>
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
