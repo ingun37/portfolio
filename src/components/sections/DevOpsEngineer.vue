@@ -9,20 +9,7 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Virtualization",
       textList: [
-        {
-          texts: [
-            "I can",
-            "virtualize",
-            ",",
-            "containerize",
-            ",",
-            "sandbox",
-            "any build for runtime environment using",
-            "Docker",
-            "and",
-            "NixOS",
-          ],
-        },
+        "I can__virtualize__,__containerize__,__sandbox__any build for runtime environment using__Docker__and__NixOS",
       ],
     },
     svgUrls,
