@@ -11,6 +11,7 @@ declare module 'vue' {
     AppDeveloper: typeof import('./components/sections/AppDeveloper.vue')['default']
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     CTASection: typeof import('./components/sections/CTASection.vue')['default']
+    DevOpsEngineer: typeof import('./components/sections/DevOpsEngineer.vue')['default']
     FeaturePanels: typeof import('./components/sections/FeaturePanels.vue')['default']
     FlowingLogos: typeof import('./components/FlowingLogos.vue')['default']
     GameDeveolper: typeof import('./components/sections/GameDeveolper.vue')['default']
