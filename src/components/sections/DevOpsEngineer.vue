@@ -41,7 +41,7 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Toolchains and Build Systems",
       textList: [
-        "I have strong understanding of the general mechanism of build systems and toolchains for various languages and platforms",
+        "I have strong understanding of the build systems and toolchains of various languages and platforms",
         "* C/C++: __gcc/clang/MSVC__, __CMake__",
         "* TS/JS: __CommonJS/ESM__, __NPM,PNPM/Yarn__, __Rush.js__",
         "* Haskell: __Cabal/NixOS__, __Stack__",
