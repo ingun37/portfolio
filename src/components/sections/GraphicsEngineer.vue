@@ -15,19 +15,7 @@ const items = computed(() => [
     props: {
       title: "APIs, Frameworks, and Engines",
       textList: [
-        {
-          texts: [
-            "My experties spans from",
-            "low-level graphics API",
-            "to",
-            "high-level frameworks and engines",
-            ", and from",
-            "traditional",
-            "to",
-            "modern",
-            "graphics pipeline",
-          ],
-        },
+        "My experties spans from __low-level graphics API__ to __high-level frameworks and engines__, and from __traditional__ to __modern__ graphics pipeline",
       ],
     },
     svgUrls,
@@ -36,25 +24,7 @@ const items = computed(() => [
     props: {
       title: "Theoretical Knowledge",
       textList: [
-        {
-          texts: [
-            "Throughout my career, I've worked on",
-            "PBR",
-            ",",
-            "skinning",
-            ",",
-            "animation",
-            ",",
-            "VFX",
-            ",",
-            "antialiasing",
-            ",",
-            "polygon reduction",
-            ",",
-            "OIT",
-            ", etc. developing strong fundamental knowledges and skills.",
-          ],
-        },
+        "Throughout my career, I've worked on __PBR__ skinning __animation__ VFX __antialiasing__ polygon reduction __OIT__, etc. developing strong fundamental knowledges and skills.",
       ],
     },
   },
@@ -64,28 +34,8 @@ const items = computed(() => [
       subtitle: "CLO Virtual Fashion, 2022 ~ ",
       cover: _closet,
       textList: [
-        {
-          texts: [
-            "I've developed",
-            "Depth Peeling",
-            ",",
-            "Resource Management",
-            ",",
-            "Environment Lighting",
-            ",",
-            "Rendering & Performance Test",
-            ", and many other things for the web services of CLO Virtual Fashion, contributing to their commercial success.",
-          ],
-        },
-        {
-          texts: [
-            "I'm currently actively developing a",
-            "WebGPU backend",
-            "for",
-            "NVRHI",
-            ", NVIDIA's open source rendering hardware interface, to enable the web support through WebAssembly",
-          ],
-        },
+        "I've developed __Depth Peeling__ Resource Management __Environment Lighting__ __Rendering & Performance Test__, and many other things for the web services of CLO Virtual Fashion, contributing to their commercial success.",
+        "I'm currently actively developing a __WebGPU backend__ for __NVRHI__, NVIDIA's open source rendering hardware interface, to enable the web support through WebAssembly",
       ],
     },
   },
@@ -94,15 +44,7 @@ const items = computed(() => [
       title: "OpenSource Contribution",
       subtitle: "ThreeJS, 2022",
       textList: [
-        {
-          texts: [
-            "I've detected a problem in the widely used",
-            "ThreeJS's outline pass",
-            ", and",
-            "contributed",
-            "the open source project by fixing it.",
-          ],
-        },
+        "I've detected a problem in the widely used __ThreeJS's outline pass__, and __contributed__ the open source project by fixing it.",
       ],
       links: [
         {

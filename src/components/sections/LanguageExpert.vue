@@ -36,20 +36,8 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "No Language Barrier",
       textList: [
-        {
-          texts: [
-            "I've",
-            "learned, forgotten, and re-learned",
-            "20+ languages throughout my career.",
-          ],
-        },
-        {
-          texts: [
-            "I am",
-            "not restricted",
-            "to any language. I can drop in any projects and language will not be a problem.",
-          ],
-        },
+        "I've __learned, forgotten, and re-learned__ 20+ languages throughout my career.",
+        "I am __not restricted__ to any language. I can drop in any projects and language will not be a problem.",
       ],
     },
     svgUrls,
@@ -58,15 +46,7 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Theoretical Knowledge",
       textList: [
-        {
-          texts: [
-            "I'm knowledgeable in",
-            "abstract algebra",
-            "and",
-            "category theory",
-            "that is the mathematical foundation of the language theory.",
-          ],
-        },
+        "I'm knowledgeable in __abstract algebra__ and __category theory__ that is the mathematical foundation of the language theory.",
       ],
       links: [
         {
@@ -84,13 +64,7 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Professional Functional Programmer",
       textList: [
-        {
-          texts: [
-            "I can professionally leverage the",
-            "typeclasses",
-            "to boost the productivity in any language.",
-          ],
-        },
+        "I can professionally leverage the __typeclasses__ to boost the productivity in any language.",
       ],
     },
   },
@@ -98,18 +72,8 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Diagram Nerd",
       textList: [
-        {
-          texts: [
-            "I can accurately represents any architecture, relation, and logic in diagrams",
-          ],
-        },
-        {
-          texts: [
-            "I believe maintaining diagrams is",
-            "necessary",
-            "part of the software development.",
-          ],
-        },
+        "I can accurately represents any architecture, relation, and logic in diagrams",
+        "I believe maintaining diagrams is __necessary__ part of the software development.",
       ],
     },
   },

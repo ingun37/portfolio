@@ -10,34 +10,10 @@ const items = ref<MyCardTableCell[]>([
       title: "Crusaders Quest",
       subtitle: "LoadComplete/NHN Entertainment 2015 ~ 2017",
       textList: [
-        {
-          texts: [
-            "*",
-            "Performance Optimization",
-            "using various performance analyzers and graphics techniques.",
-          ],
-        },
-        {
-          texts: [
-            "*",
-            "CI/CD",
-            "for the Unity3d/Android/Xcode projects with 300 different build targets for different markets over the world.",
-          ],
-        },
-        {
-          texts: [
-            "* Client",
-            "Authentication",
-            "for Facebook, Apple, and 13 other ID providers",
-          ],
-        },
-        {
-          texts: [
-            "*",
-            "Native Library",
-            "development for iOS and Android for the platform-specific features like Force Touch or Screen Recording",
-          ],
-        },
+        "* __Performance Optimization__ using various performance analyzers and graphics techniques.",
+        "* __CI/CD__ for the Unity3d/Android/Xcode projects with 300 different build targets for different markets over the world.",
+        "* Client __Authentication__ for Facebook, Apple, and 13 other ID providers",
+        "* __Native Library__ development for iOS and Android for the platform-specific features like Force Touch or Screen Recording",
       ],
     },
   },
@@ -47,23 +23,8 @@ const items = ref<MyCardTableCell[]>([
       title: "Echo of Soul",
       subtitle: "Nvius/Hangame 2014 ~ 2015",
       textList: [
-        {
-          texts: [
-            "* Maintenance of a commercially successful",
-            "3D MMORPG",
-            "using",
-            "Unreal Engine",
-            "and",
-            "Scaleform",
-          ],
-        },
-        {
-          texts: [
-            "* Map Editing using",
-            "Ear Clipping Algorithm",
-            "with WPF and C++",
-          ],
-        },
+        "* Maintenance of a commercially successful __3D MMORPG__ using __Unreal Engine__ and __Scaleform",
+        "* Map Editing using __Ear Clipping Algorithm__ with WPF and C++",
       ],
     },
   },

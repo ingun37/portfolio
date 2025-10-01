@@ -10,25 +10,8 @@ const items = ref<MyCardTableCell[]>([
       title: "EBS어학FM",
       subtitle: "Swink/EBSFM 2013 ~ 2014",
       textList: [
-        {
-          texts: [
-            "The",
-            "official",
-            "iOS application of one of the",
-            "the biggest radio channel",
-            "in South Korea",
-          ],
-        },
-        {
-          texts: [
-            "I developed the whole application including",
-            "UI",
-            ",",
-            "Network Session Threading",
-            ", and",
-            "Audio Streaming.",
-          ],
-        },
+        "The __official__ iOS application of one of the __the biggest radio channel__ in South Korea",
+        "I developed the whole application including __UI__, __Network Session Threading__, and __Audio Streaming__.",
       ],
     },
   },
@@ -44,11 +27,7 @@ const items = ref<MyCardTableCell[]>([
         },
       ],
       textList: [
-        {
-          texts: [
-            "I've developed an algebraic calculator with hand writing support",
-          ],
-        },
+        "I've developed an algebraic calculator with hand writing support",
       ],
     },
   },
@@ -67,11 +46,7 @@ const items = ref<MyCardTableCell[]>([
         },
       ],
       textList: [
-        {
-          texts: [
-            "I've contributed to the famous open source Markdown Editor Swift UI module by refactoring and fixing a performance issue.",
-          ],
-        },
+        "I've contributed to the famous open source Markdown Editor Swift UI module by refactoring and fixing a performance issue.",
       ],
     },
   },

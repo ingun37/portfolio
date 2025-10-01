@@ -14,9 +14,9 @@
   <Sect>
     <LanguageExpert />
   </Sect>
-  <Sect>
-    <DevOpsEngineer />
-  </Sect>
+  <!--  <Sect>-->
+  <!--    <DevOpsEngineer />-->
+  <!--  </Sect>-->
 </template>
 
 <script lang="ts" setup>

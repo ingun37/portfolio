@@ -19,7 +19,7 @@
         :key="idx"
         style="background-color: transparent"
       >
-        <MyCardParagraph :texts="item.texts" />
+        <MyCardParagraph :text="item" />
       </v-list>
     </v-card-text>
     <slot></slot>
@@ -48,9 +48,7 @@ import MyCardParagraph from "@/components/MyCardParagraph.vue";
 export type MyCardExProps = {
   title: string;
   subtitle?: string;
-  textList: {
-    texts: string[];
-  }[];
+  textList: string[];
   cover?: string;
   startColor?: string; // gradient start color
   endColor?: string; // gradient end color

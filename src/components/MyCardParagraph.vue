@@ -1,6 +1,6 @@
 <!-- src/components/MyCardParagraph.vue -->
 <template>
-  <template v-for="(text, idx) in texts" :key="idx">
+  <template v-for="(text, idx) in textList" :key="idx">
     <template v-if="text">
       <span v-if="isEven(idx)" class="toon-card__gap" aria-hidden="true"></span>
       <span
@@ -18,9 +18,11 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
-  texts?: string[];
+  text: string;
 }>();
-
+const textList = computed(() =>
+  props.text ? props.text.split("__").map((x) => x.trim()) : [],
+);
 const isEven = (idx: number) => (idx + 1) % 2 === 0;
 </script>
 
