@@ -12,7 +12,11 @@ const items = ref<MyCardTableCell[]>([
       textList: [
         {
           texts: [
-            "I developed the official iOS application for one of the biggest radio channel in South Korea",
+            "The",
+            "official",
+            "iOS application of one of the",
+            "the biggest radio channel",
+            "in South Korea",
           ],
         },
         {

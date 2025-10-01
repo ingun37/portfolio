@@ -52,7 +52,7 @@ const items = computed(() => [
             "polygon reduction",
             ",",
             "OIT",
-            ", etc. and developed strong fundamental knowledges and skills.",
+            ", etc. developing strong fundamental knowledges and skills.",
           ],
         },
       ],
@@ -74,7 +74,7 @@ const items = computed(() => [
             "Environment Lighting",
             ",",
             "Rendering & Performance Test",
-            ", and many other things for the web services of CVF, contributing to their commercial success.",
+            ", and many other things for the web services of CLO Virtual Fashion, contributing to their commercial success.",
           ],
         },
         {

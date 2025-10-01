@@ -12,30 +12,30 @@ const items = ref<MyCardTableCell[]>([
       textList: [
         {
           texts: [
-            "I was responsible for",
+            "*",
             "Performance Optimization",
             "using various performance analyzers and graphics techniques.",
           ],
         },
         {
           texts: [
-            "I've set up",
+            "*",
             "CI/CD",
-            "that builds Unity3d/Android/Xcode projects with 300 different build targets for different markets over the world.",
+            "for the Unity3d/Android/Xcode projects with 300 different build targets for different markets over the world.",
           ],
         },
         {
           texts: [
-            "I developed",
-            "authentication",
-            "clients for Facebook, Apple and 13 different ID providers",
+            "* Client",
+            "Authentication",
+            "for Facebook, Apple, and 13 other ID providers",
           ],
         },
         {
           texts: [
-            "I've developed",
-            "native libraries",
-            "for various platforms including iOS ForceTouch, Android Screen Recorder, etc.",
+            "*",
+            "Native Library",
+            "development for iOS and Android for the platform-specific features like Force Touch or Screen Recording",
           ],
         },
       ],
@@ -49,18 +49,19 @@ const items = ref<MyCardTableCell[]>([
       textList: [
         {
           texts: [
-            "I've maintained the commercially successful 3D MMORPG using",
+            "* Maintenance of a commercially successful",
+            "3D MMORPG",
+            "using",
             "Unreal Engine",
-            ", and",
+            "and",
             "Scaleform",
-            "using WPF and C++",
           ],
         },
         {
           texts: [
-            "I've developed map area indicator feature using",
+            "* Map Editing using",
             "Ear Clipping Algorithm",
-            "using WPF and C++",
+            "with WPF and C++",
           ],
         },
       ],
