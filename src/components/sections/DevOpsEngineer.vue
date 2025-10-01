@@ -16,15 +16,21 @@ const items = computed<MyCardTableCell[]>(() => [
   },
   {
     props: {
-      title: "Automated E2E Testing",
+      title: "E2E Rendering Testing",
       textList: [
-        "I can develop a __automated__, __scalable__ E2E testing for the 3D rendering systems, and run it on a __gpu-accelerated__ cloud computing platform.",
+        "I've developed the __automated__, __scalable__ E2E testing for the 3D rendering systems, and run it on the __gpu-accelerated__ cloud computing platform for the web services of CLO Virtual Fashion, decreasing the failure rate dramatically",
       ],
     },
   },
   {
     props: {
-      title: "Performance Data Analysis",
+      title: "Rendering Performance Data Analysis",
+      textList: [
+        "I've successfully improved the performance through data analysis in CLO Virtual Fashion",
+        "* Collect the FPS, Heap memory usage, GPU memory usage, network activity, loading time data using __Elastic Search__",
+        "* __Analyze__ using __Pandas__ python library",
+        "* __Visualize__ using __PowerBi__",
+      ],
     },
   },
 ]);

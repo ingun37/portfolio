@@ -34,7 +34,7 @@ const items = computed(() => [
       subtitle: "CLO Virtual Fashion, 2022 ~ present(2025)",
       cover: _closet,
       textList: [
-        "I've developed __Depth Peeling__, __Resource Management__, __Environment Lighting__, __Rendering Test__, __Performance Data Analysis__ and many other things for the web services of CLO Virtual Fashion, contributing to their commercial success.",
+        "I've developed __Depth Peeling__, __Environment Lighting__, __VFX__,__Reactive 3D Resource Loading__, and many other things for the web services of CLO Virtual Fashion, contributing to their commercial success.",
         "I'm currently actively developing a __WebGPU backend__ for __NVRHI__, NVIDIA's open source rendering hardware interface, to enable the web support through WebAssembly",
       ],
     },
