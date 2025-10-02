@@ -24,6 +24,7 @@ declare module 'vue' {
     MyCardParagraph: typeof import('./components/MyCardParagraph.vue')['default']
     MyCardTable: typeof import('./components/MyCardTable.vue')['default']
     OneLiner: typeof import('./components/OneLiner.vue')['default']
+    ProgrammingLanguageExpert: typeof import('./components/ProgrammingLanguageExpert.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollFade: typeof import('./components/ScrollFade.vue')['default']
