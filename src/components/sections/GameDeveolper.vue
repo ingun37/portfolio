@@ -3,6 +3,7 @@ import { ref } from "vue";
 import type { MyCardTableCell } from "@/components/MyCardTable.vue";
 import _eos from "@/assets/eos.jpg";
 import _crusaders from "@/assets/crusaders.webp";
+import GameDeveloperTitle from "@/components/GameDeveloperTitle.vue";
 const items = ref<MyCardTableCell[]>([
   {
     props: {
@@ -32,7 +33,7 @@ const items = ref<MyCardTableCell[]>([
 </script>
 
 <template>
-  <h1 class="mb-2">Game Developer</h1>
+  <GameDeveloperTitle class="mb-2"></GameDeveloperTitle>
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
