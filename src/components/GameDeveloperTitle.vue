@@ -42,7 +42,7 @@ import _pacman_closed from "@/assets/pacman-closed.webp";
   top: 50%;
   width: 2ch;
   height: 2ch;
-  transform: translate(-2ch, -50%);
+  transform: translate(-4ch, -50%);
   animation: pacmanMove 4s linear infinite;
 }
 
