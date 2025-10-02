@@ -19,8 +19,8 @@ export default createVuetify({
       myCustomLightTheme: {
         dark: false,
         colors: {
-          background: "#F0EAD6",
-          surface: "#D8C3A5",
+          background: "#53524f",
+          surface: "#f6f2ec",
           "surface-bright": "#FFFFFF",
           "surface-light": "#EEEEEE",
           "surface-variant": "#424242",
@@ -35,10 +35,8 @@ export default createVuetify({
           warning: "#E9C46A",
           "pink-start": "#f19488",
           "pink-end": "#e86fbf",
-          "pink-fade": "#fac0e7",
           "blue-start": "#77e4c3",
           "blue-end": "#37bddd",
-          "blue-fade": "#9de7f2",
           "yellow-start": "#f5ea7a",
           "yellow-end": "#e8c45c",
           "green-start": "#bfe47d",

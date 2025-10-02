@@ -11,83 +11,35 @@
     <ScrollFade direction="up" :delay="'120ms'">
       <p class="mb-2">get to know me as a</p>
     </ScrollFade>
-    <ScrollFade direction="up" :delay="'160ms'" class="w-100">
-      <div class="w-100 bg-surface-variant">
-        <v-container class="w-100">
-          <v-row no-gutters>
-            <v-col cols="12">
-              <MyCard
-                class="w-100"
-                text1="Programming"
-                text2="Language"
-                text3="Expert"
-                :start-color="theme.current.value.colors['pink-start']"
-                :end-color="theme.current.value.colors['pink-end']"
-              />
-            </v-col>
-            <v-col cols="12">
-              <MyCard
-                class="w-100"
-                text1="Computer"
-                text2="Grapahics"
-                text3="Engineer"
-                :start-color="theme.current.value.colors['blue-start']"
-                :end-color="theme.current.value.colors['blue-end']"
-              />
-            </v-col>
-            <v-col cols="12">
-              <MyCard
-                class="w-100"
-                text1=""
-                text2="Game"
-                text3="Developer"
-                :start-color="theme.current.value.colors['yellow-start']"
-                :end-color="theme.current.value.colors['yellow-end']"
-              />
-            </v-col>
-            <v-col cols="12">
-              <MyCard
-                class="w-100"
-                text1=""
-                text2="Application"
-                text3="Developer"
-                :start-color="theme.current.value.colors['green-start']"
-                :end-color="theme.current.value.colors['green-end']"
-              />
-            </v-col>
-            <v-col cols="12">
-              <MyCard
-                class="w-100"
-                text1=""
-                text2="Devops"
-                text3="Engineer"
-                :start-color="theme.current.value.colors['purple-start']"
-                :end-color="theme.current.value.colors['purple-end']"
-              />
-            </v-col>
-            <v-col cols="12">
-              <MyCard
-                class="w-100"
-                text1=""
-                text2="Devops"
-                text3="Engineer"
-                :start-color="theme.current.value.colors['orange-start']"
-                :end-color="theme.current.value.colors['orange-end']"
-              />
-            </v-col>
-          </v-row>
-        </v-container>
-      </div>
+    <ScrollFade
+      direction="up"
+      :delay="'160ms'"
+      class="w-100 bg-surface-variant"
+    >
+      <v-sheet class="w-100 d-flex justify-center align-center bg-transparent">
+        <v-sheet
+          class="d-flex flex-column justify-center align-center bg-transparent"
+        >
+          <OneLiner
+            class="ma-1"
+            v-for="(text, index) in texts"
+            :text="text"
+            :key="index.toString()"
+          ></OneLiner>
+        </v-sheet>
+      </v-sheet>
     </ScrollFade>
   </div>
 </template>
 
 <script lang="ts" setup>
-// ... existing code ...
-import MyCard from "@/components/MyCard.vue";
-import { useTheme } from "vuetify/framework";
-const theme = useTheme();
-// ... existing code ...
+const texts = ref([
+  "(Programming __Language__ Expert)",
+  "{Computer __Graphics__ Engineer}",
+  "<Game __Developer__>",
+  "[App __Developer__]",
+  "`Devops __Engineer__`",
+]);
 </script>
 
 <style scoped></style>
