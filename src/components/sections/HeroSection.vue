@@ -40,8 +40,8 @@ import { useTheme } from "vuetify/framework";
 const texts = ref([
   "(Programming __Language__ Expert)",
   "{Computer __Graphics__ Engineer}",
-  "<__Game__ Developer>",
-  "[__Application__ Developer]",
+  "[__Game__ Developer]",
+  "<__Application__ Developer>",
   "`__Devops__ Engineer`",
 ]);
 const colors = ["pink", "blue", "yellow", "green", "purple"];
