@@ -44,6 +44,7 @@ import _pacman_closed from "@/assets/pacman-closed.webp";
   height: 2ch;
   transform: translate(-4ch, -50%);
   animation: pacmanMove 4s linear infinite;
+  filter: drop-shadow(-6px 6px 0 rgba(0, 0, 0, 0.5));
 }
 
 /* Stack two frames and flicker between them for the chomp */
@@ -73,6 +74,7 @@ import _pacman_closed from "@/assets/pacman-closed.webp";
 .game .letter {
   display: inline-block;
   opacity: 1;
+  filter: drop-shadow(-2px 2px 0 rgba(0, 0, 0, 0.5));
 }
 
 /* Sync vanish moments roughly to pacman's position over "Game" */
