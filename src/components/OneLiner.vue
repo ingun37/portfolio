@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const props = defineProps<{ text: string }>();
+const props = defineProps<{
+  text: string;
+  startColor: string; // gradient start color
+  endColor: string; // gradient end color
+}>();
 const content = computed(() => props.text.slice(1, -1));
 const opener = computed(() => props.text.slice(0, 1));
 const closure = computed(() =>
@@ -11,11 +15,19 @@ const closure = computed(() =>
   <v-sheet
     class="d-flex justify-space-between align-center w-100 bg-transparent"
   >
-    <span class="text-h4 mr-3 mb-1">{{ opener }}</span>
+    <span class="text-h4 mr-3 mb-1" :style="{ color: startColor }">{{
+      opener
+    }}</span>
     <span>
-      <MyCardParagraph :text="content"></MyCardParagraph>
+      <MyCardParagraph
+        :text="content"
+        :start-color="startColor"
+        :end-color="endColor"
+      ></MyCardParagraph>
     </span>
-    <span class="text-h4 ml-3 mb-1">{{ closure }}</span>
+    <span class="text-h4 ml-3 mb-1" :style="{ color: endColor }">{{
+      closure
+    }}</span>
   </v-sheet>
 </template>
 

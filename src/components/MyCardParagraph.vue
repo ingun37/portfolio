@@ -6,6 +6,7 @@
       <span
         v-if="isEven(idx)"
         class="toon-card__part toon-card__part--highlight"
+        :style="gradientStyle"
       >
         {{ text }}
       </span>
@@ -17,13 +18,31 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
+
 const props = defineProps<{
   text: string;
+  startColor?: string; // gradient start color
+  endColor?: string; // gradient end color
 }>();
 const textList = computed(() =>
   props.text ? props.text.split("__").map((x) => x.trim()) : [],
 );
 const isEven = (idx: number) => (idx + 1) % 2 === 0;
+const gradientStyle = computed(() => {
+  if (props.startColor && props.endColor) {
+    const [start, end] = [props.startColor, props.endColor];
+    return {
+      "border-top-color": start,
+      "border-left-color": start,
+      "border-bottom-color": end,
+      "border-right-color": end,
+      background: "transparent",
+    } as const;
+  }
+  return undefined;
+});
+// Input is assumed to be "#RRGGBB" (fully opaque). Use it as-is when provided.
 </script>
 
 <style scoped>
@@ -40,6 +59,7 @@ const isEven = (idx: number) => (idx + 1) % 2 === 0;
   display: inline-inline;
   padding: 2px 8px;
   margin: 0 0;
+
   background: rgba(255, 255, 255, 0.65);
   border: 3px solid #000;
   border-radius: 10px 8px 10px 8px;

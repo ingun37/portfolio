@@ -24,6 +24,8 @@
             class="ma-1"
             v-for="(text, index) in texts"
             :text="text"
+            :startColor="startColors[index]"
+            :endColor="endColors[index]"
             :key="index.toString()"
           ></OneLiner>
         </v-sheet>
@@ -33,13 +35,20 @@
 </template>
 
 <script lang="ts" setup>
+import { useTheme } from "vuetify/framework";
+
 const texts = ref([
   "(Programming __Language__ Expert)",
   "{Computer __Graphics__ Engineer}",
-  "<Game __Developer__>",
-  "[App __Developer__]",
-  "`Devops __Engineer__`",
+  "<__Game__ Developer>",
+  "[__Application__ Developer]",
+  "`__Devops__ Engineer`",
 ]);
+const colors = ["pink", "blue", "yellow", "green", "purple"];
+const theme = useTheme();
+
+const startColors = colors.map((c) => theme.current.value.colors[`${c}-start`]);
+const endColors = colors.map((c) => theme.current.value.colors[`${c}-end`]);
 </script>
 
 <style scoped></style>
