@@ -14,7 +14,7 @@ import _java from "@/assets/logos/java.svg";
 import _c from "@/assets/logos/c.svg";
 import _lua from "@/assets/logos/lua.svg";
 import type { MyCardTableCell } from "@/components/MyCardTable.vue";
-import ProgrammingLanguageExpert from "@/components/ProgrammingLanguageExpert.vue";
+import ProgrammingLanguageExpertTitle from "@/components/ProgrammingLanguageExpertTitle.vue";
 const svgUrls = [
   _c,
   _cPlusPlus,
@@ -82,7 +82,7 @@ const items = computed<MyCardTableCell[]>(() => [
 </script>
 
 <template>
-  <ProgrammingLanguageExpert class="mb-2"></ProgrammingLanguageExpert>
+  <ProgrammingLanguageExpertTitle class="mb-2"></ProgrammingLanguageExpertTitle>
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
