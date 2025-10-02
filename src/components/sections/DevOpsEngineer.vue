@@ -76,7 +76,6 @@ const items = computed<MyCardTableCell[]>(() => [
 
 <template>
   <h1 class="mb-2">DevOps Engineer</h1>
-  <p class="mb-2">These are my values as a dev-ops engineer</p>
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >

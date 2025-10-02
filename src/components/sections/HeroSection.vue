@@ -9,7 +9,7 @@
     </ScrollFade>
 
     <ScrollFade direction="up" :delay="'120ms'">
-      <p>get to know me as a</p>
+      <p class="mb-2">get to know me as a</p>
     </ScrollFade>
     <ScrollFade direction="up" :delay="'160ms'" class="w-100">
       <div class="w-100 bg-surface-variant">
@@ -63,6 +63,16 @@
                 text3="Engineer"
                 :start-color="theme.current.value.colors['purple-start']"
                 :end-color="theme.current.value.colors['purple-end']"
+              />
+            </v-col>
+            <v-col cols="12">
+              <MyCard
+                class="w-100"
+                text1=""
+                text2="Devops"
+                text3="Engineer"
+                :start-color="theme.current.value.colors['orange-start']"
+                :end-color="theme.current.value.colors['orange-end']"
               />
             </v-col>
           </v-row>

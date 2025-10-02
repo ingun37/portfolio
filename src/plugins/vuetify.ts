@@ -45,6 +45,8 @@ export default createVuetify({
           "green-end": "#5fc56d",
           "purple-start": "#baa0d6",
           "purple-end": "#836fde",
+          "orange-start": "#8a725f",
+          "orange-end": "#818a7b",
         },
         variables: {
           "border-color": "#000000",
