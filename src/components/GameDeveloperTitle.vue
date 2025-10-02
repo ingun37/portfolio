@@ -35,14 +35,14 @@ import _pacman_closed from "@/assets/pacman-closed.webp";
   padding-left: 1.1ch; /* space for pacman to start just before 'G' */
 }
 
-/* Pacman position and movement */
+/* Pacman position and movement (scaled x2) */
 .pacman {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 1ch;
-  height: 1ch;
-  transform: translate(-1ch, -50%);
+  width: 2ch;
+  height: 2ch;
+  transform: translate(-2ch, -50%);
   animation: pacmanMove 4s linear infinite;
 }
 
@@ -53,7 +53,12 @@ import _pacman_closed from "@/assets/pacman-closed.webp";
   width: 100%;
   height: 100%;
   object-fit: contain;
-  image-rendering: auto;
+
+  /* nearest-neighbor upscaling (no smoothing) */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback */
+  image-rendering: -moz-crisp-edges; /* Firefox legacy */
+  -ms-interpolation-mode: nearest-neighbor; /* old IE */
 }
 
 .mouth-open {
