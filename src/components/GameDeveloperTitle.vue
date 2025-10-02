@@ -6,6 +6,10 @@ import _pacman_closed from "@/assets/pacman-closed.webp";
 <template>
   <h1 class="game-title">
     <span class="scene">
+      <span class="game">
+        <span class="letter">G</span><span class="letter">a</span
+        ><span class="letter">m</span><span class="letter">e</span>
+      </span>
       <span class="pacman">
         <img class="mouth mouth-open" :src="_pacman_open" alt="Pacman open" />
         <img
@@ -13,10 +17,6 @@ import _pacman_closed from "@/assets/pacman-closed.webp";
           :src="_pacman_closed"
           alt="Pacman closed"
         />
-      </span>
-      <span class="game">
-        <span class="letter">G</span><span class="letter">a</span
-        ><span class="letter">m</span><span class="letter">e</span>
       </span>
     </span>
     <span>&nbsp;Developer</span>
