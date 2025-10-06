@@ -71,6 +71,14 @@ const items = computed<MyCardTableCell[]>(() => [
     },
     svgUrls: dataAnalysisSvgUrls,
   },
+  {
+    props: {
+      title: "Database",
+      textList: [
+        "I'm capable of setting up and maintaining the __RDBMS__, __Graph Database__, and __NoSQL Database__.",
+      ],
+    },
+  },
 ]);
 </script>
 
