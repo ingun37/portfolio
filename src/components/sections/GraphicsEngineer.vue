@@ -15,7 +15,7 @@ const items = computed(() => [
     props: {
       title: "APIs, Frameworks, and Engines",
       textList: [
-        "Expertise spans from __low-level graphics API__ to __high-level frameworks and engines__, and from __traditional__ to __modern__ graphics pipelines.",
+        "Expertise spans from __low-level__ graphics API to __high-level__ frameworks and engines, and from __traditional__ to __modern__ graphics pipelines.",
       ],
     },
     svgUrls,
@@ -24,7 +24,7 @@ const items = computed(() => [
     props: {
       title: "Theoretical Knowledge",
       textList: [
-        "Worked on __PBR__ skinning __animation__ VFX __antialiasing__ polygon reduction __OIT__, etc. developing strong fundamental knowledge and skills.",
+        "Worked on __PBR__ __skinning__ __animation__ __VFX__ __antialiasing__ __polygon reduction__ __OIT__, etc. developing strong fundamental knowledge and skills.",
       ],
     },
   },
@@ -34,7 +34,7 @@ const items = computed(() => [
       subtitle: "CLO Virtual Fashion, 2022 ~ present(2025)",
       cover: _closet,
       textList: [
-        "Developed __Depth Peeling__, __Environment Lighting__, __VFX__,__Reactive 3D Resource Loading__, and many other things for CLO Virtual Fashion's web services, contributing to their commercial success.",
+        "Developed __Depth Peeling__ __Environment Lighting__ __VFX__ __Reactive 3D Resource Loading__, and many other things for CLO Virtual Fashion's web services, contributing to their commercial success.",
         "Currently pioneering __WebGPU backend__ for __NVRHI__, NVIDIA's open source rendering hardware interface, to enable high-performance web support via __WebAssembly__",
       ],
     },
