@@ -25,7 +25,10 @@
       </v-list>
     </v-card-text>
     <slot></slot>
-    <v-card-actions v-if="limitedLinks.length" class="d-flex flex-column p-0">
+    <v-card-actions
+      v-if="limitedLinks.length"
+      class="d-flex flex-column p-0 text-wrap"
+    >
       <v-btn
         v-for="(link, i) in limitedLinks"
         :key="i"
@@ -101,11 +104,5 @@ const gradientStyle = computed(() => {
     8px 8px 0 #111,
     0 0 0 2px rgba(255, 255, 255, 0.4) inset;
   filter: saturate(125%) contrast(105%);
-}
-
-@media (max-width: 420px) {
-  .toon-card {
-    padding: 10px 12px;
-  }
 }
 </style>
