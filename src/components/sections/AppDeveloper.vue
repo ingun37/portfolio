@@ -50,6 +50,23 @@ const items = ref<MyCardTableCell[]>([
       ],
     },
   },
+  {
+    props: {
+      title: "Modern & Progressive Design patterns",
+      textList: [
+        "I'm familiar with the __Modern__ and __Progressive__ design patterns for building the __Reactive__, __Robust__, and sustainable client-side applications",
+        "I always adopt __Reactive Programming__ __Flux Architecture__ for the client side applications development, especially for loading resources and updating UI",
+      ],
+    },
+  },
+  {
+    props: {
+      title: "Web Frontend",
+      textList: [
+        "I have designed & developed many personal websites (including this one) using __Vue.js__ and __React__",
+      ],
+    },
+  },
 ]);
 </script>
 
