@@ -20,6 +20,9 @@
   <Sect>
     <Person />
   </Sect>
+  <Sect>
+    <FindMeOn />
+  </Sect>
 </template>
 
 <script lang="ts" setup>
