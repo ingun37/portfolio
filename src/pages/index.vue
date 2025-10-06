@@ -1,6 +1,6 @@
 <template>
   <Sect>
-    <HeroSection />
+    <Introduction />
   </Sect>
   <Sect>
     <GraphicsEngineer />
@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import HeroSection from "@/components/sections/HeroSection.vue";
+import Introduction from "@/components/sections/Introduction.vue";
 import LanguageExpert from "@/components/sections/LanguageExpert.vue";
 import GameDeveolper from "@/components/sections/GameDeveolper.vue";
 import DevOpsEngineer from "@/components/sections/DevOpsEngineer.vue";
