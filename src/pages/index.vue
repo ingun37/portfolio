@@ -18,7 +18,7 @@
     <DevOpsEngineer />
   </Sect>
   <Sect>
-    <FluentBilingual />
+    <Person />
   </Sect>
 </template>
 

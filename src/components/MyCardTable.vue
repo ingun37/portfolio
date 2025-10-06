@@ -33,7 +33,7 @@ const columnNumber = computed(() => {
 
   return Math.min(upTo(), props.items.length);
 });
-const colors = ["pink", "blue", "yellow", "green", "purple"];
+const colors = ["pink", "blue", "yellow", "green", "purple", "silver"];
 const theme = useTheme();
 
 const startColors = colors.map((c) => theme.current.value.colors[`${c}-start`]);
