@@ -17,6 +17,9 @@
   <Sect>
     <DevOpsEngineer />
   </Sect>
+  <Sect>
+    <FluentBilingual />
+  </Sect>
 </template>
 
 <script lang="ts" setup>

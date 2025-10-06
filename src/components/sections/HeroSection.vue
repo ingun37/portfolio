@@ -43,8 +43,9 @@ const texts = ref([
   "[__Game__ Developer]",
   "<__Application__ Developer>",
   "`__Devops__ Engineer`",
+  '"Fluent __Bilingual__"',
 ]);
-const colors = ["pink", "blue", "yellow", "green", "purple"];
+const colors = ["pink", "blue", "yellow", "green", "purple", "orange"];
 const theme = useTheme();
 
 const startColors = colors.map((c) => theme.current.value.colors[`${c}-start`]);
