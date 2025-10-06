@@ -21,7 +21,7 @@ jobs:
       with:
         node-version: 22
         cache: 'pnpm'
-    - run: pnpm ci
+    - run: pnpm install
     - run: pnpm build --base=/portfolio/
     - name: Upload static files as artifact
       id: deployment
