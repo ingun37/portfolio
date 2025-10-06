@@ -9,7 +9,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppDeveloper: typeof import('./components/sections/AppDeveloper.vue')['default']
-    AppFooter: typeof import('./components/AppFooter.vue')['default']
     DevOpsEngineer: typeof import('./components/sections/DevOpsEngineer.vue')['default']
     FindMeOn: typeof import('./components/sections/FindMeOn.vue')['default']
     FlowingLogos: typeof import('./components/FlowingLogos.vue')['default']
@@ -30,7 +29,5 @@ declare module 'vue' {
     ScrollFade: typeof import('./components/ScrollFade.vue')['default']
     Sect: typeof import('./components/sections/Sect.vue')['default']
     SlidingLogoBanner: typeof import('./components/SlidingLogoBanner.vue')['default']
-    StickyShowcase: typeof import('./components/sections/StickyShowcase.vue')['default']
-    VideoSection: typeof import('./components/sections/VideoSection.vue')['default']
   }
 }
