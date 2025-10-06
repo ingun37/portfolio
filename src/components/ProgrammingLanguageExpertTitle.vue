@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1 class="overwrite-heading">
+  <h1 class="overwrite-heading" style="text-align: center">
     <span>Programming </span
     ><span class="overwrite-target">Language Expert</span>
   </h1>

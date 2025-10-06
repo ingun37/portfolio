@@ -10,7 +10,7 @@
   >
     <v-img v-if="cover" color="surface-variant" height="200" :src="cover" cover>
     </v-img>
-    <v-card-title class="font-weight-black">{{ title }}</v-card-title>
+    <v-card-title class="font-weight-black text-wrap">{{ title }}</v-card-title>
     <v-card-subtitle v-if="subtitle">{{ subtitle }}</v-card-subtitle>
     <v-card-text class="font-weight-black pb-0">
       <v-list

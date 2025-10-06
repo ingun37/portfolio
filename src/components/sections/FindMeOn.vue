@@ -6,7 +6,7 @@ const emailUrl = `mailto:${email}`;
 </script>
 
 <template>
-  <h1 class="mb-2">Find Me on</h1>
+  <h1 class="mb-2" style="text-align: center">Find Me on</h1>
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >

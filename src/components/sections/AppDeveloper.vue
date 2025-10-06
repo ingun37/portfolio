@@ -70,7 +70,7 @@ const items = ref<MyCardTableCell[]>([
 </script>
 
 <template>
-  <h1 class="mb-2">Application Developer</h1>
+  <h1 class="mb-2" style="text-align: center">Application Developer</h1>
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >

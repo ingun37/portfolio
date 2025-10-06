@@ -4,7 +4,7 @@ import _pacman_closed from "@/assets/pacman-closed.webp";
 </script>
 
 <template>
-  <h1 class="game-title">
+  <h1 class="game-title" style="text-align: center">
     <span class="scene">
       <span class="game">
         <span class="letter">G</span><span class="letter">a</span

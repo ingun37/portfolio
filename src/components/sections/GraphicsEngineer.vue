@@ -58,7 +58,7 @@ const items = computed(() => [
 </script>
 
 <template>
-  <h1 class="mb-2">Computer Graphics Engineer</h1>
+  <h1 class="mb-2" style="text-align: center">Computer Graphics Engineer</h1>
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
