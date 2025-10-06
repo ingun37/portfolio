@@ -10,14 +10,12 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppDeveloper: typeof import('./components/sections/AppDeveloper.vue')['default']
     AppFooter: typeof import('./components/AppFooter.vue')['default']
-    CTASection: typeof import('./components/sections/CTASection.vue')['default']
     DevOpsEngineer: typeof import('./components/sections/DevOpsEngineer.vue')['default']
     FeaturePanels: typeof import('./components/sections/FeaturePanels.vue')['default']
     FlowingLogos: typeof import('./components/FlowingLogos.vue')['default']
     GameDeveloperTitle: typeof import('./components/GameDeveloperTitle.vue')['default']
     GameDeveolper: typeof import('./components/sections/GameDeveolper.vue')['default']
     GraphicsEngineer: typeof import('./components/sections/GraphicsEngineer.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     HeroSection: typeof import('./components/sections/HeroSection.vue')['default']
     LanguageExpert: typeof import('./components/sections/LanguageExpert.vue')['default']
     MyCard: typeof import('./components/MyCard.vue')['default']
@@ -33,7 +31,6 @@ declare module 'vue' {
     Sect: typeof import('./components/sections/Sect.vue')['default']
     SlidingLogoBanner: typeof import('./components/SlidingLogoBanner.vue')['default']
     StickyShowcase: typeof import('./components/sections/StickyShowcase.vue')['default']
-    ToonCard: typeof import('./components/ToonCard.vue')['default']
     VideoSection: typeof import('./components/sections/VideoSection.vue')['default']
   }
 }
