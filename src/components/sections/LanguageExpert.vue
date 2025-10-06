@@ -32,13 +32,13 @@ const svgUrls = [
   _lua,
 ];
 
-const items = computed<MyCardTableCell[]>(() => [
+const items = ref<MyCardTableCell[]>([
   {
     props: {
       title: "No Language Barrier",
       textList: [
-        "I've __learned, forgotten, and re-learned__ 20+ languages throughout my career.",
-        "I am __not restricted__ to any language. I can drop in any projects and language will not be a problem.",
+        "__Used__ 20+ languages throughout my career.",
+        "__Unrestricted__ to any language. I can drop into any project regardless of the language or platform",
       ],
     },
     svgUrls,
@@ -47,7 +47,7 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Theoretical Knowledge",
       textList: [
-        "I'm knowledgeable in __abstract algebra__ and __category theory__ that is the mathematical foundation of the language theory.",
+        "Possess deep theoretical knowledge in __abstract algebra__ and __category theory__ that is the mathematical foundation of the language theory.",
       ],
       links: [
         {
@@ -65,7 +65,7 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Professional Functional Programmer",
       textList: [
-        "I can professionally leverage the __typeclasses__ to boost the productivity in any language.",
+        "Professionally leverage the __typeclasses__ to boost the productivity, maintainability, and robustness in any language.",
       ],
     },
   },
@@ -73,7 +73,7 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Diagram Nerd",
       textList: [
-        "I can accurately represents any architecture, relation, and logic in diagrams",
+        "Skilled in translating complex architecture, relations, and business logic into accurate and clear visual diagrams.",
         "I believe maintaining diagrams is __necessary__ part of the software development.",
       ],
     },

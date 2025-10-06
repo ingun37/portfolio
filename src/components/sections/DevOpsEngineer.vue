@@ -32,7 +32,7 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Declarative & Reproducible CI/CD",
       textList: [
-        "I've setup __Declarative__ CI/CD and __Reproducible__ runtime/build environments for many companies using __Docker__, __NixOS__, __Azure Pipeline__, __Github Workflow__, __AWS CodePipeline__, __Jenkins__, etc.",
+        "Established __Declarative__ CI/CD and __Reproducible__ runtime/build environments across multiple companies using __Docker__, __NixOS__, __Azure Pipeline__, __Github Workflow__, __AWS CodePipeline__, __Jenkins__, etc.",
       ],
     },
     svgUrls,
@@ -41,7 +41,7 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Toolchains and Build Systems",
       textList: [
-        "I have strong understanding of the build systems and toolchains of various languages and platforms",
+        "Possess a deep understanding of the build systems and toolchains of various languages and platforms",
         "* C/C++: __gcc/clang/MSVC__, __CMake__",
         "* TS/JS: __CommonJS/ESM__, __NPM,PNPM/Yarn__, __Rush.js__",
         "* Haskell: __Cabal/NixOS__, __Stack__",
@@ -54,8 +54,8 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "E2E Rendering Testing",
       textList: [
-        "I've developed the __automated__, __scalable__ E2E testing for the 3D rendering systems, and run it on the __gpu-accelerated__ cloud computing platform for the web services of CLO Virtual Fashion, decreasing the failure rate dramatically",
-        "I've also developed the image comparison algorithm that accounts randomness using __OpenCV__'s morphological transformation and thresholding for comparing experiment and expected rendering results",
+        "Developed an __automated__, __scalable__ E2E testing for 3D rendering systems for the web services at CLO Virtual Fashion. Deployed on a __GPU-accelerated__ cloud computing platform, resulting in the dramatic decrease in production failure rates.",
+        "Engineered a robust image comparison algorithm using __OpenCV__'s morphological transformation and thresholding to accurately compare rendering results despite inherent system randomness.",
       ],
     },
   },
@@ -63,21 +63,13 @@ const items = computed<MyCardTableCell[]>(() => [
     props: {
       title: "Rendering Performance Data Analysis",
       textList: [
-        "I've successfully improved the performance through data analysis in CLO Virtual Fashion",
-        "* Collect the FPS, Heap memory usage, GPU memory usage, network activity, loading time data using __Elastic Search__",
-        "* __Analyze__ using __Pandas__ Python library",
-        "* __Visualize__ using __PowerBi__",
+        "Drove significant performance improvements at CLO Virtual Fashion through a data-driven analysis pipeline.",
+        "* Data Collection: Gathered metrics (FPS, memory usage, network activity, loading time) using __Elastic Search__.",
+        "* Analysis: Performed detailed data processing and analysis using the __Pandas__ Python library.",
+        "* Visualization: Created actionable dashboards and reports using __PowerBI__ to guide engineering efforts.",
       ],
     },
     svgUrls: dataAnalysisSvgUrls,
-  },
-  {
-    props: {
-      title: "Database",
-      textList: [
-        "I'm capable of setting up and maintaining the __RDBMS__, __Graph Database__, and __NoSQL Database__.",
-      ],
-    },
   },
 ]);
 </script>

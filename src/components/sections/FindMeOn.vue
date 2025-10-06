@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const githubUrl = "https://github.com/your-username";
-const instagramUrl = "https://instagram.com/your.username";
-const email = "you@example.com";
+const githubUrl = "https://github.com/ingun37";
+const instagramUrl = "https://instagram.com/ingun37";
+const email = "ingun37@gmail.com";
 const emailUrl = `mailto:${email}`;
 </script>
 

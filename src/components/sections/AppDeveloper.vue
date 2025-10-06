@@ -10,8 +10,7 @@ const items = ref<MyCardTableCell[]>([
       title: "EBS어학FM",
       subtitle: "Swink/EBSFM 2013 ~ 2014",
       textList: [
-        "The __official__ iOS application of one of the __the biggest radio channel__ in South Korea",
-        "I developed the whole application including __UI__, __Network Session Threading__, and __Audio Streaming__.",
+        "Developed the __official__ iOS application for EBSFM, one of South Korea's largest radio channels",
       ],
     },
   },
@@ -27,7 +26,7 @@ const items = ref<MyCardTableCell[]>([
         },
       ],
       textList: [
-        "I've developed an algebraic calculator with hand writing support",
+        "Engineered an algebraic matrix calculator that features handwriting recognition support.",
       ],
     },
   },
@@ -46,7 +45,7 @@ const items = ref<MyCardTableCell[]>([
         },
       ],
       textList: [
-        "I've contributed to the famous open source Markdown Editor Swift UI module by refactoring and fixing a performance issue.",
+        "Contributed to SwiftDown, a popular open-source Markdown Editor SwiftUI module, by refactoring the codebase and fixing a performance issue.",
       ],
     },
   },
@@ -54,8 +53,8 @@ const items = ref<MyCardTableCell[]>([
     props: {
       title: "Modern & Progressive Design patterns",
       textList: [
-        "I'm familiar with the __Modern__ and __Progressive__ design patterns for building the __Reactive__, __Robust__, and sustainable client-side applications",
-        "I always adopt __Reactive Programming__ __Flux Architecture__ for the client side applications development, especially for loading resources and updating UI",
+        "Deep expertise in Modern and Progressive design patterns for architecting reactive, robust, and sustainable client-side applications.",
+        "Consistently apply __Reactive Programming__ and __Flux Architecture__ principles, specifically for efficient resource loading and dynamic UI updates.",
       ],
     },
   },
@@ -63,7 +62,7 @@ const items = ref<MyCardTableCell[]>([
     props: {
       title: "Web Frontend",
       textList: [
-        "I have designed & developed many personal websites (including this one) using __Vue.js__ and __React__",
+        "Designed and developed multiple personal websites (including this one) leveraging __Vue.js__ and __React__ frameworks.",
       ],
     },
   },

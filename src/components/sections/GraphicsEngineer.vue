@@ -15,7 +15,7 @@ const items = computed(() => [
     props: {
       title: "APIs, Frameworks, and Engines",
       textList: [
-        "My experties spans from __low-level graphics API__ to __high-level frameworks and engines__, and from __traditional__ to __modern__ graphics pipeline",
+        "Expertise spans from __low-level graphics API__ to __high-level frameworks and engines__, and from __traditional__ to __modern__ graphics pipelines.",
       ],
     },
     svgUrls,
@@ -24,7 +24,7 @@ const items = computed(() => [
     props: {
       title: "Theoretical Knowledge",
       textList: [
-        "Throughout my career, I've worked on __PBR__ skinning __animation__ VFX __antialiasing__ polygon reduction __OIT__, etc. developing strong fundamental knowledges and skills.",
+        "Worked on __PBR__ skinning __animation__ VFX __antialiasing__ polygon reduction __OIT__, etc. developing strong fundamental knowledge and skills.",
       ],
     },
   },
@@ -34,8 +34,8 @@ const items = computed(() => [
       subtitle: "CLO Virtual Fashion, 2022 ~ present(2025)",
       cover: _closet,
       textList: [
-        "I've developed __Depth Peeling__, __Environment Lighting__, __VFX__,__Reactive 3D Resource Loading__, and many other things for the web services of CLO Virtual Fashion, contributing to their commercial success.",
-        "I'm currently actively developing a __WebGPU backend__ for __NVRHI__, NVIDIA's open source rendering hardware interface, to enable the web support through WebAssembly",
+        "Developed __Depth Peeling__, __Environment Lighting__, __VFX__,__Reactive 3D Resource Loading__, and many other things for CLO Virtual Fashion's web services, contributing to their commercial success.",
+        "Currently pioneering __WebGPU backend__ for __NVRHI__, NVIDIA's open source rendering hardware interface, to enable high-performance web support via __WebAssembly__",
       ],
     },
   },
@@ -44,7 +44,7 @@ const items = computed(() => [
       title: "OpenSource Contribution",
       subtitle: "ThreeJS, 2022",
       textList: [
-        "I've detected a problem in the widely used __ThreeJS's outline pass__, and __contributed__ the open source project by fixing it.",
+        "Identified and resolved a critical issue within the widely used __ThreeJS Outline Pass__, contributing to the open-source project.",
       ],
       links: [
         {
