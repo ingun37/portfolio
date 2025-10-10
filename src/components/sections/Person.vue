@@ -50,7 +50,7 @@ const items = ref<MyCardTableCell[]>([
     props: {
       title: "Avid Reader",
       textList: [
-        "I love reading. My favorites are sci-fi and fantasy novels, philosophy and science books, and journalism.",
+        "I love to read. My favorites are sci-fi and fantasy novels, philosophy and science books, and journalism.",
       ],
     },
   },
