@@ -13,14 +13,15 @@ const items = ref<MyCardTableCell[]>([
   },
   {
     props: {
-      title: "Math/Science Enthusiast",
+      title: "Math Enthusiast",
       textList: [
-        "I love mathematics and science. I'm dedicated to the life-long learning of Abstract Algebra, Analysis, Calculus, Linear Algebra, Statistics, Physics, Topology, Category Theory, and many other topics.",
+        "I'm fascinated by mathematics and believe that the true power of programming comes from abstract mathematical thinking.",
+        "I consistently expand my knowledge by studying various advanced textbooks.",
       ],
       links: [
         {
           href: "https://ingun37.github.io/answers/",
-          label: "My notes on the various math/science textbooks",
+          label: "See my notes on various math/science textbooks",
         },
       ],
     },
@@ -49,12 +50,7 @@ const items = ref<MyCardTableCell[]>([
     props: {
       title: "Avid Reader",
       textList: [
-        "I love to read, no matter if it's " +
-          "literature or blog post, " +
-          "fiction or non-fiction, " +
-          "good or bad writing, " +
-          "classic or modern, " +
-          "agreeable or controversial, ",
+        "I love reading. My favorites are sci-fi and fantasy novels, philosophy and science books, and journalism.",
       ],
     },
   },
@@ -70,7 +66,7 @@ const items = ref<MyCardTableCell[]>([
 </script>
 
 <template>
-  <h1 class="mb-2" style="text-align: center">As a Person</h1>
+  <h1 class="mb-2" style="text-align: center">Personal Life</h1>
   <v-sheet
     class="d-flex flex-column bg-surface-variant justify-center align-center w-100"
   >
